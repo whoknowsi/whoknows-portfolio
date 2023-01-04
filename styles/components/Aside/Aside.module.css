@@ -1,0 +1,5 @@
+.container {
+  height: 100%;
+  width: 18em;
+  background-color: var(--middle-color);
+}

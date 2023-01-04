@@ -3,10 +3,16 @@
   --border-radius: 12px;
   --background-color: #191923;
   --background-front-color: #1e1e28;
-  --middle-color: #20202a;
+  --back-color: #20202a;
+  --middle-color-light: #393946;
+  --middle-color: #292936;
+  --middle-color-dark: #090916;
   --front-color: #2c2c39;
   --text-color-highlight: #f7f6ff;
   --text-color-gray: #919197;
+  --text-color-gray-dark: #717177;
+  --text-color-vivid: #FFC107;
+  --border-shadow: 0px 0px 7px 0px rgba(15, 15, 20, 0.2);
 }
 
 * {
@@ -32,6 +38,11 @@ h4 {
 p {
   color: var(--text-color-gray);
   font-size: .9em;
+}
+
+svg {
+  color: var(--text-color-gray-dark);
+  font-size: 1.5em;
 }
 
 a {

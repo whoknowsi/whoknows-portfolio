@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.container hr {
+  flex: 1;
+  height: 1px;
+  background-color: var(--text-color-gray-dark);
+  border: none;
+}

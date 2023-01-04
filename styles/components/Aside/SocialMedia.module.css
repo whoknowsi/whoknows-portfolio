@@ -1,13 +1,15 @@
 .container {
-  background-color: var(--middle-color);
-  height: 18em;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 1em;
+  gap: 2em;
+  padding: 1em 0;
+  background-color: var(--middle-color);
   -webkit-box-shadow: var(--border-shadow);
   -moz-box-shadow: var(--border-shadow);
   box-shadow: var(--border-shadow);
+}
+
+.container a {
+  height: 1.5em;
 }

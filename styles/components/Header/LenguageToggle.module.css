@@ -1,0 +1,23 @@
+.container {
+  background-color: var(--middle-color);
+  padding: 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container button {
+  width: 1.5em;
+  height: 1.5em;
+  background-color: var(--text-color-vivid);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.container span {
+  font-size: .75em;
+}

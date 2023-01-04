@@ -1,5 +1,11 @@
 .container {
   height: 100%;
   width: 18em;
-  background-color: var(--middle-color);
+  background-color: var(--back-color);
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: var(--border-shadow);
+  -moz-box-shadow: var(--border-shadow);
+  box-shadow: var(--border-shadow);
+  overflow: hidden;
 }

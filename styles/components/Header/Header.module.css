@@ -1,5 +1,10 @@
 .container {
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  width: 6em;
-  background-color: var(--middle-color);
+  width: 4em;
+  background-color: var(--back-color);
+  -webkit-box-shadow: var(--border-shadow);
+  -moz-box-shadow: var(--border-shadow);
+  box-shadow: var(--border-shadow);
 }

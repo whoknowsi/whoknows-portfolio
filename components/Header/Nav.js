@@ -9,7 +9,7 @@ const Nav = ({ open }) => {
     const interval = 0.03
     let delay = interval
     for (const iterator of list.current.childNodes) {
-      console.log(iterator.style.transitionDelay = `${delay.toFixed(3)}s`)
+      iterator.style.transitionDelay = `${delay.toFixed(3)}s`
       delay += interval
     }
   }, [list])

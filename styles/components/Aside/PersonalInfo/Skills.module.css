@@ -1,7 +1,6 @@
 .container {
-  display: flex;
-  gap: 1em;
-  flex-wrap: wrap;
-  padding: .5em;
-  justify-content: space-evenly;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 0.5em;
 }

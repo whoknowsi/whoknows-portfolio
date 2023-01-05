@@ -43,6 +43,7 @@ p {
 svg {
   color: var(--text-color-gray-dark);
   font-size: 1.5em;
+  user-select: none;
 }
 
 a {

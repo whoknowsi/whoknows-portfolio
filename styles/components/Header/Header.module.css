@@ -2,9 +2,15 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 4em;
+  width: 15em;
   background-color: var(--back-color);
   -webkit-box-shadow: var(--border-shadow);
   -moz-box-shadow: var(--border-shadow);
   box-shadow: var(--border-shadow);
+  transform: translateX(9.5em);
+  transition: transform .3s ease-in-out;
+}
+
+.container.open {
+  transform: translateX(0em);
 }

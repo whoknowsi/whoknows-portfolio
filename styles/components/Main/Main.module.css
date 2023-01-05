@@ -1,4 +1,5 @@
 .container {
   flex: 1;
   padding: 2em;
+  flex-shrink: 1;
 }

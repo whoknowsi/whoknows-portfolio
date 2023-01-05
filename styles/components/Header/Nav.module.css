@@ -1,3 +1,36 @@
 .container {
   flex: 1;
+  color: var(--text-color-gray);
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: .9em;
+  font-weight: 500;
+}
+
+.container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.container ul li {
+  list-style: none;
+  transform: translateX(5em);
+  opacity: 0;
+  transition: all .3s ease-out;
+}
+
+.container.open ul li {
+  transform: translateX(0em);
+  opacity: 1;
+}
+
+.container ul li a {
+  transition: color .3s ease-out;
+}
+
+.container ul li a:hover {
+  color: var(--text-color-highlight)
 }

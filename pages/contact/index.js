@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import Main from '../components/Main/Main'
+import Main from '../../components/Contact/Main'
 
-export default function Home () {
+export default function Contact () {
   return (
     <>
       <Head>

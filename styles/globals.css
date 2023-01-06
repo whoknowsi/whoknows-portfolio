@@ -4,13 +4,14 @@
   --background-color: #191923;
   --background-front-color: #1e1e28;
   --back-color: #20202a;
-  --middle-color-light: #393946;
+  --middle-color-light: #343441;
   --middle-color: #292936;
   --middle-color-dark: #090916;
   --front-color: #2c2c39;
   --text-color-highlight: #f7f6ff;
   --text-color-gray: #919197;
   --text-color-gray-dark: #717177;
+  --text-color-vivid-light: #ffcc32;
   --text-color-vivid: #FFC107;
   --text-color-vivid-dark: #DFA100;
   --menu-open-transition: 0.5s;
@@ -50,12 +51,19 @@ svg {
   user-select: none;
   height: var(--svg-basic-height);
   width: auto;
+  transition: color .3s ease-in-out;
+}
+
+
+svg:hover {
+  color: var(--text-color-highlight)
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
+
 
 .container {
   display: flex;
@@ -64,6 +72,7 @@ a {
   min-height: 100vh;
   background-color: var(--background-color);
   padding: 1em;
+  max-height: 100vh;
 }
 
 .content {
@@ -86,10 +95,27 @@ a {
   transition-property: transform, filter, opacity;
   transition-duration: var(--menu-open-transition);
   transition-timing-function: var(--menu-open-cubic);
+  overflow: auto;
+  padding-bottom: 0;
+  margin-bottom: 2em;
 }
 
 .main.open {
   transform: translateX(-9.5em);
   opacity: 0.5;
   filter: blur(1px)
+}
+
+.main h3 {
+  margin-bottom: 1em;
+}
+
+input, textarea {
+  outline: none;
+  border: none;
+  font-family: inherit;
+}
+
+textarea {
+  resize: none;
 }

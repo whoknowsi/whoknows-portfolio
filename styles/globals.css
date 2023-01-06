@@ -83,7 +83,7 @@ a {
   padding: 2em;
   flex-shrink: 1;
   padding-right: 7.5em;
-  transition: all var(--menu-open-transition) var(--menu-open-cubic);
+  transition: transform var(--menu-open-transition) var(--menu-open-cubic);
 }
 
 .main.open {

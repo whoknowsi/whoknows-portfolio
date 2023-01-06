@@ -4,3 +4,7 @@
   align-items: center;
   justify-content: center;
 }
+
+.container svg {
+  height: 2em;
+}

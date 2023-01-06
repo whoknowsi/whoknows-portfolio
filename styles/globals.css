@@ -15,6 +15,7 @@
   --menu-open-transition: 0.5s;
   --menu-open-cubic: ease-out;
   --border-shadow: 0px 0px 7px 0px rgba(15, 15, 20, 0.2);
+  --svg-basic-height: 1.5em;
 }
 
 * {
@@ -46,7 +47,7 @@ p {
 svg {
   color: var(--text-color-gray-dark);
   user-select: none;
-  height: 2em;
+  height: var(--svg-basic-height);
   width: auto;
 }
 

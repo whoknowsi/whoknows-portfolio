@@ -1,14 +1,14 @@
 .container {
   background-color: var(--middle-color);
-  padding: 1em 2em;
+  padding: 1em calc(2.75em - var(--svg-basic-height) / 2);
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
 .container button {
-  width: 1.5em;
-  height: 1.5em;
+  width: var(--svg-basic-height);
+  height: var(--svg-basic-height);
   background-color: var(--text-color-vivid);
   border-radius: 50%;
   display: flex;

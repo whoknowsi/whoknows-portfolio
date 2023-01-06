@@ -11,5 +11,5 @@
 }
 
 .container a {
-  height: 2em;
+  height: var(--svg-basic-height);
 }

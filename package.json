@@ -10,17 +10,20 @@
   },
   "dependencies": {
     "@next/font": "13.1.1",
-    "eslint-config-next": "13.1.1",
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1"
   },
   "devDependencies": {
-    "eslint": "^8.31.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.6.0",
-    "eslint-plugin-promise": "^6.1.1"
+    "standard": "^17.0.0",
+    "eslint-config-next": "^13.1.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/standard/eslintrc.json",
+      "next/core-web-vitals"
+    ]
   }
 }
+

@@ -19,7 +19,9 @@
   list-style: none;
   transform: translateX(5em);
   opacity: 0;
-  transition: all var(--menu-open-transition) ease-out;
+  transition-property: transform, opacity;
+  transition-duration: var(--menu-open-transition);
+  transition-timing-function: ease-out;
 }
 
 .container.open ul li {

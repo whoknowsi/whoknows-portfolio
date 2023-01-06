@@ -3,6 +3,40 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.bubble {
+  position: absolute;
+  background-color: var(--text-color-vivid);
+  color: var(--middle-color);
+  padding: 0.5em 1em;
+  bottom: calc(2.7em * 1.2);
+  opacity: 0;
+  width: max-content;
+  transition: opacity .3s cubic-bezier(.11,.11,.37,1.07);;
+  pointer-events: none;
+  border-radius: 1em;
+  font-size: .8em;
+  font-weight: 500;
+  z-index: 50;
+}
+
+.bubble::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.4em;
+  width: 0;
+  height: 0;
+  border: 0.4em solid transparent;
+  border-color: var(--text-color-vivid) transparent transparent transparent;
+  border-bottom: none;
+}
+
+.bubble.hover {
+  opacity: 1;
 }
 
 .container svg {

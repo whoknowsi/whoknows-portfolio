@@ -11,7 +11,7 @@ const NodeJsLogo = ({ colors, width, height, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors}>
+    <SvgContainer colors={colors} hoverColors={hoverColors} name="Node.js">
       <SVG />
     </SvgContainer>
   )

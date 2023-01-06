@@ -14,7 +14,7 @@ const ReactLogo = ({ colors, width, height, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors}>
+    <SvgContainer colors={colors} hoverColors={hoverColors} name="React">
       <SVG />
     </SvgContainer>
   )

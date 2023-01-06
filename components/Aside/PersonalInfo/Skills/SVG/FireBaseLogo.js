@@ -22,7 +22,7 @@ const FireBaseLogo = ({ width, height, colors, hoverColors }) => {
     </svg>
   )
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors}>
+    <SvgContainer colors={colors} hoverColors={hoverColors} name="Firebase">
       <SVG />
     </SvgContainer>
   )

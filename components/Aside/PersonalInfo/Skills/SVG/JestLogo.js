@@ -15,7 +15,7 @@ const JestLogo = ({ width, height, colors, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors}>
+    <SvgContainer colors={colors} hoverColors={hoverColors} name="Jest">
       <SVG />
     </SvgContainer>
   )

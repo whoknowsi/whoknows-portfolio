@@ -12,7 +12,7 @@ const WordPressLogo = ({ colors, width, height, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors}>
+    <SvgContainer colors={colors} hoverColors={hoverColors} name="WordPress">
       <SVG />
     </SvgContainer>
   )

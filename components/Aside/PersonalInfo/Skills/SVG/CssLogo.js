@@ -22,7 +22,7 @@ const CssLogo = ({ width, height, colors, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors}>
+    <SvgContainer colors={colors} hoverColors={hoverColors} name="CSS">
       <SVG />
     </SvgContainer>
   )

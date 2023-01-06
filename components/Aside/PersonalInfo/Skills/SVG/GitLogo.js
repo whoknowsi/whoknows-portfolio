@@ -11,7 +11,7 @@ const GitLogo = ({ colors, width, height, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors}>
+    <SvgContainer colors={colors} hoverColors={hoverColors} name="Git">
       <SVG />
     </SvgContainer>
   )

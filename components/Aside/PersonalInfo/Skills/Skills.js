@@ -10,11 +10,11 @@ import JavaScriptLogo from './SVG/JavaScriptLogo'
 import JestLogo from './SVG/JestLogo'
 import MongoDBLogo from './SVG/MongoDBLogo'
 import MySQLLogo from './SVG/MySQLLogo'
+import NextJsLogo from './SVG/NextJsLogo'
 import NodeJsLogo from './SVG/NodeJsLogo'
 import ReactLogo from './SVG/ReactLogo'
 import ReactNativeLogo from './SVG/ReactNativeLogo'
 import TypeScriptLogo from './SVG/TypeScriptLogo'
-import WordPressLogo from './SVG/WordpressLogo'
 
 const Skills = () => {
   const [props, setProps] = useState(null)
@@ -59,16 +59,17 @@ const Skills = () => {
           <JavaScriptLogo {...props} />
           <TypeScriptLogo {...props} />
           <ReactLogo {...props} />
+          <NextJsLogo {...props} />
+          <JestLogo {...props} />
           <ReactNativeLogo {...props} />
           <BootstrapLogo {...props} />
-          <GitLogo {...props} />
           <NodeJsLogo {...props} />
+          <GitLogo {...props} />
           <ExpressJsLogo {...props} />
           <MongoDBLogo {...props} />
           <MySQLLogo {...props} />
           <FireBaseLogo {...props} />
-          <JestLogo {...props} />
-          <WordPressLogo {...props} />
+          {/* <WordPressLogo {...props} /> */}
         </>
       }
 

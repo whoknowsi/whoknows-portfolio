@@ -1,7 +1,7 @@
 import styles from '../../../../styles/components/Aside/PersonalInfo/SkillSvg.module.css'
 import React, { useState } from 'react'
 
-const SvgContainer = ({ children, colors, hoverColors }) => {
+const SvgContainer = ({ children, colors, hoverColors, name }) => {
   const [hover, setHover] = useState(false)
 
   const handleMouseEnter = () => {
@@ -18,7 +18,10 @@ const SvgContainer = ({ children, colors, hoverColors }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-    {React.cloneElement(children, { currentColors: hover ? hoverColors : colors })}
+      <div className={`${styles.bubble} ${hover ? styles.hover : ''}`}>
+        {name}
+      </div>
+      {React.cloneElement(children, { currentColors: hover ? hoverColors : colors })}
     </div>
   )
 }

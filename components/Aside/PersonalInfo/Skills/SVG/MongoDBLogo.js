@@ -24,7 +24,7 @@ const MongoDBLogo = ({ width, heigth, colors, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors}>
+    <SvgContainer colors={colors} hoverColors={hoverColors} name="MongoDB">
       <SVG />
     </SvgContainer>
   )

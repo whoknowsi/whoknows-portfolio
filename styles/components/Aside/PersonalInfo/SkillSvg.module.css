@@ -31,7 +31,7 @@
   width: 0;
   height: 0;
   border: 0.4em solid transparent;
-  border-color: var(--text-color-vivid) transparent transparent transparent;
+  border-top-color: var(--text-color-vivid);
   border-bottom: none;
 }
 

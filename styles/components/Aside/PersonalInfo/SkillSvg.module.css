@@ -8,3 +8,8 @@
 .container svg {
   height: 2em;
 }
+
+.container svg > *,
+.container svg > defs > * > * {
+  transition: all .5s cubic-bezier(.11,.11,.37,1.07);
+}

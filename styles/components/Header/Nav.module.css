@@ -19,7 +19,7 @@
   list-style: none;
   transform: translateX(5em);
   opacity: 0;
-  transition: all .3s ease-out;
+  transition: all var(--menu-open-transition) ease-out;
 }
 
 .container.open ul li {
@@ -28,7 +28,7 @@
 }
 
 .container ul li a {
-  transition: color .3s ease-out;
+  transition: color var(--menu-open-transition) ease-out;
 }
 
 .container ul li a:hover {

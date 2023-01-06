@@ -9,4 +9,5 @@
   box-shadow: var(--border-shadow);
   overflow: hidden;
   flex-shrink: 0;
+  z-index: 25;
 }

@@ -1,9 +1,9 @@
-import Cards from './Cards'
+import Title from './Title'
 
 const Main = () => {
   return (
     <>
-      <Cards/>
+      <Title />
     </>
   )
 }

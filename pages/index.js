@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import Main from '../components/Main/Main'
+import Main from '../components/Home/Main'
 
 export default function Home () {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>{'Whoknows\'s Portfolio'}</title>
       </Head>
       <Main />
     </>

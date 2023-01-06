@@ -14,7 +14,9 @@ export default function App ({ Component, pageProps }) {
     <div className='container'>
       <div className='content'>
         <Aside />
-        <Component {...pageProps} />
+          <main className='main'>
+            <Component {...pageProps} />
+          </main>
         <Header />
       </div>
     </div>

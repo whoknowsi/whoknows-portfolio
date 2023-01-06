@@ -7,7 +7,7 @@ const Nav = ({ open }) => {
   useEffect(() => {
     if (!list) return
     const interval = 0.03
-    let delay = interval
+    let delay = 0
     for (const iterator of list.current.childNodes) {
       iterator.style.transitionDelay = `${delay.toFixed(3)}s`
       delay += interval

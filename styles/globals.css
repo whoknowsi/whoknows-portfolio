@@ -12,6 +12,8 @@
   --text-color-gray: #919197;
   --text-color-gray-dark: #717177;
   --text-color-vivid: #FFC107;
+  --menu-open-transition: 0.5s;
+  --menu-open-cubic: ease-out;
   --border-shadow: 0px 0px 7px 0px rgba(15, 15, 20, 0.2);
 }
 
@@ -63,6 +65,7 @@ a {
 }
 
 .content {
+  position: relative;
   display: flex;
   background-color: var(--background-front-color);
   max-width: calc(var(--max-width) - 2em);
@@ -71,4 +74,18 @@ a {
   -moz-box-shadow: 0px 0px 20px 0px rgba(20, 20, 30, .2);
   box-shadow: 0px 0px 20px 0px rgba(20, 20, 30, .2);
   overflow: hidden;
+}
+
+.main {
+  flex: 1;
+  padding: 2em;
+  flex-shrink: 1;
+  padding-right: 7.5em;
+  transition: all var(--menu-open-transition) var(--menu-open-cubic);
+}
+
+.main.open {
+  transform: translateX(-9.5em);
+  opacity: 0.5;
+  filter: blur(1px)
 }

@@ -5,7 +5,7 @@ export default function Contact () {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>{'Whoknows\'s Portfolio - contact'}</title>
       </Head>
       <Main />
     </>

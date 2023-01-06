@@ -1,0 +1,18 @@
+.container {
+  padding: 2em 1em;
+  background-color: var(--middle-color-light);
+  max-width: 20em;
+  flex: 1;
+}
+
+.container ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: .8em;
+  color: var(--text-color-gray)
+}
+
+.container ul li strong {
+  color: var(--text-color-highlight)
+}

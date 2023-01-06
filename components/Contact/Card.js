@@ -1,6 +1,28 @@
-const Card = () => {
+import Link from 'next/link'
+import styles from '../../styles/components/Contact/Card.module.css'
+
+const Card = ({ data }) => {
   return (
-    <div>Card</div>
+    <div className={styles.container}>
+      <ul>
+        {data.map(({ name, description, url, Icon }) => {
+          return (
+            <li key={name}>
+              <strong>{name}</strong>
+                {url
+                  ? <Link rel="noopener noreferrer" target="_blank" href={url}>
+                      {Icon
+                        ? <Icon />
+                        : description
+                      }
+                  </Link>
+                  : description
+                }
+            </li>
+          )
+        })}
+      </ul>
+    </div>
   )
 }
 

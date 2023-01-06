@@ -2,7 +2,7 @@ import styles from '../../../styles/components/Aside/PersonalInfo/PersonalInfo.m
 import BasicInfo from './BasicInfo'
 import CV from './CV'
 import Separator from './Separator'
-import Skills from './Skills'
+import Skills from './Skills/Skills'
 
 const PersonalInfo = () => {
   return (

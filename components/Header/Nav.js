@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 import styles from '../../styles/components/Header/Nav.module.css'
 
-const Nav = ({ open }) => {
+const Nav = ({ open, handleMenuToggle }) => {
   const list = useRef(null)
   useEffect(() => {
     if (!list) return
@@ -18,27 +18,27 @@ const Nav = ({ open }) => {
     <nav className={`${styles.container} ${open ? styles.open : ''}`}>
         <ul ref={list}>
           <li>
-            <Link href={'/'}>
+            <Link href={'/'} onClick={handleMenuToggle}>
               Home
             </Link>
           </li>
           <li>
-            <Link href={'/portfolio'}>
+            <Link href={'/portfolio'} onClick={handleMenuToggle}>
               Portfolio
             </Link>
           </li>
           <li>
-            <Link href={'/deployments'}>
+            <Link href={'/deployments'} onClick={handleMenuToggle}>
               Deployments
             </Link>
           </li>
           <li>
-            <Link href={'/certifications'}>
+            <Link href={'/certifications'} onClick={handleMenuToggle}>
               Certifications
             </Link>
           </li>
           <li>
-            <Link href={'/contact'}>
+            <Link href={'/contact'} onClick={handleMenuToggle}>
               Contact
             </Link>
           </li>

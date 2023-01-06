@@ -5,10 +5,10 @@ import styles from '../../styles/components/Aside/SocialMedia.module.css'
 const SocialMedia = () => {
   return (
     <div className={styles.container}>
-      <Link href="https://github.com/whoknowsi/" target="_blank" rel="noopener noreferrer">
+      <Link href="https://github.com/whoknowsi/" target="_blank" rel="noopener noreferrer" aria-label='github'>
         <FaGithub />
       </Link>
-      <Link href="https://www.linkedin.com/in/carlos-jofr%C3%A9-830273210/" target="_blank" rel="noopener noreferrer">
+      <Link href="https://www.linkedin.com/in/carlos-jofr%C3%A9-830273210/" target="_blank" rel="noopener noreferrer" aria-label='linkedin'>
         <FaLinkedin />
       </Link>
     </div>

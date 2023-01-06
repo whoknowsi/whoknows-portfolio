@@ -18,10 +18,12 @@ const Header = () => {
       : main.classList.remove('open')
   }, [open])
 
+  // TODO: take care of tabulation when menu is not open (when tabulating the menu "opens" but just broke the page)
+
   return (
     <header className={`${styles.container} ${open ? styles.open : ''}`}>
       <MenuToggle handleMenuToggle={handleMenuToggle} />
-      <Nav open={open} />
+      <Nav handleMenuToggle={handleMenuToggle} open={open} />
       <LenguageToggle />
     </header>
   )

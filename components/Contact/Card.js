@@ -10,7 +10,7 @@ const Card = ({ data }) => {
             <li key={name}>
               <strong>{name}</strong>
                 {url
-                  ? <Link rel="noopener noreferrer" target="_blank" href={url}>
+                  ? <Link rel="noopener noreferrer" target="_blank" href={url} aria-label={name}>
                       {Icon
                         ? <Icon />
                         : description

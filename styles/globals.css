@@ -119,3 +119,12 @@ input, textarea {
 textarea {
   resize: none;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active,
+input:-internal-autofill-selected {
+    -webkit-box-shadow: 0 0 0px 5em var(--middle-color) inset;
+    -webkit-text-fill-color: var(--text-color-highlight) !important;
+}

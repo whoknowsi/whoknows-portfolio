@@ -30,7 +30,7 @@ const thirdCard = [
     description: 'echosmania@gmail.com'
   }, {
     name: 'Phone',
-    url: '+54 9 1127925467'
+    description: '+54 9 11 2792 5467'
   }
 ]
 

@@ -10,7 +10,7 @@
   -webkit-box-shadow: var(--border-shadow);
   -moz-box-shadow: var(--border-shadow);
   box-shadow: var(--border-shadow);
-  transform: translateX(9.5em);
+  transform: translateX(10em);
   transition: transform var(--menu-open-transition) var(--menu-open-cubic);
 }
 

@@ -1,16 +1,28 @@
 import Link from 'next/link'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaMehBlank, FaTwitter } from 'react-icons/fa'
 import styles from '../../styles/components/Aside/SocialMedia.module.css'
 
-const SocialMedia = () => {
+const socialMediaIcons = [
+  { github: FaGithub },
+  { linkedin: FaLinkedin },
+  { facebook: FaFacebook },
+  { twitter: FaTwitter },
+  { instagram: FaInstagram }
+]
+
+const SocialMedia = ({ urls }) => {
   return (
     <div className={styles.container}>
-      <Link href="https://github.com/whoknowsi/" target="_blank" rel="noopener noreferrer" aria-label='github'>
-        <FaGithub />
-      </Link>
-      <Link href="https://www.linkedin.com/in/carlos-jofr%C3%A9-830273210/" target="_blank" rel="noopener noreferrer" aria-label='linkedin'>
-        <FaLinkedin />
-      </Link>
+      {urls.map((url) => {
+        const icon = socialMediaIcons.find(x => url.includes(Object.keys(x)[0]))
+        const Icon = icon ? Object.values(icon)[0] : FaMehBlank
+        const label = icon ? Object.keys(Icon)[0] : 'social network'
+        return (
+          <Link key={url} href={url} target="_blank" rel="noopener noreferrer" aria-label={label}>
+            <Icon />
+          </Link>
+        )
+      })}
     </div>
   )
 }

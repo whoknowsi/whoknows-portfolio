@@ -3,12 +3,12 @@ import Header from './Header'
 import PersonalInfo from './PersonalInfo/PersonalInfo'
 import SocialMedia from './SocialMedia'
 
-const Aside = () => {
+const Aside = ({ info }) => {
   return (
     <aside className={styles.container}>
-      <Header />
+      <Header name={info.name} lastName={info.lastName} descriptions={info.description} />
       <PersonalInfo />
-      <SocialMedia />
+      <SocialMedia urls={info.socialMedia} />
     </aside>
   )
 }

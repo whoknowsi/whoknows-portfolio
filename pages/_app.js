@@ -3,10 +3,12 @@ import Aside from '../components/Aside/Aside'
 import Header from '../components/Header/Header'
 import '../styles/globals.css'
 import { Poppins } from '@next/font/google'
+import { getBasicInfo } from '../services/basic-info'
 
 const poppins = Poppins({ weight: ['400', '500', '600'], subsets: ['latin'] })
 
-export default function App ({ Component, pageProps }) {
+export default function App ({ Component, pageProps, props }) {
+  const { basicInfo } = props
   return <>
     <Head>
       <title>Whoknows | Web Developer Portfolio</title>
@@ -16,7 +18,7 @@ export default function App ({ Component, pageProps }) {
     </Head>
     <div className={`${poppins.className} container`}>
       <div className='content'>
-        <Aside />
+        <Aside info={basicInfo} />
           <main className='main'>
             <Component {...pageProps} />
           </main>
@@ -24,4 +26,13 @@ export default function App ({ Component, pageProps }) {
       </div>
     </div>
   </>
+}
+
+App.getInitialProps = async () => {
+  const basicInfo = await getBasicInfo()
+  return {
+    props: {
+      basicInfo
+    }
+  }
 }

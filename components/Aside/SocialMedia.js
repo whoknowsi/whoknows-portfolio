@@ -16,7 +16,7 @@ const SocialMedia = ({ urls }) => {
       {urls.map((url) => {
         const icon = socialMediaIcons.find(x => url.includes(Object.keys(x)[0]))
         const Icon = icon ? Object.values(icon)[0] : FaMehBlank
-        const label = icon ? Object.keys(Icon)[0] : 'social network'
+        const label = icon ? Object.keys(icon)[0] : 'social network'
         return (
           <Link key={url} href={url} target="_blank" rel="noopener noreferrer" aria-label={label}>
             <Icon />

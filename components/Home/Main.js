@@ -3,7 +3,6 @@ import LastProjects from './LastProjects'
 import Title from './Title'
 
 const Main = ({ projects, info }) => {
-  console.log(info)
   return (
     <div className={styles.container}>
       <Title name={info.name} lastName={info.lastName} nickname={info.nickName} />

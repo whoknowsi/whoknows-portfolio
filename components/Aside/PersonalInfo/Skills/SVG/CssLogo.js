@@ -1,6 +1,6 @@
 import SvgContainer from '../SvgContainer'
 
-const CssLogo = ({ width, height, colors, hoverColors }) => {
+const CssLogo = ({ width, height, colors, hoverColors, name }) => {
   const SVG = ({ currentColors }) => (
     <svg viewBox="0 0 452 520" width={width} height={height}>
       <title>{'CSS3 Logo Badge'}</title>
@@ -22,7 +22,7 @@ const CssLogo = ({ width, height, colors, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors} name="CSS">
+    <SvgContainer colors={colors} hoverColors={hoverColors} name={name}>
       <SVG />
     </SvgContainer>
   )

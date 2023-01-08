@@ -1,6 +1,6 @@
 import SvgContainer from '../SvgContainer'
 
-const WordPressLogo = ({ colors, width, height, hoverColors }) => {
+const WordPressLogo = ({ colors, width, height, hoverColors, name }) => {
   const SVG = ({ currentColors }) => (
     <svg viewBox="0 0 122.52 122.523" width={width} height={height}>
       <g fill={currentColors.darkGrayColor}>
@@ -12,7 +12,7 @@ const WordPressLogo = ({ colors, width, height, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors} name="WordPress">
+    <SvgContainer colors={colors} hoverColors={hoverColors} name={name}>
       <SVG />
     </SvgContainer>
   )

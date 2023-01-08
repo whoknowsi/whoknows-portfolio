@@ -4,11 +4,12 @@ import PersonalInfo from './PersonalInfo/PersonalInfo'
 import SocialMedia from './SocialMedia'
 
 const Aside = ({ info }) => {
+  const { name, lastName, description, socialMedia, ...restInfo } = info
   return (
     <aside className={styles.container}>
-      <Header name={info.name} lastName={info.lastName} descriptions={info.description} />
-      <PersonalInfo />
-      <SocialMedia urls={info.socialMedia} />
+      <Header name={name} lastName={lastName} descriptions={description} />
+      <PersonalInfo info={restInfo} />
+      <SocialMedia urls={socialMedia} />
     </aside>
   )
 }

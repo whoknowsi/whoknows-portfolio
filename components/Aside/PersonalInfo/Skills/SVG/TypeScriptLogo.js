@@ -1,6 +1,6 @@
 import SvgContainer from '../SvgContainer'
 
-const TypeScriptLogo = ({ colors, width, height, hoverColors }) => {
+const TypeScriptLogo = ({ colors, width, height, hoverColors, name }) => {
   const SVG = ({ currentColors }) => (
     <svg viewBox="0 0 512 512" width={width} height={height}>
       <rect fill={currentColors.darkGrayColor} height={512} rx={50} width={512} />
@@ -15,7 +15,7 @@ const TypeScriptLogo = ({ colors, width, height, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors} name="TypeScript">
+    <SvgContainer colors={colors} hoverColors={hoverColors} name={name}>
       <SVG />
     </SvgContainer>
   )

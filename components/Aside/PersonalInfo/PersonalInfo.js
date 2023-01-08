@@ -4,14 +4,15 @@ import CV from './CV'
 import Separator from './Separator'
 import Skills from './Skills/Skills'
 
-const PersonalInfo = () => {
+const PersonalInfo = (info) => {
+  const { skills, ...basicInfo } = info.info
   return (
     <div className={styles.container}>
-      <BasicInfo />
+      <BasicInfo info={basicInfo} />
       <Separator title={'Skills'} />
-      <Skills />
+      <Skills skills={skills} />
       <Separator title={'CV'} />
-      <CV />
+      <CV cv={basicInfo.CV} />
     </div>
   )
 }

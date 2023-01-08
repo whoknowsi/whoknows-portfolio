@@ -1,6 +1,6 @@
 import SvgContainer from '../SvgContainer'
 
-const ExpressJsLogo = ({ width, height, colors, hoverColors }) => {
+const ExpressJsLogo = ({ width, height, colors, hoverColors, name }) => {
   const SVG = ({ currentColors }) => (
     <svg viewBox="0 0 500 500" width={width} height={height}>
       <circle
@@ -26,7 +26,7 @@ const ExpressJsLogo = ({ width, height, colors, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors} name="Express.js">
+    <SvgContainer colors={colors} hoverColors={hoverColors} name={name}>
       <SVG />
     </SvgContainer>
   )

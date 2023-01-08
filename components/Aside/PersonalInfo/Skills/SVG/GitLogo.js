@@ -1,6 +1,6 @@
 import SvgContainer from '../SvgContainer'
 
-const GitLogo = ({ colors, width, height, hoverColors }) => {
+const GitLogo = ({ colors, width, height, hoverColors, name }) => {
   const SVG = ({ currentColors }) => (
     <svg viewBox="0 0 114 114" width={width} height={height}>
       <path
@@ -11,7 +11,7 @@ const GitLogo = ({ colors, width, height, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors} name="Git">
+    <SvgContainer colors={colors} hoverColors={hoverColors} name={name}>
       <SVG />
     </SvgContainer>
   )

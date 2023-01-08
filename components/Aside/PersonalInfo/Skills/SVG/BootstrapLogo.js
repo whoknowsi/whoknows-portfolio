@@ -1,6 +1,6 @@
 import SvgContainer from '../SvgContainer'
 
-const BootstrapLogo = ({ width, height, colors, hoverColors }) => {
+const BootstrapLogo = ({ width, height, colors, hoverColors, name }) => {
   const SVG = ({ currentColors }) =>
     (<svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 512 408">
       <defs>
@@ -60,7 +60,7 @@ const BootstrapLogo = ({ width, height, colors, hoverColors }) => {
     </svg>)
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors} name="Bootstrap">
+    <SvgContainer colors={colors} hoverColors={hoverColors} name={name}>
       <SVG />
     </SvgContainer>
   )

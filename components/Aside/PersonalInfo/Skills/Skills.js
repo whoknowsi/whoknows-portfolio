@@ -15,8 +15,29 @@ import NodeJsLogo from './SVG/NodeJsLogo'
 import ReactLogo from './SVG/ReactLogo'
 import ReactNativeLogo from './SVG/ReactNativeLogo'
 import TypeScriptLogo from './SVG/TypeScriptLogo'
+import WordPressLogo from './SVG/WordPressLogo'
+import NoLogo from './SVG/NoLogo'
 
-const Skills = () => {
+const skillsList = [
+  { HTML: HtmlLogo },
+  { CSS: CssLogo },
+  { JavaScript: JavaScriptLogo },
+  { TypeScript: TypeScriptLogo },
+  { React: ReactLogo },
+  { 'Next.js': NextJsLogo },
+  { Jest: JestLogo },
+  { 'React Native': ReactNativeLogo },
+  { Bootstrap: BootstrapLogo },
+  { 'Node.js': NodeJsLogo },
+  { Git: GitLogo },
+  { 'Express.js': ExpressJsLogo },
+  { MongoDB: MongoDBLogo },
+  { MySQL: MySQLLogo },
+  { Firebase: FireBaseLogo },
+  { WordPress: WordPressLogo }
+]
+
+const Skills = ({ skills }) => {
   const [props, setProps] = useState(null)
 
   useEffect(() => {
@@ -49,30 +70,21 @@ const Skills = () => {
     })
   }, [])
 
+  const SkillsMapped = () => {
+    return (
+      skills.map((skill) => {
+        const foundSkill = skillsList.find(x => skill === (Object.keys(x)[0]).toString())
+        const Component = foundSkill ? Object.values(foundSkill)[0] : NoLogo
+        const label = skill
+
+        return <Component key={label} name={label} {...props} />
+      })
+    )
+  }
+
   return (
     <div className={styles.container}>
-      {
-        props &&
-        <>
-          <HtmlLogo {...props} />
-          <CssLogo {...props} />
-          <JavaScriptLogo {...props} />
-          <TypeScriptLogo {...props} />
-          <ReactLogo {...props} />
-          <NextJsLogo {...props} />
-          <JestLogo {...props} />
-          <ReactNativeLogo {...props} />
-          <BootstrapLogo {...props} />
-          <NodeJsLogo {...props} />
-          <GitLogo {...props} />
-          <ExpressJsLogo {...props} />
-          <MongoDBLogo {...props} />
-          <MySQLLogo {...props} />
-          <FireBaseLogo {...props} />
-          {/* <WordPressLogo {...props} /> */}
-        </>
-      }
-
+      { props && SkillsMapped() }
     </div>
   )
 }

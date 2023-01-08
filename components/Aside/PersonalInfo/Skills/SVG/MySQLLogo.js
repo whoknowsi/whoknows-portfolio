@@ -1,6 +1,6 @@
 import SvgContainer from '../SvgContainer'
 
-const MySQLLogo = ({ width, height, colors, hoverColors }) => {
+const MySQLLogo = ({ width, height, colors, hoverColors, name }) => {
   const SVG = ({ currentColors }) => (
     <svg viewBox="0 0 25.6 25.6" width={width} height={height}>
       <path
@@ -11,7 +11,7 @@ const MySQLLogo = ({ width, height, colors, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors} name="MySQL">
+    <SvgContainer colors={colors} hoverColors={hoverColors} name={name}>
       <SVG />
     </SvgContainer>
   )

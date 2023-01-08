@@ -1,6 +1,6 @@
 import SvgContainer from '../SvgContainer'
 
-const FireBaseLogo = ({ width, height, colors, hoverColors }) => {
+const FireBaseLogo = ({ width, height, colors, hoverColors, name }) => {
   const SVG = ({ currentColors }) => (
     <svg viewBox="0 0 32 32" width={width} height={height}>
       <path
@@ -22,7 +22,7 @@ const FireBaseLogo = ({ width, height, colors, hoverColors }) => {
     </svg>
   )
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors} name="Firebase">
+    <SvgContainer colors={colors} hoverColors={hoverColors} name={name}>
       <SVG />
     </SvgContainer>
   )

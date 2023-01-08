@@ -1,6 +1,6 @@
 import SvgContainer from '../SvgContainer'
 
-const ReactLogo = ({ colors, width, height, hoverColors }) => {
+const ReactLogo = ({ colors, width, height, hoverColors, name }) => {
   const SVG = ({ currentColors }) => (
     <svg viewBox="-11.5 -10.232 23 20.463" width={width} height={height}>
       <title>{'React Logo'}</title>
@@ -14,7 +14,7 @@ const ReactLogo = ({ colors, width, height, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors} name="React">
+    <SvgContainer colors={colors} hoverColors={hoverColors} name={name}>
       <SVG />
     </SvgContainer>
   )

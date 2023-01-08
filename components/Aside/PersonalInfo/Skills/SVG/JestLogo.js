@@ -1,6 +1,6 @@
 import SvgContainer from '../SvgContainer'
 
-const JestLogo = ({ width, height, colors, hoverColors }) => {
+const JestLogo = ({ width, height, colors, hoverColors, name }) => {
   const SVG = ({ currentColors }) => (
     <svg viewBox="0 0 256 283" width={width} height={height}>
       <path
@@ -15,7 +15,7 @@ const JestLogo = ({ width, height, colors, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors} name="Jest">
+    <SvgContainer colors={colors} hoverColors={hoverColors} name={name}>
       <SVG />
     </SvgContainer>
   )

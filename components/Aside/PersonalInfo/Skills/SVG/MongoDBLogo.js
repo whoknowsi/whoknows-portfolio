@@ -1,6 +1,6 @@
 import SvgContainer from '../SvgContainer'
 
-const MongoDBLogo = ({ width, heigth, colors, hoverColors }) => {
+const MongoDBLogo = ({ width, heigth, colors, hoverColors, name }) => {
   const SVG = ({ currentColors }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@ const MongoDBLogo = ({ width, heigth, colors, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors} name="MongoDB">
+    <SvgContainer colors={colors} hoverColors={hoverColors} name={name}>
       <SVG />
     </SvgContainer>
   )

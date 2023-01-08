@@ -1,6 +1,6 @@
 import SvgContainer from '../SvgContainer'
 
-const NextJsLogo = ({ width, height, colors, hoverColors }) => {
+const NextJsLogo = ({ width, height, colors, hoverColors, name }) => {
   const SVG = ({ currentColors }) =>
     (<svg viewBox="0 0 256 256" width={width} height={height}>
     <path
@@ -10,7 +10,7 @@ const NextJsLogo = ({ width, height, colors, hoverColors }) => {
       </svg>)
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors} name="Next.js">
+    <SvgContainer colors={colors} hoverColors={hoverColors} name={name}>
       <SVG />
     </SvgContainer>
   )

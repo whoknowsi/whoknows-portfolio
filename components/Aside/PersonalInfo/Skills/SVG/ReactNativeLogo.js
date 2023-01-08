@@ -1,6 +1,6 @@
 import SvgContainer from '../SvgContainer'
 
-const ReactNativeLogo = ({ colors, width, height, hoverColors }) => {
+const ReactNativeLogo = ({ colors, width, height, hoverColors, name }) => {
   const SVG = ({ currentColors }) => (
     <svg viewBox="670.088 32.462 2224.172 2666.488" width={width} height={height}>
       <g fill={currentColors.darkGrayColor}>
@@ -11,7 +11,7 @@ const ReactNativeLogo = ({ colors, width, height, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors} name="React Native">
+    <SvgContainer colors={colors} hoverColors={hoverColors} name={name}>
       <SVG />
     </SvgContainer>
   )

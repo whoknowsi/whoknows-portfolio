@@ -1,6 +1,6 @@
 import SvgContainer from '../SvgContainer'
 
-const JavaScriptLogo = ({ colors, width, height, hoverColors }) => {
+const JavaScriptLogo = ({ colors, width, height, hoverColors, name }) => {
   const SVG = ({ currentColors }) => (
     <svg viewBox="0 0 124 141.532" width={width} height={height}>
       <path
@@ -23,7 +23,7 @@ const JavaScriptLogo = ({ colors, width, height, hoverColors }) => {
   )
 
   return (
-    <SvgContainer colors={colors} hoverColors={hoverColors} name="JavaScript">
+    <SvgContainer colors={colors} hoverColors={hoverColors} name={name}>
       <SVG />
     </SvgContainer>
   )

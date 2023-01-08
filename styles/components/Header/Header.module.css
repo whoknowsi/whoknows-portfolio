@@ -12,6 +12,7 @@
   box-shadow: var(--border-shadow);
   transform: translateX(10em);
   transition: transform var(--menu-open-transition) var(--menu-open-cubic);
+  z-index: 25;
 }
 
 .container.open {

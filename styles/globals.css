@@ -19,6 +19,7 @@
   --menu-open-cubic: ease-out;
   --border-shadow: 0px 0px 7px 0px rgba(15, 15, 20, 0.2);
   --border-shadow-block: 0px 2.5px 12px 0 rgb(15 15 20 / 20%);
+  --montain-gradient: linear-gradient(0deg, var(--background-front-color) 0%, var(--middle-color) 100%);
   --svg-basic-height: 1.5em;
 }
 
@@ -112,6 +113,7 @@ a {
   overflow: auto;
   padding-bottom: 0;
   margin-bottom: 2em;
+  z-index: 5;
 }
 
 .main h1,
@@ -123,8 +125,7 @@ a {
 
 .main.open {
   transform: translateX(-9.5em);
-  opacity: 0.5;
-  filter: blur(1px)
+  filter: blur(1px) brightness(.9);
 }
 
 input, textarea {

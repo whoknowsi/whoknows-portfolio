@@ -4,11 +4,17 @@ import Header from '../components/Header/Header'
 import '../styles/globals.css'
 import { Poppins } from '@next/font/google'
 import { getBasicInfo } from '../services/basic-info'
+import BackgroundPatron from '../components/Background/BackgroundPatron'
+import { useState } from 'react'
 
 const poppins = Poppins({ weight: ['400', '500', '600'], subsets: ['latin'] })
 
 export default function App ({ Component, pageProps, props }) {
+  const [open, setOpen] = useState(false)
+  const handleMenuToggle = () => setOpen(!open)
+
   const { basicInfo } = props
+
   return <>
     <Head>
       <title>Whoknows | Web Developer Portfolio</title>
@@ -18,11 +24,12 @@ export default function App ({ Component, pageProps, props }) {
     </Head>
     <div className={`${poppins.className} container`}>
       <div className='content'>
+        <BackgroundPatron open={open} />
         <Aside info={basicInfo} />
-          <main className='main'>
+          <main className={open ? 'main open' : 'main'}>
             <Component {...pageProps} info={basicInfo} />
           </main>
-        <Header />
+        <Header handleMenuToggle={handleMenuToggle} open={open} />
       </div>
     </div>
   </>

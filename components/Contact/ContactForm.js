@@ -4,7 +4,7 @@ import { FaUserAlt, FaAt, FaEnvelopeOpen } from 'react-icons/fa'
 const ContactForm = () => {
   return (
     <div className={styles.container}>
-      <h3>Get in touch</h3>
+      <h2>Get in touch</h2>
       <div className={styles.formContainer}>
         <form>
           <div className={styles.inputContainer}>

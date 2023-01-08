@@ -4,7 +4,7 @@ import Project from './Project'
 const LastProjects = ({ projects }) => {
   return (
     <div className={styles.container}>
-      <h3>My last projects</h3>
+      <h2>My last projects</h2>
       <div className={styles.projectsContainer}>
         {
           projects.map((props) => (

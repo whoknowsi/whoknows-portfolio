@@ -4,7 +4,7 @@ import Card from './Card'
 const ContactInformation = ({ firstCard, secondCard, thirdCard }) => {
   return (
     <div>
-      <h3>Contact information</h3>
+      <h2>Contact information</h2>
       <div className={styles.container}>
           <Card data={firstCard} />
           <Card data={secondCard} />

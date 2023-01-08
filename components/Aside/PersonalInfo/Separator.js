@@ -4,7 +4,7 @@ const Separator = ({ title }) => {
   return (
     <div className={styles.container}>
       <hr />
-      <h4>{title}</h4>
+      <h3>{title}</h3>
       <hr />
     </div>
   )

@@ -20,7 +20,7 @@ export default function App ({ Component, pageProps, props }) {
       <div className='content'>
         <Aside info={basicInfo} />
           <main className='main'>
-            <Component {...pageProps} />
+            <Component {...pageProps} info={basicInfo} />
           </main>
         <Header />
       </div>

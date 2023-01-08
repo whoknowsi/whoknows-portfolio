@@ -4,8 +4,8 @@
   --background-color: #191923;
   --background-front-color: #1e1e28;
   --back-color: #20202a;
-  --middle-color-light: #343441;
-  --middle-color: #292936;
+  --middle-color-light: #30303c;
+  --middle-color: #262631;
   --middle-color-dark: #090916;
   --front-color: #2c2c39;
   --text-color-highlight: #f7f6ff;
@@ -17,6 +17,7 @@
   --menu-open-transition: 0.5s;
   --menu-open-cubic: ease-out;
   --border-shadow: 0px 0px 7px 0px rgba(15, 15, 20, 0.2);
+  --border-shadow-block: 0px 2.5px 12px 0 rgb(15 15 20 / 20%);
   --svg-basic-height: 1.5em;
 }
 
@@ -90,7 +91,7 @@ a {
 .content {
   position: relative;
   display: flex;
-  background-color: var(--background-front-color);
+  background: linear-gradient(0deg, var(--background-front-color) 0%, var(--front-color) 100%);
   max-width: calc(var(--max-width) - 2em);
   width: 100%;
   -webkit-box-shadow: 0px 0px 20px 0px rgba(20, 20, 30, .2);

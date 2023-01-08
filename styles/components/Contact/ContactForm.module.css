@@ -3,6 +3,7 @@
     flex-direction: column;
     flex: 1;
     max-height: 40em;
+    box-shadow: var(--border-shadow-block);
 }
 
 .formContainer {

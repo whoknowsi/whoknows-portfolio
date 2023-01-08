@@ -8,5 +8,6 @@
 .introductionContainer {
     padding: 2em;
     background-color: var(--middle-color-light);
+    box-shadow: var(--border-shadow-block);
 }
 

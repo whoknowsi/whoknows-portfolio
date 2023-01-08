@@ -6,6 +6,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    box-shadow: var(--border-shadow-block);
 }
 .container span {
     font-size: .8em;

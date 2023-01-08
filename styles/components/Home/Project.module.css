@@ -5,5 +5,36 @@
     min-width: 19em;
     flex: 1;
     box-shadow: var(--border-shadow-block);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
 }
 
+.container:hover {
+    transform: scale(1.05);
+}
+
+.imageContainer {
+    width: 100%;
+    margin-bottom: .5em;
+}
+
+.imageContainer img {
+    position: inherit !important;
+    object-fit: contain;
+}
+.container h3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: .5em;
+}
+
+.container p {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

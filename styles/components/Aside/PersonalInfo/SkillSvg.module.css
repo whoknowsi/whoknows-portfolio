@@ -10,16 +10,19 @@
   position: absolute;
   background-color: var(--text-color-vivid);
   color: var(--middle-color);
-  padding: 0.5em 1em;
+  padding: 0.40em 1em;
   bottom: calc(2.7em * 1.2);
   opacity: 0;
   width: max-content;
-  transition: opacity .3s cubic-bezier(.11,.11,.37,1.07);;
+  transition: all .3s cubic-bezier(.11,.11,.37,1.07);;
   pointer-events: none;
   border-radius: 1em;
   font-size: .8em;
   font-weight: 500;
   z-index: 50;
+  border: 3px solid var(--text-color-vivid);
+  text-align: center;
+  transform: translateY(.1em);
 }
 
 .bubble::before {
@@ -27,16 +30,19 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -0.4em;
+  bottom: -0.75em;
   width: 0;
   height: 0;
-  border: 0.4em solid transparent;
+  border: 0.75em solid transparent;
   border-top-color: var(--text-color-vivid);
   border-bottom: none;
+  z-index: 55;
 }
 
 .bubble.hover {
   opacity: 1;
+  transform: translateY(-.5em);
+    padding: 0.5em 1em;
 }
 
 .container svg {

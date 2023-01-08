@@ -1,12 +1,14 @@
+import styles from '../../styles/components/Home/Main.module.css'
 import LastProjects from './LastProjects'
 import Title from './Title'
 
-const Main = ({ projects }) => {
+const Main = ({ projects, info }) => {
+  console.log(info)
   return (
-    <>
-      <Title />
+    <div className={styles.container}>
+      <Title name={info.name} lastName={info.lastName} nickname={info.nickName} />
       <LastProjects projects={projects} />
-    </>
+    </div>
   )
 }
 

@@ -2,13 +2,13 @@ import Head from 'next/head'
 import Main from '../components/Home/Main'
 import { getLastProjects } from '../services/projects'
 
-export default function Home ({ projects }) {
+export default function Home ({ projects, info }) {
   return (
     <>
       <Head>
         <title>{'Whoknows\'s Portfolio'}</title>
       </Head>
-      <Main projects={projects} />
+      <Main projects={projects} info={info} />
     </>
   )
 }

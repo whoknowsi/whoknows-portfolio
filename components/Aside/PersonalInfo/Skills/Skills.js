@@ -44,7 +44,7 @@ const Skills = ({ skills }) => {
     const htmlEl = document.querySelector('html')
     const styles = getComputedStyle(htmlEl)
 
-    const grayColor = styles.getPropertyValue('--text-color-gray')
+    const grayColor = styles.getPropertyValue('--text-color-gray-semi-dark')
     const darkGrayColor = styles.getPropertyValue('--text-color-gray-dark')
     const backgroundColor = styles.getPropertyValue('--back-color')
     const lightBackgroundColor = styles.getPropertyValue('--middle-color-light')

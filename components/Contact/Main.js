@@ -13,6 +13,8 @@ const socialMediaIcons = [
   { instagram: FaInstagram }
 ]
 
+const capitalizeFirstLetter = str => str.charAt(0).toUpperCase() + str.slice(1)
+
 const Main = ({ info }) => {
   const { country, city, email, socialMedia, phone } = info
 
@@ -24,7 +26,7 @@ const Main = ({ info }) => {
       return {
         url,
         Icon,
-        name: label
+        name: capitalizeFirstLetter(label)
       }
     })
   }

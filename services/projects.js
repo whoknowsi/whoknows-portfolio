@@ -8,6 +8,15 @@ const getLastProjects = async () => {
     : []
 }
 
+const getProjectBy = async (id) => {
+  const response = await fetch(`${url}/${id}`)
+  const data = await response.json()
+  return data.result
+    ? data.result
+    : null
+}
+
 export {
-  getLastProjects
+  getLastProjects,
+  getProjectBy
 }

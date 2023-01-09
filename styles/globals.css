@@ -131,6 +131,11 @@ a {
   filter: blur(1px) brightness(.9);
 }
 
+.main.open > *  {
+  user-select: none;
+  pointer-events: none;
+}
+
 input, textarea {
   outline: none;
   border: none;

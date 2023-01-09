@@ -19,10 +19,10 @@ export default function App ({ Component, pageProps, props }) {
 
   const { basicInfo } = props
 
-  const start = () => setLoading(true)
-  const end = () => setLoading(false)
-
   useEffect(() => {
+    const start = () => setLoading(true)
+    const end = () => setLoading(false)
+
     router.events.on('routeChangeStart', start)
     router.events.on('routeChangeComplete', end)
     router.events.on('routeChangeError', end)
@@ -33,6 +33,11 @@ export default function App ({ Component, pageProps, props }) {
       router.events.off('routeChangeError', end)
     }
   }, [router.events])
+
+  const handleMainClick = () => {
+    if (!open) return
+    setOpen(false)
+  }
 
   return <>
     <Head>
@@ -45,7 +50,7 @@ export default function App ({ Component, pageProps, props }) {
       <div className='content'>
         <BackgroundPatron open={open} />
         <Aside info={basicInfo} />
-        <main className={open ? 'main open' : 'main'}>
+        <main className={open ? 'main open' : 'main'} onClick={handleMainClick}>
         {
           loading
             ? <Loading />

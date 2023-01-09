@@ -5,15 +5,41 @@ import '../styles/globals.css'
 import { Poppins } from '@next/font/google'
 import { getBasicInfo } from '../services/basic-info'
 import BackgroundPatron from '../components/Background/BackgroundPatron'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+import Loading from '../components/Loading'
 
 const poppins = Poppins({ weight: ['400', '500', '600'], subsets: ['latin'] })
 
 export default function App ({ Component, pageProps, props }) {
   const [open, setOpen] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const router = useRouter()
   const handleMenuToggle = () => setOpen(!open)
 
   const { basicInfo } = props
+
+  const start = () => {
+    console.log('start')
+    setLoading(true)
+  }
+
+  const end = () => {
+    console.log('finished')
+    setLoading(false)
+  }
+
+  useEffect(() => {
+    router.events.on('routeChangeStart', start)
+    router.events.on('routeChangeComplete', end)
+    router.events.on('routeChangeError', end)
+
+    return () => {
+      router.events.off('routeChangeStart', start)
+      router.events.off('routeChangeComplete', end)
+      router.events.off('routeChangeError', end)
+    }
+  }, [router.events])
 
   return <>
     <Head>
@@ -26,8 +52,12 @@ export default function App ({ Component, pageProps, props }) {
       <div className='content'>
         <BackgroundPatron open={open} />
         <Aside info={basicInfo} />
-          <main className={open ? 'main open' : 'main'}>
-            <Component {...pageProps} info={basicInfo} />
+        <main className={open ? 'main open' : 'main'}>
+        {
+          loading
+            ? <Loading />
+            : <Component {...pageProps} info={basicInfo} />
+          }
           </main>
         <Header handleMenuToggle={handleMenuToggle} open={open} />
       </div>

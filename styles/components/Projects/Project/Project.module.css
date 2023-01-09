@@ -53,6 +53,7 @@
     cursor: pointer;
     padding: 0em .5em;
     transition: all .2s ease-in-out;
+    user-select: none;
 }
 
 .prev:hover, .next:hover {

@@ -12,11 +12,21 @@ const Project = ({ project }) => {
   const [currentImg, setCurrentImage] = useState(1)
 
   useEffect(() => {
+    const handleResize = () => {
+      if (!slider.current.style.transform) return
+      const toTranslate = `translateX(${-getValueToTranslate() * (currentImg - 1)}px)`
+      slider.current.style.transform = toTranslate
+    }
+
+    window.addEventListener('resize', handleResize)
+
     if (media.length === 0) next.current.style.visibility = 'hidden'
-  }, [media.length])
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [media.length, currentImg])
 
   const getValueToTranslate = () => {
-    const htmlEl = document.querySelector('html')
+    const htmlEl = document.querySelector('body')
     const styles = getComputedStyle(htmlEl)
 
     const emToPixels = em => Number(styles.fontSize.split('px')[0]) * Number(em.split('em')[0])

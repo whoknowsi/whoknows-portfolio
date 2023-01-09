@@ -4,12 +4,10 @@ import Title from './Title'
 
 const Main = ({ projects, info }) => {
   return (
-    <>
-      <div className={styles.container}>
-        <Title name={info.name} lastName={info.lastName} nickname={info.nickName} />
-        <LastProjects projects={projects} />
-      </div>
-    </>
+    <div className={styles.container}>
+      <Title name={info.name} lastName={info.lastName} nickname={info.nickName} />
+      <LastProjects projects={projects} />
+    </div>
   )
 }
 

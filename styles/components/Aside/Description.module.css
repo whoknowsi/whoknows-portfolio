@@ -1,3 +1,14 @@
 .container {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container h2 {
+  transition: color 0.3s ease-in-out
+}
+
+.container h2:hover {
+  color: var(--text-color-vivid)
 }

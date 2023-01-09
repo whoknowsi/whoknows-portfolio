@@ -5,12 +5,12 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 15em;
+  width: var(--header-width-open);
   background-color: var(--back-color);
   -webkit-box-shadow: var(--border-shadow);
   -moz-box-shadow: var(--border-shadow);
   box-shadow: var(--border-shadow);
-  transform: translateX(10em);
+  transform: translateX(calc(var(--header-width-open) - var(--header-width)));
   transition: transform var(--menu-open-transition) var(--menu-open-cubic);
   z-index: 25;
 }

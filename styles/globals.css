@@ -21,6 +21,9 @@
   --border-shadow-block: 0px 2.5px 12px 0 rgb(15 15 20 / 20%);
   --montain-gradient: linear-gradient(0deg, var(--background-front-color) 0%, var(--middle-color) 100%);
   --svg-basic-height: 1.5em;
+  --aside-width: 18em;
+  --header-width: 5em;
+  --header-width-open: 15em;
 }
 
 * {
@@ -106,7 +109,7 @@ a {
   flex: 1;
   padding: 2em;
   flex-shrink: 1;
-  padding-right: 7.5em;
+  padding-right: calc(var(--header-width) + 2em);
   transition-property: transform, filter, opacity;
   transition-duration: var(--menu-open-transition);
   transition-timing-function: var(--menu-open-cubic);

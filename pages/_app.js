@@ -19,15 +19,8 @@ export default function App ({ Component, pageProps, props }) {
 
   const { basicInfo } = props
 
-  const start = () => {
-    console.log('start')
-    setLoading(true)
-  }
-
-  const end = () => {
-    console.log('finished')
-    setLoading(false)
-  }
+  const start = () => setLoading(true)
+  const end = () => setLoading(false)
 
   useEffect(() => {
     router.events.on('routeChangeStart', start)

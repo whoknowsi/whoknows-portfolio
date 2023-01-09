@@ -4,15 +4,15 @@
     bottom: 0;
     top: 0;
     right: 0;
-    filter: blur(1px);
+    filter: blur(1px) brightness(1);
     opacity: .5;
-    transition-property: transform, filter;
+    transition-property: filter;
     transition-duration: var(--menu-open-transition);
     transition-timing-function: var(--menu-open-cubic);
 }
 
 .container.open {
-    filter: brightness(0.8);
+    filter: blur(2px) brightness(0.8);
 }
 
 .container svg {

@@ -1,4 +1,4 @@
-import styles from '../../styles/components/Contact/Footer.module.css'
+import styles from '../styles/components/Footer.module.css'
 
 const Footer = () => {
   return (

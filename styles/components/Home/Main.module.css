@@ -5,4 +5,5 @@
     width: 100%;
     gap: 2em;
     height: 100%;
+    max-height: var(--max-height);
 }

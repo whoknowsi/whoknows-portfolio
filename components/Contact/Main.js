@@ -1,7 +1,7 @@
 import styles from '../../styles/components/Contact/Main.module.css'
 import ContactForm from './ContactForm'
 import ContactInformation from './ContactInformation'
-import Footer from './Footer'
+import Footer from '../Footer'
 
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaMehBlank, FaTwitter } from 'react-icons/fa'
 

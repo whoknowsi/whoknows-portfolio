@@ -3,6 +3,7 @@ import styles from '../../../styles/components/Projects/Project/Project.module.c
 import { FaGithub, FaGithubAlt } from 'react-icons/fa'
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
+import Footer from '../../Footer'
 
 const Project = ({ project }) => {
   const { name, description, createdAt, status, repoUrl, url, media } = project
@@ -99,8 +100,8 @@ const Project = ({ project }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
-
   )
 }
 

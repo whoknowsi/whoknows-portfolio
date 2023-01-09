@@ -23,6 +23,7 @@
 }
 
 .imagesContainer {
+    position: relative;
     width: 100%;
     flex: 1;
     overflow: hidden;
@@ -33,10 +34,10 @@
     height: inherit;
     display: flex;
     width: max-content;
+    transition: transform .3s ease-in-out;
 }
 
 .imageContainer {
-    position: relative;
     width: calc(min(var(--max-width), 100vw) - var(--header-width) - var(--aside-width) - 6em);
 }
 
@@ -50,10 +51,18 @@
     bottom: 0;
     top: 0;
     cursor: pointer;
+    padding: 0em .5em;
+    transition: all .2s ease-in-out;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,.2);
+    color: var(--text-color-highlight)
 }
 
 .prev {
     left: 0;
+    visibility: hidden;
 }
 
 .next {

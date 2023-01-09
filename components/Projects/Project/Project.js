@@ -2,19 +2,71 @@ import Image from 'next/image'
 import styles from '../../../styles/components/Projects/Project/Project.module.css'
 import { FaGithub, FaGithubAlt } from 'react-icons/fa'
 import Link from 'next/link'
+import { useState, useRef, useEffect } from 'react'
 
 const Project = ({ project }) => {
   const { name, description, createdAt, status, repoUrl, url, media } = project
+  const slider = useRef(null)
+  const next = useRef(null)
+  const prev = useRef(null)
+  const [currentImg, setCurrentImage] = useState(1)
+
+  useEffect(() => {
+    if (media.length === 0) next.current.style.visibility = 'hidden'
+  }, [media.length])
+
+  const getValueToTranslate = () => {
+    const htmlEl = document.querySelector('html')
+    const styles = getComputedStyle(htmlEl)
+
+    const emToPixels = em => Number(styles.fontSize.split('px')[0]) * Number(em.split('em')[0])
+
+    const maxWidth = Number(styles.getPropertyValue('--max-width').split('px')[0])
+    const vw = window.innerWidth
+    const headerWidth = emToPixels(styles.getPropertyValue('--header-width'))
+    const asideWidth = emToPixels(styles.getPropertyValue('--aside-width'))
+    const paddingWidth = emToPixels('6em')
+
+    return Math.min(maxWidth, vw) - headerWidth - asideWidth - paddingWidth
+  }
+
+  const fromTranslateToNumber = t => Number(t.split('(')[1].split('px')[0])
+
+  const handlePrev = () => {
+    if (currentImg === 2) prev.current.style.visibility = 'hidden'
+    if (currentImg === 1) return
+
+    next.current.style.visibility = 'visible'
+
+    const currentTranslate = fromTranslateToNumber(slider.current.style.transform)
+    const toTranslate = `translateX(${currentTranslate + getValueToTranslate()}px)`
+    slider.current.style.transform = toTranslate
+
+    setCurrentImage(currentImg - 1)
+  }
+
+  const handleNext = () => {
+    if (currentImg === media.length - 1) next.current.style.visibility = 'hidden'
+    if (currentImg === media.length) return
+
+    prev.current.style.visibility = 'visible'
+
+    const toTranslate = `translateX(-${getValueToTranslate() * (currentImg)}px)`
+    slider.current.style.transform = toTranslate
+
+    setCurrentImage(currentImg + 1)
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.firstSectionContainer}>
         <h2>{name}</h2>
         <div className={styles.imagesContainer}>
-          <div className={styles.imagesSlider}>
+          <div ref={prev} className={styles.prev} onClick={handlePrev}><span>{'<'}</span></div>
+          <div ref={next} className={styles.next} onClick={handleNext}><span>{'>'}</span></div>
+          <div className={styles.imagesSlider} ref={slider}>
             {media.map((url, i) =>
               <div key={url} className={styles.imageContainer}>
-                <div className={styles.prev}>{'<'}</div>
-                <div className={styles.next}>{'>'}</div>
                 <Image src={url} fill alt={`${name} image ${i}`} />
               </div>)}
           </div>

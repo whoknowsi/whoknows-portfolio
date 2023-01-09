@@ -9,8 +9,13 @@ const Project = ({ name, description, createdAt, status, client, media, _id }) =
     router.push(`/projects/${_id}`)
   }
 
+  const handleMiddleClick = (e) => {
+    if (e.button !== 1) return
+    window.open(`/projects/${_id}`, '_blank')
+  }
+
   return (
-    <div className={styles.container} onClick={handleClick}>
+    <div className={styles.container} onClick={handleClick} onMouseDown={handleMiddleClick}>
       <Link href={`/projects/${_id}`}><h3>{name}</h3></Link>
       <div className={styles.imageContainer}>
         <Image

@@ -7,6 +7,7 @@ import { getBasicInfo } from '../services/basic-info'
 import BackgroundPatron from '../components/Background/BackgroundPatron'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import { Analytics } from '@vercel/analytics/react'
 import Loading from '../components/Loading'
 
 const poppins = Poppins({ weight: ['400', '500', '600'], subsets: ['latin'] })
@@ -62,6 +63,7 @@ export default function App ({ Component, pageProps, props }) {
         <Header handleMenuToggle={ handleMenuToggle } open={menuOpen}/>
       </div>
     </div>
+    <Analytics />
   </>
 }
 

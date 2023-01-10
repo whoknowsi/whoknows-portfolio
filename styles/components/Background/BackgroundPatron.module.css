@@ -6,13 +6,14 @@
     right: 0;
     filter: blur(1px) brightness(1);
     opacity: .5;
-    transition-property: filter;
+    transition-property: filter, transform;
     transition-duration: var(--menu-open-transition);
     transition-timing-function: var(--menu-open-cubic);
 }
 
 .container.open {
     filter: blur(2px) brightness(0.8);
+    transform: translateX(-1em);
 }
 
 .container svg {

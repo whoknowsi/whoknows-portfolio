@@ -1,0 +1,21 @@
+.container {
+    position: absolute;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+    user-select: none;
+    pointer-events: none;
+    transition: opacity var(--menu-open-transition) var(--menu-open-cubic);
+    z-index: 10;
+}
+
+.container.open {
+    opacity: 1;
+}
+
+@media (min-width: 1024px) {
+    .container {
+        backdrop-filter: blur(1px);
+    }
+}

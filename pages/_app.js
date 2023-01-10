@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { Analytics } from '@vercel/analytics/react'
 import Loading from '../components/Loading'
+import BlurFilter from '../components/BlurFilter'
 
 const poppins = Poppins({ weight: ['400', '500', '600'], subsets: ['latin'] })
 
@@ -53,14 +54,15 @@ export default function App ({ Component, pageProps, props }) {
       <div className='content'>
         <BackgroundPatron open={menuOpen || asideOpen} />
         <Aside info={basicInfo} handleAsideToggle={ handleAsideToggle } open={asideOpen} />
-        <main className={menuOpen || asideOpen ? 'main open' : 'main'} onClick={ handleMainClick }>
+        <BlurFilter open={menuOpen || asideOpen}/>
+        <main className={menuOpen || asideOpen ? 'main open' : 'main'} onClick={ handleMainClick } >
         {
           loading
             ? <Loading />
             : <Component {...pageProps} info={basicInfo} />
-          }
-          </main>
-        <Header handleMenuToggle={ handleMenuToggle } open={menuOpen}/>
+        }
+        </main>
+        <Header handleMenuToggle={handleMenuToggle} open={menuOpen} />
       </div>
     </div>
     <Analytics />

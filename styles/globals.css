@@ -116,9 +116,7 @@ a {
   padding: 2em;
   flex-shrink: 1;
   padding-right: calc(var(--header-width) + 2em);
-  transition-property: transform, filter, opacity;
-  transition-duration: var(--menu-open-transition);
-  transition-timing-function: var(--menu-open-cubic);
+  transition: transform var(--menu-open-transition) var(--menu-open-cubic);
   overflow: auto;
   padding-bottom: 0;
   margin-bottom: 2em;
@@ -134,13 +132,12 @@ a {
 
 .main.open {
   transform: translateX(-9.5em);
-  filter: blur(1px) brightness(.9);
   pointer-events: all;
 }
 
-.main.open > *  {
-  user-select: none;
+.main.open > * {
   pointer-events: none;
+  user-select: none;
 }
 
 input, textarea {

@@ -1,9 +1,9 @@
 import styles from '../../styles/components/Header/LenguageToggle.module.css'
 
-const LenguageToggle = () => {
+const LenguageToggle = ({ open }) => {
   return (
     <div className={styles.container}>
-      <button>
+      <button tabIndex={open ? 0 : -1}>
         <span>EN</span>
       </button>
     </div>

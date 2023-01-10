@@ -18,27 +18,27 @@ const Nav = ({ open, handleMenuToggle }) => {
     <nav className={`${styles.container} ${open ? styles.open : ''}`}>
         <ul ref={list}>
           <li>
-            <Link href={'/'} onClick={handleMenuToggle}>
+            <Link href={'/'} tabIndex={open ? 0 : -1} onClick={handleMenuToggle}>
               Home
             </Link>
           </li>
           <li>
-            <Link href={'/portfolio'} onClick={handleMenuToggle}>
+            <Link href={'/portfolio'} tabIndex={open ? 0 : -1} onClick={handleMenuToggle}>
               Portfolio
             </Link>
           </li>
           <li>
-            <Link href={'/deployments'} onClick={handleMenuToggle}>
+            <Link href={'/deployments'} tabIndex={open ? 0 : -1} onClick={handleMenuToggle}>
               Deployments
             </Link>
           </li>
           <li>
-            <Link href={'/certifications'} onClick={handleMenuToggle}>
+            <Link href={'/certifications'} tabIndex={open ? 0 : -1} onClick={handleMenuToggle}>
               Certifications
             </Link>
           </li>
           <li>
-            <Link href={'/contact'} onClick={handleMenuToggle}>
+            <Link href={'/contact'} tabIndex={open ? 0 : -1} onClick={handleMenuToggle}>
               Contact
             </Link>
           </li>

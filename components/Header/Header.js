@@ -11,7 +11,7 @@ const Header = ({ handleMenuToggle, open }) => {
       <div className={`${styles.menuContainer} ${open ? styles.open : ''}`}>
         <MenuToggle handleMenuToggle={handleMenuToggle} open={open} />
         <Nav handleMenuToggle={handleMenuToggle} open={open} />
-        <LenguageToggle />
+        <LenguageToggle open={open} />
       </div>
     </header>
   )

@@ -23,7 +23,7 @@
   background: none;
   font-size: 1em;
   right: 2em;
-  top: 2em;
+  top: calc(var(--header-height) / 2 - var(--svg-basic-height)/2);
 }
 
 @media (max-width: 1023px) {
@@ -36,10 +36,6 @@
     pointer-events: none !important;
   }
 
-  .container > button {
-    transition: opacity .3s ease-in-out;
-  }
-
   .container.menuOpen > button {
     opacity: 0.5;
   }
@@ -50,6 +46,7 @@
   .asideToggle {
     display: flex;
     transition: transform var(--menu-open-transition) var(--menu-open-cubic);
+    transition-property: transform, opacity;
     transform: translateX(var(--header-width));
   }
   .container.open .asideToggle {

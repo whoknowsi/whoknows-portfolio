@@ -13,7 +13,7 @@
 
 .container.open {
     filter: blur(2px) brightness(0.8);
-    transform: translateX(-1em);
+    transform: translateX(1em);
 }
 
 .container svg {

@@ -27,7 +27,7 @@ export default function App ({ Component, pageProps, props }) {
     const start = () => {
       setLoading(true)
       setMenuOpen(false)
-      setMenuOpen(false)
+      setAsideOpen(false)
     }
     const end = () => setLoading(false)
 

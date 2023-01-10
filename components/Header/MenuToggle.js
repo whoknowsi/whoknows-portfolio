@@ -1,10 +1,10 @@
 import { FaBars } from 'react-icons/fa'
 import styles from '../../styles/components/Header/MenuTogge.module.css'
 
-const MenuToggle = ({ handleMenuToggle }) => {
+const MenuToggle = ({ handleMenuToggle, handleAsideToggle, open }) => {
   return (
     <div className={styles.container}>
-      <button onClick={ handleMenuToggle } aria-label="hamburger menu">
+      <button className={`${styles.menuToggle} ${open ? styles.open : ''}`} onClick={ handleMenuToggle } aria-label="hamburger menu">
         <FaBars />
       </button>
     </div>

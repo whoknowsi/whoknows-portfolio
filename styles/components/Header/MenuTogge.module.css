@@ -4,9 +4,10 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  z-index: 1;
 }
 
-.container button {
+.menuToggle{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,4 +15,18 @@
   cursor: pointer;
   background: none;
   font-size: 1em;
+}
+
+.menuToggle {
+  z-index: 2;
+}
+
+@media (max-width: 1023px) {
+  .menuToggle {
+    transition: transform var(--menu-open-transition) var(--menu-open-cubic);
+    transform: translateX(calc(var(--header-width) * -1));
+  }
+  .menuToggle.open {
+    transform: translateX(0);
+  }
 }

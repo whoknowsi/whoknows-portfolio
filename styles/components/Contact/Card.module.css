@@ -1,7 +1,6 @@
 .container {
   padding: 2em;
   background-color: var(--middle-color-light);
-  max-width: 23em;
   min-width: 19em;
   flex: 1;
   box-shadow: var(--border-shadow-block)

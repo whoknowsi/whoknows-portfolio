@@ -12,10 +12,12 @@ import Loading from '../components/Loading'
 const poppins = Poppins({ weight: ['400', '500', '600'], subsets: ['latin'] })
 
 export default function App ({ Component, pageProps, props }) {
-  const [open, setOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [asideOpen, setAsideOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const router = useRouter()
-  const handleMenuToggle = () => setOpen(!open)
+  const handleMenuToggle = () => setMenuOpen(!menuOpen)
+  const handleAsideToggle = () => setAsideOpen(!asideOpen)
 
   const { basicInfo } = props
 
@@ -35,8 +37,8 @@ export default function App ({ Component, pageProps, props }) {
   }, [router.events])
 
   const handleMainClick = () => {
-    if (!open) return
-    setOpen(false)
+    if (menuOpen) setMenuOpen(false)
+    if (asideOpen) setAsideOpen(false)
   }
 
   return <>
@@ -46,18 +48,18 @@ export default function App ({ Component, pageProps, props }) {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <div className={`${poppins.className} container`}>
+    <div className={`${poppins.className} container ${asideOpen || menuOpen ? 'open' : ''}`}>
       <div className='content'>
-        <BackgroundPatron open={open} />
-        <Aside info={basicInfo} />
-        <main className={open ? 'main open' : 'main'} onClick={handleMainClick}>
+        <BackgroundPatron open={menuOpen || asideOpen} />
+        <Aside info={basicInfo} handleAsideToggle={ handleAsideToggle } open={asideOpen} />
+        <main className={menuOpen || asideOpen ? 'main open' : 'main'} onClick={ handleMainClick }>
         {
           loading
             ? <Loading />
             : <Component {...pageProps} info={basicInfo} />
           }
           </main>
-        <Header handleMenuToggle={handleMenuToggle} open={open} />
+        <Header handleMenuToggle={ handleMenuToggle } open={menuOpen}/>
       </div>
     </div>
   </>

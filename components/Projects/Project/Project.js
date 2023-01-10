@@ -34,9 +34,10 @@ const Project = ({ project }) => {
 
     const maxWidth = Number(styles.getPropertyValue('--max-width').split('px')[0])
     const vw = window.innerWidth
-    const headerWidth = emToPixels(styles.getPropertyValue('--header-width'))
-    const asideWidth = emToPixels(styles.getPropertyValue('--aside-width'))
-    const paddingWidth = emToPixels('6em')
+    const isMobile = window.innerWidth <= 1023
+    const headerWidth = isMobile ? 0 : emToPixels(styles.getPropertyValue('--header-width'))
+    const asideWidth = isMobile ? 0 : emToPixels(styles.getPropertyValue('--aside-width'))
+    const paddingWidth = isMobile ? emToPixels('4em') : emToPixels('6em')
 
     return Math.min(maxWidth, vw) - headerWidth - asideWidth - paddingWidth
   }
@@ -77,7 +78,7 @@ const Project = ({ project }) => {
           <div ref={next} className={styles.next} onClick={handleNext}><span>{'>'}</span></div>
           <div className={styles.imagesSlider} ref={slider}>
             {media.map((url, i) =>
-              <div key={url} className={styles.imageContainer}>
+              <div key={url} className={`${styles.imageContainer} ${(currentImg - 1) === i ? styles.current : ''}`}>
                 <Image src={url} fill alt={`${name} image ${i}`} />
               </div>)}
           </div>

@@ -6,9 +6,10 @@
 }
 
 .container h2 {
-  transition: color 0.3s ease-in-out
+  transition: all 0.3s ease-in-out
 }
 
 .container h2:hover {
-  color: var(--text-color-vivid)
+  color: var(--text-color-vivid);
+  transform: scale(1.01)
 }

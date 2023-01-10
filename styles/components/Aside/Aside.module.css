@@ -10,6 +10,7 @@
   flex-shrink: 0;
   z-index: 25;
   position: relative;
+  pointer-events: all !important;
 }
 
 .asideToggle {
@@ -31,9 +32,20 @@
     position: absolute;
     transition: transform var(--menu-open-transition) var(--menu-open-cubic);
   }
+  .container.menuOpen {
+    pointer-events: none !important;
+  }
+
+  .container > button {
+    transition: opacity .3s ease-in-out;
+  }
+
+  .container.menuOpen > button {
+    opacity: 0.5;
+  }
+
   .container.open {
     transform: translateX(0);
-    pointer-events: all;
   }
   .asideToggle {
     display: flex;

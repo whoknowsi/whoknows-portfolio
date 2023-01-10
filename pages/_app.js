@@ -24,7 +24,11 @@ export default function App ({ Component, pageProps, props }) {
   const { basicInfo } = props
 
   useEffect(() => {
-    const start = () => setLoading(true)
+    const start = () => {
+      setLoading(true)
+      setMenuOpen(false)
+      setMenuOpen(false)
+    }
     const end = () => setLoading(false)
 
     router.events.on('routeChangeStart', start)
@@ -53,16 +57,16 @@ export default function App ({ Component, pageProps, props }) {
     <div className={`${poppins.className} container ${asideOpen || menuOpen ? 'open' : ''}`}>
       <div className='content'>
         <BackgroundPatron open={menuOpen || asideOpen} />
-        <Aside info={basicInfo} handleAsideToggle={ handleAsideToggle } open={asideOpen} />
-        <BlurFilter open={menuOpen || asideOpen}/>
-        <main className={menuOpen || asideOpen ? 'main open' : 'main'} onClick={ handleMainClick } >
+        <Aside info={basicInfo} handleAsideToggle={handleAsideToggle} open={asideOpen} menuOpen={menuOpen} />
+        <BlurFilter open={menuOpen || asideOpen} handleClick={handleMainClick} />
+        <main className={'main'} >
         {
           loading
             ? <Loading />
             : <Component {...pageProps} info={basicInfo} />
         }
         </main>
-        <Header handleMenuToggle={handleMenuToggle} open={menuOpen} />
+        <Header handleMenuToggle={handleMenuToggle} open={menuOpen} asideOpen={asideOpen} />
       </div>
     </div>
     <Analytics />

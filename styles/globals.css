@@ -95,10 +95,6 @@ a {
   max-height: 100vh;
 }
 
-.container.open {
-  pointer-events: none;
-}
-
 .content {
   position: relative;
   display: flex;
@@ -110,6 +106,8 @@ a {
   box-shadow: 0px 0px 20px 0px rgba(20, 20, 30, .2);
   overflow: hidden;
 }
+
+.content
 
 .main {
   flex: 1;
@@ -130,14 +128,12 @@ a {
     margin-bottom: 1em;
 }
 
-.main.open {
+.container.open .main {
   transform: translateX(-9.5em);
-  pointer-events: all;
 }
 
-.main.open > * {
+.container.open .content > * {
   pointer-events: none;
-  user-select: none;
 }
 
 input, textarea {
@@ -170,7 +166,7 @@ input:-internal-autofill-selected {
     padding-top: calc(2em + var(--header-height));
   }
 
-  .main.open {
+  .container.open .main {
     transform: translateX(0);
   }
 } 

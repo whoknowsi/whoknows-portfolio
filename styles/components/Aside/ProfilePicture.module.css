@@ -3,9 +3,15 @@
   height: 8em;
   border-radius: 50%;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .container img {
   width: 100%;
   height: auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+.container img:hover {
+  transform: scale(1.1);
 }

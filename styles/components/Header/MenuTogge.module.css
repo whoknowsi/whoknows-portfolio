@@ -24,9 +24,14 @@
 @media (max-width: 1023px) {
   .menuToggle {
     transition: transform var(--menu-open-transition) var(--menu-open-cubic);
+    transition-property: transform opacity;
     transform: translateX(calc(var(--header-width) * -1));
   }
   .menuToggle.open {
     transform: translateX(0);
+  }
+
+  .menuToggle.asideOpen {
+    opacity: 0.5;
   }
 }

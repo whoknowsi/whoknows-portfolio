@@ -7,11 +7,12 @@
     user-select: none;
     pointer-events: none;
     transition: opacity var(--menu-open-transition) var(--menu-open-cubic);
-    z-index: 10;
+    z-index: 15;
 }
 
 .container.open {
     opacity: 1;
+    pointer-events: all !important;
 }
 
 @media (min-width: 1024px) {

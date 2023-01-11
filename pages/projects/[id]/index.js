@@ -6,7 +6,7 @@ export default function Contact ({ project }) {
   return (
     <>
       <Head>
-        <title>{'Whoknows\'s Portfolio - contact'}</title>
+        <title>{`Whoknows | ${project?.name ? project.name : 'Project not found'}`}</title>
       </Head>
       <Main project={project} />
     </>

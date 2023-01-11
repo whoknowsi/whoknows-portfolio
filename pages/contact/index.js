@@ -5,7 +5,7 @@ export default function Contact ({ info }) {
   return (
     <>
       <Head>
-        <title>{'Whoknows\'s Portfolio - contact'}</title>
+        <title>{'Whoknows | Contact'}</title>
       </Head>
       <Main info={info}/>
     </>

@@ -6,7 +6,7 @@ export default function Home ({ projects, info }) {
   return (
     <>
       <Head>
-        <title>{'Whoknows\'s Portfolio'}</title>
+        <title>Whoknows | Web Developer Portfolio</title>
       </Head>
       <Main projects={projects} info={info} />
     </>

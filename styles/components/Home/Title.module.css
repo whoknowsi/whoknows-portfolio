@@ -12,3 +12,12 @@
     box-shadow: var(--border-shadow-block);
 }
 
+.container span {
+    color: var(--text-color-vivid);
+    font-size: 1.1em;
+}
+
+.container strong {
+    font-size: 1.3em;
+}
+

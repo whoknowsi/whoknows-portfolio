@@ -4,6 +4,7 @@
     flex-direction: column;
     z-index: 10;
     flex: 1;
+    padding-bottom: 2em;
 }
 
 .projectsContainer {

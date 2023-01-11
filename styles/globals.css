@@ -155,13 +155,22 @@ input:-internal-autofill-selected {
 }
 
 @media (max-width: 1023px) {
+  :root {
+    --max-height: fit-content;
+  }
+
   .container {
     padding: 0;
   }
 
   .main {
     padding: 2em;
-    padding-top: calc(2em + var(--header-height));
+    margin-top: var(--header-height);
+    margin-bottom: 0;
+  }
+
+  .main > * {
+    height: auto !important;
   }
 
   .container.open .main {

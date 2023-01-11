@@ -1,15 +1,49 @@
+import Link from 'next/link'
 import styles from '../../styles/components/Home/LastProjects.module.css'
 import Project from './Project'
+import { useRef, useEffect, useState } from 'react'
 
 const LastProjects = ({ projects }) => {
+  const projectsContainer = useRef(null)
+  const [maxProjectsOnLine, setMaxProjectsOnLine] = useState(null)
+
+  const getCurrentProjectsInLine = () => {
+    const bodyStyles = getComputedStyle(document.querySelector('body'))
+    const fontSize = bodyStyles.getPropertyValue('font-size')
+
+    const emToPxNum = (em) => pxToNum(fontSize) * em
+    const pxToNum = (px) => Number(px.split('px')[0])
+
+    const projectsContainerStyles = getComputedStyle(projectsContainer.current)
+    const projectStyles = getComputedStyle(projectsContainer.current.children[1])
+
+    const containerWidth = projectsContainerStyles.getPropertyValue('width')
+    const projectWidth = projectStyles.getPropertyValue('min-width')
+    const numberOfProjectsInLineRightNow = Math.floor((pxToNum(containerWidth)) / pxToNum(projectWidth))
+    const gap = emToPxNum(numberOfProjectsInLineRightNow - 1)
+
+    return Math.floor((pxToNum(containerWidth) - gap) / pxToNum(projectWidth))
+  }
+
+  useEffect(() => {
+    const handleResize = () => setMaxProjectsOnLine(getCurrentProjectsInLine())
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [maxProjectsOnLine])
+
   return (
     <div className={styles.container}>
       <h2>My last projects</h2>
-      <div className={styles.projectsContainer}>
+      <div ref={projectsContainer} className={styles.projectsContainer}>
+      <div className={styles.viewMore}><Link href='/projects'>View more...</Link></div>
         {
-          projects.map((props) => (
+          maxProjectsOnLine
+            ? (projects.slice(0, maxProjectsOnLine > 1 ? maxProjectsOnLine : projects.length).map((props) => (
             <Project key={props.name} {...props}/>
-          ))
+              )))
+            : <Project />
         }
       </div>
     </div>

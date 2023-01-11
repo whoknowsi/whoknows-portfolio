@@ -23,8 +23,8 @@ const Nav = ({ open }) => {
             </Link>
           </li>
           <li>
-            <Link href={'/portfolio'} tabIndex={open ? 0 : -1}>
-              Portfolio
+            <Link href={'/projects'} tabIndex={open ? 0 : -1}>
+              Projects
             </Link>
           </li>
           <li>

@@ -60,11 +60,13 @@ export default function App ({ Component, pageProps, props }) {
         <Aside info={basicInfo} handleAsideToggle={handleAsideToggle} open={asideOpen} menuOpen={menuOpen} />
         <BlurFilter open={menuOpen || asideOpen} handleClick={handleMainClick} />
         <main className={'main'} >
-        {
-          loading
-            ? <Loading />
-            : <Component {...pageProps} info={basicInfo} />
-        }
+          <div>
+            {
+              loading
+                ? <Loading />
+                : <Component {...pageProps} info={basicInfo} />
+            }
+          </div>
         </main>
         <Header handleMenuToggle={handleMenuToggle} open={menuOpen} asideOpen={asideOpen} />
       </div>

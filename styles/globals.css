@@ -114,9 +114,17 @@ a {
   padding-right: calc(var(--header-width) + 2em);
   transition: transform var(--menu-open-transition) var(--menu-open-cubic);
   overflow: auto;
-  padding-bottom: 0;
-  margin-bottom: 2em;
   z-index: 5;
+}
+.main > * {
+  position: relative;
+  height: auto;
+  max-height: var(--max-height);
+  min-height: min(var(--max-height), 100%);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2em;
 }
 
 .main h1,
@@ -166,11 +174,6 @@ input:-internal-autofill-selected {
   .main {
     padding: 2em;
     margin-top: var(--header-height);
-    margin-bottom: 0;
-  }
-
-  .main > * {
-    height: auto !important;
   }
 
   .container.open .main {

@@ -1,4 +1,3 @@
-import styles from '../../styles/components/Contact/Main.module.css'
 import ContactForm from './ContactForm'
 import ContactInformation from './ContactInformation'
 import Footer from '../Footer'
@@ -38,7 +37,7 @@ const Main = ({ info }) => {
   }
 
   return (
-    <div className={styles.container}>
+    <>
       <ContactInformation
         firstCard={[
           { name: 'Country', description: country },
@@ -53,7 +52,7 @@ const Main = ({ info }) => {
         ]} />
       <ContactForm />
       <Footer />
-    </div>
+    </>
   )
 }
 

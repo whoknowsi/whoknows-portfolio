@@ -6,7 +6,8 @@
 }
 
 .container h2 {
-  transition: all 0.3s ease-in-out
+  transition: transform 0.3s ease-in-out;
+  transition-property: transform, color;
 }
 
 .container h2:hover {

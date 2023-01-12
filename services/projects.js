@@ -1,6 +1,6 @@
 const url = `${process.env.API_BASE_URL}/projects`
 
-const getLastProjects = async () => {
+const getProjects = async () => {
   const response = await fetch(url)
   const data = await response.json()
   return data.results
@@ -17,6 +17,6 @@ const getProjectBy = async (id) => {
 }
 
 export {
-  getLastProjects,
+  getProjects,
   getProjectBy
 }

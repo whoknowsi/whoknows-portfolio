@@ -1,7 +1,7 @@
 .container {
   flex: 1;
   color: var(--text-color-gray);
-  padding: 2em;
+  padding: 2em 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -9,15 +9,17 @@
   font-weight: 500;
   background-color: var(--back-color);
   overflow: auto;
+  overflow-x: hidden;
 }
 
-.container ul {
+.container > ul {
   display: flex;
   flex-direction: column;
   gap: 1em;
+    flex: 1;
 }
 
-.container ul li {
+.container > ul li {
   list-style: none;
   transform: translateX(5em);
   opacity: 0;
@@ -26,17 +28,47 @@
   transition-timing-function: ease-out;
 }
 
-.container.open ul li {
+.container.open > ul li {
   transform: translateX(0em);
   opacity: 1;
 }
 
-.container ul li a {
+.container > ul li a {
+  cursor: pointer;
   transition: color var(--menu-open-transition) ease-out;
+  padding: 0 2em;
 }
 
-.container ul li a:hover {
+.container >  ul li a:hover {
   color: var(--text-color-highlight)
+}
+
+
+.projects {
+  max-height: 0;
+  height: -1em;
+  overflow: hidden;
+  background-color: var(--back-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 0;
+  box-shadow: inset 0 .3em .5em 0 rgb(15 15 20 / 20%);
+  filter: brightness(.9);
+  transition: all .5s ease-in-out;
+}
+
+.projects a:first-child {
+  margin-top: 1em;
+}
+
+.projects a:last-child {
+  margin-bottom: 1em;
+}
+
+.container.open .projects.projectsOpen {
+  max-height: 8em;
+  margin-top: 1em;
 }
 
 @media (max-width: 1023px) {

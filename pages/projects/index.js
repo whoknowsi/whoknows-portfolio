@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Main from '../../components/Projects/Main'
-import { getProjects } from '../../services/projects'
 
 export default function Contact ({ projects }) {
   return (
@@ -11,13 +10,4 @@ export default function Contact ({ projects }) {
       <Main projects={projects} />
     </>
   )
-}
-
-export async function getServerSideProps () {
-  const projects = await getProjects()
-  return {
-    props: {
-      projects
-    }
-  }
 }

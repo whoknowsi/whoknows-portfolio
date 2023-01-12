@@ -3,14 +3,14 @@ import LenguageToggle from './LenguageToggle'
 import MenuToggle from './MenuToggle'
 import Nav from './Nav'
 
-const Header = ({ handleMenuToggle, open, asideOpen }) => {
+const Header = ({ handleMenuToggle, open, asideOpen, projects }) => {
   // TODO: take care of tabulation when menu is not open (when tabulating the menu "opens" but just broke the page)
 
   return (
     <header className={`${styles.container} ${open ? styles.open : ''}`}>
       <div className={`${styles.menuContainer} ${open ? styles.open : ''}`}>
         <MenuToggle handleMenuToggle={handleMenuToggle} open={open} asideOpen={asideOpen}/>
-        <Nav open={open} />
+        <Nav open={open} projects={projects} />
         <LenguageToggle open={open} />
       </div>
     </header>

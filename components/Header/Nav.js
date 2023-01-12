@@ -1,9 +1,10 @@
 import Link from 'next/link'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from '../../styles/components/Header/Nav.module.css'
 
-const Nav = ({ open }) => {
+const Nav = ({ open, projects }) => {
   const list = useRef(null)
+  const [projectsOpen, setProjectsOpen] = useState(false)
   useEffect(() => {
     if (!list) return
     const interval = 0.03
@@ -14,6 +15,14 @@ const Nav = ({ open }) => {
     }
   }, [list])
 
+  const handleClick = () => {
+    setProjectsOpen(!projectsOpen)
+  }
+
+  useEffect(() => {
+    if (!open) setProjectsOpen(false)
+  }, [open])
+
   return (
     <nav className={`${styles.container} ${open ? styles.open : ''}`}>
         <ul ref={list}>
@@ -23,9 +32,14 @@ const Nav = ({ open }) => {
             </Link>
           </li>
           <li>
-            <Link href={'/projects'} tabIndex={open ? 0 : -1}>
-              Projects
-            </Link>
+            <a tabIndex={open ? 0 : -1} onClick={handleClick}>Projects</a>
+          <ul className={`${styles.projects} ${projectsOpen ? styles.projectsOpen : ''}`}>
+            {
+              projects.map(({ _id, name }) => (
+                <Link key={_id} href={`/projects/${_id}`}>{name}</Link>
+              ))
+            }
+            </ul>
           </li>
           <li>
             <Link href={'/deployments'} tabIndex={open ? 0 : -1}>

@@ -4,6 +4,7 @@ import Header from '../components/Header/Header'
 import '../styles/globals.css'
 import { Poppins } from '@next/font/google'
 import { getBasicInfo } from '../services/basic-info'
+import { getProjects } from '../services/projects'
 import BackgroundPatron from '../components/Background/BackgroundPatron'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
@@ -21,7 +22,7 @@ export default function App ({ Component, pageProps, props }) {
   const handleMenuToggle = () => setMenuOpen(!menuOpen)
   const handleAsideToggle = () => setAsideOpen(!asideOpen)
 
-  const { basicInfo } = props
+  const { basicInfo, projects } = props
 
   useEffect(() => {
     const start = () => {
@@ -64,11 +65,11 @@ export default function App ({ Component, pageProps, props }) {
             {
               loading
                 ? <Loading />
-                : <Component {...pageProps} info={basicInfo} />
+                : <Component {...pageProps} info={basicInfo} projects={projects} />
             }
           </div>
         </main>
-        <Header handleMenuToggle={handleMenuToggle} open={menuOpen} asideOpen={asideOpen} />
+        <Header handleMenuToggle={handleMenuToggle} open={menuOpen} asideOpen={asideOpen} projects={projects} />
       </div>
     </div>
     <Analytics />
@@ -77,9 +78,11 @@ export default function App ({ Component, pageProps, props }) {
 
 App.getInitialProps = async () => {
   const basicInfo = await getBasicInfo()
+  const projects = await getProjects()
   return {
     props: {
-      basicInfo
+      basicInfo,
+      projects
     }
   }
 }

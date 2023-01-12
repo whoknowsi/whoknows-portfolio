@@ -15,7 +15,8 @@ const Nav = ({ open, projects }) => {
     }
   }, [list])
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault()
     setProjectsOpen(!projectsOpen)
   }
 
@@ -32,7 +33,7 @@ const Nav = ({ open, projects }) => {
             </Link>
           </li>
           <li>
-            <a tabIndex={open ? 0 : -1} onClick={handleClick}>Projects</a>
+            <Link href={'/projects'} tabIndex={open ? 0 : -1} onClick={handleClick}>Projects</Link>
           <ul className={`${styles.projects} ${projectsOpen ? styles.projectsOpen : ''}`}>
             {
               projects.map(({ _id, name }) => (

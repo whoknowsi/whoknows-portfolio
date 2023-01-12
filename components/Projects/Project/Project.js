@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from '../../../styles/components/Projects/Project/Project.module.css'
-import { FaGithub, FaGithubAlt } from 'react-icons/fa'
+import { FaGithub, FaLink } from 'react-icons/fa'
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import Footer from '../../Footer'
@@ -96,7 +96,7 @@ const Project = ({ project }) => {
               <li><strong>Date:</strong>{createdAt}</li>
               <li><strong>Status:</strong>{status}</li>
               <li><strong>Repo:</strong><Link href={repoUrl} target="_blank" rel="noopener noreferrer" aria-label={`${name} repository`}><FaGithub /></Link></li>
-              <li><strong>Website:</strong><Link href={url} target="_blank" rel="noopener noreferrer" aria-label={`${name} website`}><FaGithubAlt /></Link></li>
+              <li><strong>Website:</strong><Link href={url} target="_blank" rel="noopener noreferrer" aria-label={`${name} website`}><FaLink /></Link></li>
             </ul>
           </div>
         </div>

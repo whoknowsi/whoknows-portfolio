@@ -58,11 +58,11 @@
   transition: all .5s ease-in-out;
 }
 
-.projects a:first-child {
+.projects li:first-child {
   margin-top: 1em;
 }
 
-.projects a:last-child {
+.projects li:last-child {
   margin-bottom: 1em;
 }
 

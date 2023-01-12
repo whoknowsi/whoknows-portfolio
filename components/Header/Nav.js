@@ -36,7 +36,7 @@ const Nav = ({ open, projects }) => {
           <ul className={`${styles.projects} ${projectsOpen ? styles.projectsOpen : ''}`}>
             {
               projects.map(({ _id, name }) => (
-                <Link key={_id} href={`/projects/${_id}`}>{name}</Link>
+                <li key={_id}><Link href={`/projects/${_id}`}>{name}</Link></li>
               ))
             }
             </ul>

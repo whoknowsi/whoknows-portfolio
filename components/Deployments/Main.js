@@ -1,12 +1,12 @@
-import Deployment from './Deployment'
+import Deployments from './Deployments'
+import Footer from '../Footer'
 
 const Main = ({ deployments }) => {
   return (
-    <div>
-      {deployments.map((deployment) => (
-        <Deployment key={deployment._id} deployment={deployment} />
-      ))}
-    </div>
+    <>
+      <Deployments deployments={deployments} />
+      <Footer />
+    </>
   )
 }
 

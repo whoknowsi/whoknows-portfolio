@@ -1,0 +1,109 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.deploymentsContainer {
+  display: grid;
+  width: 100%;
+  row-gap: .5em;
+}
+
+.row, .header {
+  background-color: var(--middle-color-light);
+  box-shadow: var(--border-shadow-block);
+  padding: 1em 1.5em;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 12.5em auto 4em 2.5em 4em;
+  gap: 2em;
+  row-gap: 1em;
+  justify-items: center;
+  align-items: center;
+  
+}
+
+.row {
+  transition: background .3s ease-in-out
+}
+
+.row.ok:hover {
+  background-color: rgba(26, 146, 66, 0.1);
+}
+
+.row.unknow:hover {
+  background-color: rgba(168, 156, 43, 0.1);
+}
+
+.row.down:hover {
+  background-color: rgba(168, 69, 39, 0.1);;
+}
+
+.header h3 {
+  margin: 0;
+}
+
+.row a {
+  height: 1.5em;
+}
+
+.row p:first-child, .header h3:first-child {
+  justify-self: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  color: var(--text-color-highlight)
+}
+
+.description {
+  justify-self: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .row, .header {
+    grid-template-columns: 1fr 4em 2.5em 4em;
+  }
+
+  .description {
+    display: none;
+  }
+}
+
+.row.ok p svg,
+.row.unknow p svg,
+.row.down p svg {
+  font-size: .6em;
+  transition: transform .5s ease-in-out;
+}
+
+.row:hover .ok svg,
+.row:hover .unknow svg,
+.row:hover .down svg {
+  transform: scale(1.2);
+}
+
+.row.ok p svg {
+  color: rgba(26, 146, 66, 1);;
+}
+
+.row.unknow p svg {
+  color: rgb(168, 156, 43);
+}
+
+.row.down p svg {
+  color: rgba(168, 69, 39, 0.904);
+}
+
+@media (max-width: 423px) {
+  .row, .header {
+    gap: 1em;
+    padding: .5em 1.5em;
+  }
+  
+}
+

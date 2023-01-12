@@ -1,0 +1,29 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 95%;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0.5em;
+    right: 0.25em;
+    height: calc(100% - .5em);
+    width: 0.30em;
+    background: var(--back-color);
+}
+
+@media (max-width: 1023px) {
+  .container {
+    width: 97.5%;
+  }
+}
+
+@media (max-width: 423px) {
+  .container {
+    width: 100%;
+  }
+}

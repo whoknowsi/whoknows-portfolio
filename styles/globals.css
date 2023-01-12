@@ -113,9 +113,11 @@ a {
   flex-shrink: 1;
   padding-right: calc(var(--header-width) + 2em);
   transition: transform var(--menu-open-transition) var(--menu-open-cubic);
-  overflow: auto;
+  overflow: overlay;
   z-index: 5;
 }
+
+
 .main > * {
   position: relative;
   height: auto;
@@ -180,4 +182,10 @@ input:-internal-autofill-selected {
     transform: translateX(0);
   }
 } 
+
+@media (max-width: 423px) {
+  .main {
+    padding: 1.5em;
+  }
+}
 

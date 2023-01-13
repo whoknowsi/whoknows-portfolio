@@ -33,13 +33,13 @@ const Nav = ({ open, projects, handleMenuToggle }) => {
     <nav className={`${styles.container} ${open ? styles.open : ''}`}>
         <ul ref={list}>
           <li className={router.pathname === '/' ? styles.active : ''}>
-            <Link href={'/'} tabIndex={open ? 0 : -1}>
+            <Link href={'/'}>
               <IoHome />
               <div>Home</div>
             </Link>
           </li>
           <li className={router.pathname.includes('/projects') ? styles.active : ''}>
-            <Link href={'/projects'} tabIndex={open ? 0 : -1} onClick={handleClick}>
+            <Link href={'/projects'} onClick={handleClick}>
               <FaFolderOpen />
               <div>Projects</div>
             </Link>
@@ -56,19 +56,19 @@ const Nav = ({ open, projects, handleMenuToggle }) => {
             </ul>
           </li>
           <li className={router.pathname === '/deployments' ? styles.active : ''}>
-            <Link href={'/deployments'} tabIndex={open ? 0 : -1}>
+            <Link href={'/deployments'}>
               <FaCloud />
               <div>Deployments</div>
             </Link>
           </li>
           <li className={router.pathname === '/certifications' ? styles.active : ''}>
-            <Link href={'/certifications'} tabIndex={open ? 0 : -1}>
+            <Link href={'/certifications'}>
               <FaCertificate />
               <div>Certifications</div>
             </Link>
           </li>
           <li className={router.pathname === '/contact' ? styles.active : ''}>
-            <Link href={'/contact'} tabIndex={open ? 0 : -1}>
+            <Link href={'/contact'}>
               <FaAddressBook />
               <div>Contact</div>
             </Link>

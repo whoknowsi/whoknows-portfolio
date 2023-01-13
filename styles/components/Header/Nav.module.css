@@ -37,6 +37,10 @@
   color: var(--text-color-vivid)
 }
 
+.container >  ul > li.active > a:hover {
+  color: var(--text-color-vivid-light)
+}
+
 .container >  ul > li > a > svg {
   width: 1.5em;
   height: 1.5em;
@@ -85,11 +89,20 @@
 }
 
 .projects li a {
+  transition: color var(--menu-open-transition) ease-out;
   padding: 0 2em;
 }
 
 .projects .active {
   color: var(--text-color-vivid)
+}
+
+.projects li a:hover {
+  color: var(--text-color-highlight);
+}
+
+.projects .active a:hover {
+  color: var(--text-color-vivid-light);
 }
 
 .projects li:first-child {
@@ -101,6 +114,6 @@
 }
 
 .projects.projectsOpen {
-  max-height: 8em;
+  max-height: 9em;
   margin-top: 1em;
 }

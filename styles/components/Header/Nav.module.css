@@ -88,6 +88,10 @@
   padding: 0 2em;
 }
 
+.projects .active {
+  color: var(--text-color-vivid)
+}
+
 .projects li:first-child {
   margin-top: 1em;
 }

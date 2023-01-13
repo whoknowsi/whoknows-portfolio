@@ -48,7 +48,7 @@ const Nav = ({ open, projects, handleMenuToggle }) => {
                 projects.map(({ _id, name }) => (
                     <li key={_id} className={router.query?.id === _id ? styles.active : ''}>
                       <Link href={`/projects/${_id}`}>
-                        {name}
+                        <span>{name}</span>
                       </Link>
                     </li>
                 ))

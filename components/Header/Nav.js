@@ -1,8 +1,12 @@
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import styles from '../../styles/components/Header/Nav.module.css'
+import { FaFolderOpen, FaCloud, FaCertificate, FaAddressBook } from 'react-icons/fa'
+import { IoHome } from 'react-icons/io5'
+import { useRouter } from 'next/router'
 
-const Nav = ({ open, projects }) => {
+const Nav = ({ open, projects, handleMenuToggle }) => {
+  const router = useRouter()
   const list = useRef(null)
   const [projectsOpen, setProjectsOpen] = useState(false)
   useEffect(() => {
@@ -10,7 +14,7 @@ const Nav = ({ open, projects }) => {
     const interval = 0.03
     let delay = 0
     for (const iterator of list.current.childNodes) {
-      iterator.style.transitionDelay = `${delay.toFixed(3)}s`
+      iterator.children[0].style.transitionDelay = `${delay.toFixed(3)}s`
       delay += interval
     }
   }, [list])
@@ -18,6 +22,7 @@ const Nav = ({ open, projects }) => {
   const handleClick = (e) => {
     e.preventDefault()
     setProjectsOpen(!projectsOpen)
+    !open && handleMenuToggle()
   }
 
   useEffect(() => {
@@ -27,34 +32,41 @@ const Nav = ({ open, projects }) => {
   return (
     <nav className={`${styles.container} ${open ? styles.open : ''}`}>
         <ul ref={list}>
-          <li>
+          <li className={router.pathname === '/' ? styles.active : ''}>
             <Link href={'/'} tabIndex={open ? 0 : -1}>
-              Home
+              <IoHome />
+              <div>Home</div>
             </Link>
           </li>
-          <li>
-            <Link href={'/projects'} tabIndex={open ? 0 : -1} onClick={handleClick}>Projects</Link>
-          <ul className={`${styles.projects} ${projectsOpen ? styles.projectsOpen : ''}`}>
-            {
-              projects.map(({ _id, name }) => (
-                <li key={_id}><Link href={`/projects/${_id}`}>{name}</Link></li>
-              ))
-            }
+          <li className={router.pathname.includes('/projects') ? styles.active : ''}>
+            <Link href={'/projects'} tabIndex={open ? 0 : -1} onClick={handleClick}>
+              <FaFolderOpen />
+              <div>Projects</div>
+            </Link>
+            <ul className={`${styles.projects} ${projectsOpen ? styles.projectsOpen : ''}`}>
+              {
+                projects.map(({ _id, name }) => (
+                  <li key={_id}><Link href={`/projects/${_id}`}>{name}</Link></li>
+                ))
+              }
             </ul>
           </li>
-          <li>
+          <li className={router.pathname === '/deployments' ? styles.active : ''}>
             <Link href={'/deployments'} tabIndex={open ? 0 : -1}>
-              Deployments
+              <FaCloud />
+              <div>Deployments</div>
             </Link>
           </li>
-          <li>
+          <li className={router.pathname === '/certifications' ? styles.active : ''}>
             <Link href={'/certifications'} tabIndex={open ? 0 : -1}>
-              Certifications
+              <FaCertificate />
+              <div>Certifications</div>
             </Link>
           </li>
-          <li>
+          <li className={router.pathname === '/contact' ? styles.active : ''}>
             <Link href={'/contact'} tabIndex={open ? 0 : -1}>
-              Contact
+              <FaAddressBook />
+              <div>Contact</div>
             </Link>
           </li>
         </ul>

@@ -71,22 +71,71 @@
 }
 
 .container button {
-    border: none;
-    outline: none;
-    background-color: var(--text-color-vivid);
-    color: var(--back-color);
-    font-weight: 600;
-    font-size: .8em;
-    padding: 1em 2em;
-    flex: 0;
-    width: fit-content;
-    align-self: flex-end;
-    font-family: inherit;
-    margin-top: 1em;
-    cursor: pointer;
-    transition: background .2s ease-in-out;
+  border: none;
+  outline: none;
+  background-color: var(--text-color-vivid);
+  color: var(--back-color);
+  font-weight: 600;
+  font-size: .8em;
+  padding: 1em 2em;
+  width: fit-content;
+  align-self: flex-end;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+  transition-property: background, filter;
 }
 
-.container button:hover {
-    background-color: var(--text-color-vivid-light);
+.container button:disabled {
+  filter: brightness(.6);
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.footer p {
+  visibility: hidden;
+  color: var(--text-color-vivid);
+  font-size: 1.1em;
+}
+
+.footer p.error {
+  color:rgb(247 95 49);
+  visibility: visible;
+}
+
+.footer p.sent {
+  color:rgb(33, 214, 103);
+  visibility: visible;
+}
+
+.formContainer form.sendingMessage .footer p {
+  visibility: visible;
+}
+
+.footer p:not(.error):not(.sent):after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4,end) 0.8s infinite;      
+  animation: ellipsis steps(4,end) 0.8s infinite;
+  content: ".\00a0.\00a0.\00a0";
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 1.6em;    
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.6em;     
+  }
 }

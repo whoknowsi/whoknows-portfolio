@@ -12,7 +12,7 @@ const PersonalInfo = (info) => {
       <Separator title={'Skills'} />
       <Skills skills={skills} />
       <Separator title={'CV'} />
-      <CV cv={basicInfo.CV} />
+      <CV path={basicInfo.CV} />
     </div>
   )
 }

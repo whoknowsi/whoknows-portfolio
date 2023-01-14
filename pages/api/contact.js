@@ -1,6 +1,7 @@
 export default async function handler (req, res) {
   require('dotenv').config()
   const nodemailer = require('nodemailer')
+  console.log(process.env)
   const transporter = nodemailer.createTransport({
     port: 465,
     host: 'smtp.gmail.com',

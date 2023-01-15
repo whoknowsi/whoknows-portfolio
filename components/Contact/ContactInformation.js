@@ -3,9 +3,9 @@ import Card from './Card'
 
 const ContactInformation = ({ firstCard, secondCard, thirdCard }) => {
   return (
-    <div>
+    <div className={styles.container}>
       <h2>Contact information</h2>
-      <div className={styles.container}>
+      <div className={styles.cardsContainer}>
           <Card data={firstCard} />
           <Card data={secondCard} />
           <Card data={thirdCard} />

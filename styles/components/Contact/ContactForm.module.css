@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-} 
+    width: 100%;
+}
 
 .formContainer {
     display: flex;
@@ -94,14 +95,17 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-top: 1em;
+  flex-wrap: wrap-reverse;
+  gap: 1em;
 }
 
 .footer p {
   visibility: hidden;
   color: var(--text-color-vivid);
-  font-size: 1.1em;
+  flex: 1;
+  min-width: fit-content;
 }
 
 .footer p.error {
@@ -122,10 +126,13 @@
   overflow: hidden;
   display: inline-block;
   vertical-align: bottom;
+  content: ".\00a0.\00a0.\00a0";
+}
+
+.formContainer form.sendingMessage .footer p:not(.error):not(.sent):after {
+  width: 0px;
   -webkit-animation: ellipsis steps(4,end) 0.8s infinite;      
   animation: ellipsis steps(4,end) 0.8s infinite;
-  content: ".\00a0.\00a0.\00a0";
-  width: 0px;
 }
 
 @keyframes ellipsis {

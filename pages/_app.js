@@ -60,15 +60,15 @@ export default function App ({ Component, pageProps, props }) {
         <BackgroundPatron open={menuOpen || asideOpen} />
         <Aside info={basicInfo} handleAsideToggle={handleAsideToggle} open={asideOpen} menuOpen={menuOpen} />
         <BlurFilter open={menuOpen || asideOpen} handleClick={handleMainClick} />
-        <main className={'main'} >
-          <div>
+        <div className='scrollContainer'>
+          <main className={'main'} >
             {
               loading
                 ? <Loading />
                 : <Component {...pageProps} info={basicInfo} projects={projects} />
             }
-          </div>
-        </main>
+          </main>
+        </div>
         <Header handleMenuToggle={handleMenuToggle} open={menuOpen} asideOpen={asideOpen} projects={projects} />
       </div>
     </div>

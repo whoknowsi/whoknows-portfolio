@@ -1,17 +1,9 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    height: calc(100vh - 6em);
-    max-height: var(--max-height);
-    overflow: hidden;
-}
-
-.firstSectionContainer {
     overflow: hidden;
     display: flex;
     flex-direction: column;
     flex: 1;
+    width: 100%;
 }
 
 .secondSectionContainer {
@@ -38,7 +30,8 @@
 .imageContainer {
     width: calc(min(var(--max-width), 100vw) - var(--header-width) - var(--aside-width) - 6em);
     transition: opacity 0.3s ease-in-out;
-    opacity: 0
+    opacity: 0;
+    padding: 0 2.75em;
 }
 
 .imageContainer.current {
@@ -50,12 +43,12 @@
     display: flex;
     align-items: center;
     color: var(--text-color-gray);
-    font-size: 3em;
+    font-size: 2.5em;
     z-index: 5;
     bottom: 0;
     top: 0;
     cursor: pointer;
-    padding: 0em .5em;
+    padding: 0em .25em;
     transition: all .2s ease-in-out;
     user-select: none;
 }
@@ -78,6 +71,7 @@
     position: inherit !important;
     height: 100% !important;
     object-fit: contain;
+    aspect-ratio: 16/9;
 }
 
 .detailsContainer {

@@ -1,12 +1,13 @@
 .container {
     position: absolute;
     left: 0;
-    bottom: 0;
     top: 0;
-    right: 0;
+    bottom: 0;
     filter: blur(1px) brightness(1);
     opacity: .5;
     transition: transform var(--menu-open-transition) var(--menu-open-cubic);
+    width: 100vw;
+    overflow: hidden;
 }
 
 .container.open {

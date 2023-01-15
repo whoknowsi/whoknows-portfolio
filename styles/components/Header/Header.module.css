@@ -1,5 +1,8 @@
 .container {
-  position: inherit;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 .menuContainer {
@@ -31,7 +34,7 @@
 
 @media (max-width: 1023px) {
   .container {
-    position: absolute;
+    position: fixed;
     height: var(--header-height);
     background-color: var(--back-color);
     left: 0;
@@ -45,6 +48,10 @@
 
   .menuContainer {
     transform: translateX(var(--header-width-open));
-    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
   }
 }

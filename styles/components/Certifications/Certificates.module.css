@@ -1,4 +1,8 @@
 .container {
+    width: 100%;
+}
+
+.certificatesContainer {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -6,7 +10,7 @@
     width: 95%;
 }
 
-.container::before {
+.certificatesContainer::before {
     content: '';
     position: absolute;
     top: 0.5em;
@@ -17,13 +21,13 @@
 }
 
 @media (max-width: 1023px) {
-  .container {
+  .certificatesContainer {
     width: 97.5%;
   }
 }
 
 @media (max-width: 423px) {
-  .container {
+  .certificatesContainer {
     width: 100%;
   }
 }

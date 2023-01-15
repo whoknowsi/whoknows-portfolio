@@ -70,8 +70,8 @@ const Project = ({ project }) => {
   }
 
   return (
-    <div className={styles.container}>
-      <div className={styles.firstSectionContainer}>
+    <>
+      <div className={styles.container}>
         <h2>{name}</h2>
         <div className={styles.imagesContainer}>
           <div ref={prev} className={styles.prev} onClick={handlePrev}><span>{'<'}</span></div>
@@ -102,7 +102,7 @@ const Project = ({ project }) => {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   )
 }
 

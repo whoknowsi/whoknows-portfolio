@@ -1,7 +1,6 @@
 .container, .containerPlaceHolder {
     padding: 2em;
     background-color: var(--middle-color-light);
-    max-width: 23em;
     min-width: 19em;
     flex: 1;
     box-shadow: var(--border-shadow-block);
@@ -24,12 +23,12 @@
 .imageContainer {
     width: 100%;
     margin-bottom: .5em;
-    height: 9.5em;
 }
 
 .imageContainer img {
     position: inherit !important;
     object-fit: contain;
+    aspect-ratio: 16/9;
 }
 
 .imagePlaceHolder {

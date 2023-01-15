@@ -1,4 +1,4 @@
-.container, .containerPlaceHolder {
+.container {
     padding: 2em;
     background-color: var(--middle-color-light);
     min-width: 19em;
@@ -12,8 +12,9 @@
 
 .containerPlaceHolder {
     width: 100%;
-    max-width: max-content;
-    opacity: 1;
+    background-color: var(--middle-color-light);
+    height: 25em;
+    min-width: 19em;
 }
 
 .container:hover {
@@ -31,12 +32,7 @@
     aspect-ratio: 16/9;
 }
 
-.imagePlaceHolder {
-    width: 100%;
-    height: 100%;
-}
-
-.container h3, .containerPlaceHolder h3 {
+.container h3 {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -44,13 +40,9 @@
     margin-bottom: .5em;
 }
 
-.container p, .containerPlaceHolder p {
+.container p {
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
-}
-
-.containerPlaceHolder p, .containerPlaceHolder h3 {
-    opacity: 0;
 }

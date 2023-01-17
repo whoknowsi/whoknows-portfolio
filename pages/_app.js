@@ -6,7 +6,7 @@ import { Poppins } from '@next/font/google'
 import { getBasicInfo } from '../services/basic-info'
 import { getProjects } from '../services/projects'
 import BackgroundPatron from '../components/Background/BackgroundPatron'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/router'
 import { Analytics } from '@vercel/analytics/react'
 import Loading from '../components/Loading'
@@ -18,6 +18,7 @@ export default function App ({ Component, pageProps, props }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [asideOpen, setAsideOpen] = useState(false)
   const [loading, setLoading] = useState(false)
+  const scrollableEl = useRef(null)
   const router = useRouter()
   const handleMenuToggle = () => setMenuOpen(!menuOpen)
   const handleAsideToggle = () => setAsideOpen(!asideOpen)
@@ -29,6 +30,7 @@ export default function App ({ Component, pageProps, props }) {
       setLoading(true)
       setMenuOpen(false)
       setAsideOpen(false)
+      scrollableEl.current.scrollTo(0, 0)
     }
     const end = () => setLoading(false)
 
@@ -48,32 +50,58 @@ export default function App ({ Component, pageProps, props }) {
     if (asideOpen) setAsideOpen(false)
   }
 
-  return <>
-    <Head>
-      <title>Whoknows | Web Developer Portfolio</title>
-      <meta name="description" content="This is the personal portfolio of Whoknows, the web developer. Here you will find a showcase of my standout projects in the field of web development. Take a look at my professional experience and expertise to learn more about how I can help bring your web development projects to life." />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <div className={`${poppins.className} container ${asideOpen || menuOpen ? 'open' : ''}`}>
-      <div className='content'>
-        <BackgroundPatron open={menuOpen || asideOpen} />
-        <Aside info={basicInfo} handleAsideToggle={handleAsideToggle} open={asideOpen} menuOpen={menuOpen} />
-        <BlurFilter open={menuOpen || asideOpen} handleClick={handleMainClick} />
-        <div className='scrollContainer'>
-          <main className={'main'} >
-            {
-              loading
-                ? <Loading />
-                : <Component {...pageProps} info={basicInfo} projects={projects} />
-            }
-          </main>
+  return (
+    <>
+      <Head>
+        <title>Whoknows | Web Developer Portfolio</title>
+        <meta
+          name="description"
+          content="This is the personal portfolio of Whoknows, the web developer. Here you will find a showcase of my standout projects in the field of web development. Take a look at my professional experience and expertise to learn more about how I can help bring your web development projects to life."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div
+        className={`${poppins.className} container ${
+          asideOpen || menuOpen ? 'open' : ''
+        }`}
+      >
+        <div className="content">
+          <BackgroundPatron open={menuOpen || asideOpen} />
+          <Aside
+            info={basicInfo}
+            handleAsideToggle={handleAsideToggle}
+            open={asideOpen}
+            menuOpen={menuOpen}
+          />
+          <BlurFilter
+            open={menuOpen || asideOpen}
+            handleClick={handleMainClick}
+          />
+          <div ref={scrollableEl} className="scrollContainer">
+            <main className={'main'}>
+              {loading ? (
+                <Loading />
+              ) : (
+                <Component
+                  {...pageProps}
+                  info={basicInfo}
+                  projects={projects}
+                />
+              )}
+            </main>
+          </div>
+          <Header
+            handleMenuToggle={handleMenuToggle}
+            open={menuOpen}
+            asideOpen={asideOpen}
+            projects={projects}
+          />
         </div>
-        <Header handleMenuToggle={handleMenuToggle} open={menuOpen} asideOpen={asideOpen} projects={projects} />
       </div>
-    </div>
-    <Analytics />
-  </>
+      <Analytics />
+    </>
+  )
 }
 
 App.getInitialProps = async () => {

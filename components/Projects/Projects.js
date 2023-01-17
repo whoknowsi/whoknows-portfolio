@@ -1,4 +1,5 @@
 import styles from '../../styles/components/Projects/Projects.module.css'
+import { dateDDMMYYYYToTimestamp } from '../../utils/utils'
 import Project from '../Home/Project'
 
 const Projects = ({ projects }) => {
@@ -7,9 +8,11 @@ const Projects = ({ projects }) => {
       <h2>My projects</h2>
       <div className={styles.projectsContainer}>
         {
-          projects.map((props) => (
-            <Project key={props._id} {...props} />
-          ))
+          [...projects]
+            .sort((a, b) => dateDDMMYYYYToTimestamp(b.createdAt) - dateDDMMYYYYToTimestamp(a.createdAt))
+            .map((props) => (
+              <Project key={props._id} {...props} />
+            ))
         }
       </div>
     </>

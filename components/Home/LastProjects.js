@@ -5,6 +5,7 @@ import { useRef, useEffect, useState } from 'react'
 import { dateDDMMYYYYToTimestamp } from '../../utils/utils'
 
 const LastProjects = ({ projects }) => {
+  const maxProjectsToShow = 3
   const projectsContainer = useRef(null)
   const [maxProjectsOnLine, setMaxProjectsOnLine] = useState(null)
 
@@ -50,7 +51,7 @@ const LastProjects = ({ projects }) => {
             .sort((a, b) => dateDDMMYYYYToTimestamp(b.createdAt) - dateDDMMYYYYToTimestamp(a.createdAt))
             .slice(
               0,
-              maxProjectsOnLine > 1 ? maxProjectsOnLine : projects.length
+              maxProjectsOnLine > 1 ? maxProjectsOnLine : maxProjectsToShow
             )
             .map((props) => <Project key={props.name} {...props} />)
         ) : (

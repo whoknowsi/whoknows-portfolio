@@ -80,7 +80,7 @@
   padding: 0;
   display: flex;
   max-height: 0;
-  transition: max-height .5s ease-in-out;
+  transition: max-height .65s ease-in-out;
   z-index: 1;
   overflow: hidden;
 }
@@ -126,8 +126,4 @@
 
 .projects .active:hover {
   color: var(--text-color-vivid-light);
-}
-
-.projects.projectsOpen {
-  max-height: 10em;
 }

@@ -8,7 +8,25 @@ import { useRouter } from 'next/router'
 const Nav = ({ open, projects, handleMenuToggle }) => {
   const router = useRouter()
   const list = useRef(null)
+  const projectsList = useRef(null)
   const [projectsOpen, setProjectsOpen] = useState(false)
+  const [maxHeight, setMaxHeight] = useState(0)
+
+  const setMaxHeightOnEl = () => {
+    projectsList.current.style.maxHeight = `${maxHeight}em`
+  }
+
+  const resetMaxHeightOnEl = () => {
+    projectsList.current.style.maxHeight = '0px'
+  }
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    projectsOpen ? resetMaxHeightOnEl() : setMaxHeightOnEl()
+    setProjectsOpen(!projectsOpen)
+    !open && handleMenuToggle()
+  }
+
   useEffect(() => {
     if (!list) return
     const interval = 0.03
@@ -19,15 +37,23 @@ const Nav = ({ open, projects, handleMenuToggle }) => {
     }
   }, [list])
 
-  const handleClick = (e) => {
-    e.preventDefault()
-    setProjectsOpen(!projectsOpen)
-    !open && handleMenuToggle()
-  }
+  useEffect(() => {
+    if (!open) {
+      setProjectsOpen(false)
+      resetMaxHeightOnEl()
+    }
+  }, [open])
 
   useEffect(() => {
-    if (!open) setProjectsOpen(false)
-  }, [open])
+    const setMaxHeightOfProjectsList = () => {
+      const margin = 1
+      const projectsSpace = projects.length * 3
+      const totalHeight = projectsSpace + margin
+      return totalHeight
+    }
+
+    setMaxHeight(setMaxHeightOfProjectsList())
+  }, [projects.length])
 
   return (
     <nav className={`${styles.container} ${open ? styles.open : ''}`}>
@@ -43,7 +69,7 @@ const Nav = ({ open, projects, handleMenuToggle }) => {
               <FaFolderOpen />
               <div>Projects</div>
             </Link>
-            <ul className={`${styles.projects} ${projectsOpen ? styles.projectsOpen : ''}`}>
+            <ul ref={projectsList} className={`${styles.projects}`}>
               {
                 projects.map(({ _id, name }) => (
                     <li key={_id} className={router.query?.id === _id ? styles.active : ''}>

@@ -2,5 +2,5 @@
   display: grid;
   width: 100%;
   grid-template-columns: repeat(5, 1fr);
-  row-gap: 0.5em;
+  grid-row-gap: 0.5em;
 }

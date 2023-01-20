@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from '../../../styles/components/Projects/Project/Project.module.css'
-import { FaGithub, FaLink } from 'react-icons/fa'
+import { FaGithub, FaLink, FaCircle } from 'react-icons/fa'
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import Footer from '../../Footer'
@@ -15,7 +15,9 @@ const Project = ({ project }) => {
   useEffect(() => {
     const handleResize = () => {
       if (!slider.current.style.transform) return
-      const toTranslate = `translateX(${-getValueToTranslate() * (currentImg - 1)}px)`
+      const toTranslate = `translateX(${
+        -getValueToTranslate() * (currentImg - 1)
+      }px)`
       slider.current.style.transform = toTranslate
     }
 
@@ -30,19 +32,26 @@ const Project = ({ project }) => {
     const htmlEl = document.querySelector('body')
     const styles = getComputedStyle(htmlEl)
 
-    const emToPixels = em => Number(styles.fontSize.split('px')[0]) * Number(em.split('em')[0])
+    const emToPixels = (em) =>
+      Number(styles.fontSize.split('px')[0]) * Number(em.split('em')[0])
 
-    const maxWidth = Number(styles.getPropertyValue('--max-width').split('px')[0])
+    const maxWidth = Number(
+      styles.getPropertyValue('--max-width').split('px')[0]
+    )
     const vw = window.innerWidth
     const isMobile = window.innerWidth <= 1023
-    const headerWidth = isMobile ? 0 : emToPixels(styles.getPropertyValue('--header-width'))
-    const asideWidth = isMobile ? 0 : emToPixels(styles.getPropertyValue('--aside-width'))
+    const headerWidth = isMobile
+      ? 0
+      : emToPixels(styles.getPropertyValue('--header-width'))
+    const asideWidth = isMobile
+      ? 0
+      : emToPixels(styles.getPropertyValue('--aside-width'))
     const paddingWidth = isMobile ? emToPixels('4em') : emToPixels('6em')
 
     return Math.min(maxWidth, vw) - headerWidth - asideWidth - paddingWidth
   }
 
-  const fromTranslateToNumber = t => Number(t.split('(')[1].split('px')[0])
+  const fromTranslateToNumber = (t) => Number(t.split('(')[1].split('px')[0])
 
   const handlePrev = () => {
     if (currentImg === 2) prev.current.style.visibility = 'hidden'
@@ -50,8 +59,12 @@ const Project = ({ project }) => {
 
     next.current.style.visibility = 'visible'
 
-    const currentTranslate = fromTranslateToNumber(slider.current.style.transform)
-    const toTranslate = `translateX(${currentTranslate + getValueToTranslate()}px)`
+    const currentTranslate = fromTranslateToNumber(
+      slider.current.style.transform
+    )
+    const toTranslate = `translateX(${
+      currentTranslate + getValueToTranslate()
+    }px)`
     slider.current.style.transform = toTranslate
 
     setCurrentImage(currentImg - 1)
@@ -63,10 +76,29 @@ const Project = ({ project }) => {
 
     prev.current.style.visibility = 'visible'
 
-    const toTranslate = `translateX(-${getValueToTranslate() * (currentImg)}px)`
+    const toTranslate = `translateX(-${getValueToTranslate() * currentImg}px)`
     slider.current.style.transform = toTranslate
 
     setCurrentImage(currentImg + 1)
+  }
+
+  const handleClickSlide = (slide) => {
+    const toTranslate = `translateX(-${getValueToTranslate() * (slide - 1)}px)`
+    slider.current.style.transform = toTranslate
+
+    if (slide === media.length) {
+      next.current.style.visibility = 'hidden'
+    } else {
+      next.current.style.visibility = 'visible'
+    }
+
+    if (slide === 1) {
+      prev.current.style.visibility = 'hidden'
+    } else {
+      prev.current.style.visibility = 'visible'
+    }
+
+    setCurrentImage(slide)
   }
 
   return (
@@ -74,13 +106,28 @@ const Project = ({ project }) => {
       <div className={styles.container}>
         <h2>{name}</h2>
         <div className={styles.imagesContainer}>
-          <div ref={prev} className={styles.prev} onClick={handlePrev}><span>{'<'}</span></div>
-          <div ref={next} className={styles.next} onClick={handleNext}><span>{'>'}</span></div>
+          <div ref={prev} className={styles.prev} onClick={handlePrev}>
+            <span>{'<'}</span>
+          </div>
+          <div ref={next} className={styles.next} onClick={handleNext}>
+            <span>{'>'}</span>
+          </div>
+          <div className={styles.sliderPoints}>
+            {media.map((url, i) => (
+              <FaCircle key={'pointer ' + url} className={`${(i + 1) === currentImg && styles.selectedSlide}`} id={i} onClick={() => handleClickSlide(i + 1)} />
+            ))}
+          </div>
           <div className={styles.imagesSlider} ref={slider}>
-            {media.map((url, i) =>
-              <div key={url} className={`${styles.imageContainer} ${(currentImg - 1) === i ? styles.current : ''}`}>
+            {media.map((url, i) => (
+              <div
+                key={url}
+                className={`${styles.imageContainer} ${
+                  currentImg - 1 === i ? styles.current : ''
+                }`}
+              >
                 <Image src={url} fill alt={`${name} image ${i}`} />
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -93,10 +140,36 @@ const Project = ({ project }) => {
           </div>
           <div className={styles.details}>
             <ul>
-              <li><strong>Date:</strong>{createdAt}</li>
-              <li><strong>Status:</strong>{status}</li>
-              <li><strong>Repo:</strong><Link href={repoUrl} target="_blank" rel="noopener noreferrer" aria-label={`${name} repository`}><FaGithub /></Link></li>
-              <li><strong>Website:</strong><Link href={url} target="_blank" rel="noopener noreferrer" aria-label={`${name} website`}><FaLink /></Link></li>
+              <li>
+                <strong>Date:</strong>
+                {createdAt}
+              </li>
+              <li>
+                <strong>Status:</strong>
+                {status}
+              </li>
+              <li>
+                <strong>Repo:</strong>
+                <Link
+                  href={repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${name} repository`}
+                >
+                  <FaGithub />
+                </Link>
+              </li>
+              <li>
+                <strong>Website:</strong>
+                <Link
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${name} website`}
+                >
+                  <FaLink />
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

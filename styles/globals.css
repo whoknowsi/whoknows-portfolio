@@ -80,6 +80,14 @@ p {
   font-size: max(.9em, 12px);
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 svg {
   color: var(--text-color-gray-dark);
   user-select: none;

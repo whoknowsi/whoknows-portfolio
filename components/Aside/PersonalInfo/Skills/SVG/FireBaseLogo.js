@@ -8,7 +8,8 @@ const FireBaseLogo = ({ width, height, colors, hoverColors, name }) => {
         d="m19.62 11.558-3.203 2.98-2.972-5.995 1.538-3.448c.4-.7 1.024-.692 1.414 0z"
       />
       <path
-        fill={currentColors.lightBackgroundColor}
+        fill={currentColors.darkGrayColor}
+        opacity={0.5}
         d="m13.445 8.543 2.972 5.995-11.97 11.135z"
       />
       <path

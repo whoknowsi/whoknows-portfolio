@@ -13,7 +13,7 @@ export default function Navigation({ basicInfo, projects, children }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [asideOpen, setAsideOpen] = useState(false)
   const [loading, setLoading] = useState(false)
-  const timeoutRef = useRef(null)
+  const timeoutRefEnd = useRef(null)
   const scrollableEl = useRef(null)
   const handleMenuToggle = () => setMenuOpen(!menuOpen)
   const handleAsideToggle = () => setAsideOpen(!asideOpen)
@@ -21,11 +21,11 @@ export default function Navigation({ basicInfo, projects, children }) {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   useEffect(() => {
-    if(timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
-      timeoutRef.current = null
-    }
-    setLoading(false)
+    timeoutRefEnd.current = setTimeout(() => {
+      setLoading(false)
+      timeoutRefEnd.current = null
+    }, 300)
+
   }, [pathname, searchParams])
 
   const startLoading = (path) => {
@@ -34,9 +34,13 @@ export default function Navigation({ basicInfo, projects, children }) {
     scrollableEl.current?.scrollTo(0, 0)
 
     if(path === pathname) return 
-    timeoutRef.current = setTimeout(() => {
-      setLoading(true)
-    }, 100)
+
+    if(timeoutRefEnd.current) {
+      clearTimeout(timeoutRefEnd.current)
+      timeoutRefEnd.current = null
+    }
+
+    setLoading(true)
   }
 
   const handleMainClick = () => {

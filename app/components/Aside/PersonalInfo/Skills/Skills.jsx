@@ -49,38 +49,40 @@ const Skills = ({ skills }) => {
   const [props, setProps] = useState(null)
 
   useEffect(() => {
-    const htmlEl = document.querySelector('html')
-    const styles = getComputedStyle(htmlEl)
+    setTimeout(() => {
+      const htmlEl = document.querySelector('html')
+      const styles = getComputedStyle(htmlEl)
 
-    const grayColor = styles.getPropertyValue('--text-color-gray-semi-dark')
-    const darkGrayColor = styles.getPropertyValue('--text-color-gray-dark')
-    const backgroundColor = styles.getPropertyValue('--back-color')
-    const lightBackgroundColor = styles.getPropertyValue('--middle-color-light')
+      const grayColor = styles.getPropertyValue('--text-color-gray-semi-dark')
+      const darkGrayColor = styles.getPropertyValue('--text-color-gray-dark')
+      const backgroundColor = styles.getPropertyValue('--back-color')
+      const lightBackgroundColor = styles.getPropertyValue('--middle-color-light')
 
-    const grayColorHover = styles.getPropertyValue('--text-color-vivid')
-    const darkGrayColorHover = styles.getPropertyValue('--text-color-vivid-dark')
+      const grayColorHover = styles.getPropertyValue('--text-color-vivid')
+      const darkGrayColorHover = styles.getPropertyValue('--text-color-vivid-dark')
 
-    setProps({
-      colors: {
-        grayColor,
-        darkGrayColor,
-        backgroundColor,
-        lightBackgroundColor
-      },
-      hoverColors: {
-        grayColor: grayColorHover,
-        darkGrayColor: darkGrayColorHover,
-        backgroundColor,
-        lightBackgroundColor
-      },
-      width: 32,
-      height: 32
-    })
+      setProps({
+        colors: {
+          grayColor,
+          darkGrayColor,
+          backgroundColor,
+          lightBackgroundColor
+        },
+        hoverColors: {
+          grayColor: grayColorHover,
+          darkGrayColor: darkGrayColorHover,
+          backgroundColor,
+          lightBackgroundColor
+        },
+        width: 32,
+        height: 32
+      })
+    }, 100)   
   }, [])
 
   const SkillsMapped = () => {
     return (
-      skills.map((skill) => {
+      props && skills.map((skill) => {
         const foundSkill = skillsList.find(x => skill === (Object.keys(x)[0]).toString())
         const Component = foundSkill ? Object.values(foundSkill)[0] : NoLogo
         const label = skill

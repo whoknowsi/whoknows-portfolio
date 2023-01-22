@@ -77,7 +77,7 @@ const Skills = ({ skills }) => {
         width: 32,
         height: 32
       })
-    }, 100)   
+    }, 50)   
   }, [])
 
   const SkillsMapped = () => {

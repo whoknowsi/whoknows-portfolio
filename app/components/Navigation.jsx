@@ -7,6 +7,7 @@ import BackgroundPatron from './Background/BackgroundPatron'
 import BlurFilter from './BlurFilter/BlurFilter'
 import {usePathname, useSearchParams} from 'next/navigation'
 import Loading from './loading'
+import Footer from './Footer/Footer'
 
 export default function Navigation({ basicInfo, projects, children }) {
   
@@ -51,7 +52,10 @@ export default function Navigation({ basicInfo, projects, children }) {
   return (
     <div className={`content ${asideOpen || menuOpen ? 'open' : ''}`}>
       <div ref={scrollableEl} className="scrollContainer">
-        {loading ? <Loading /> : children}
+        <main className={'main'}>
+          {loading ? <Loading /> : children}
+          {!loading && <Footer /> }
+        </main>
       </div>
       <Aside info={basicInfo} handleAsideToggle={handleAsideToggle} open={asideOpen} menuOpen={menuOpen} loading={startLoading} />
       <BackgroundPatron open={menuOpen || asideOpen} />

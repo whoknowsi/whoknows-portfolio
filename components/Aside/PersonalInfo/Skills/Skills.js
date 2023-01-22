@@ -17,6 +17,10 @@ import ReactNativeLogo from './SVG/ReactNativeLogo'
 import TypeScriptLogo from './SVG/TypeScriptLogo'
 import WordPressLogo from './SVG/WordPressLogo'
 import NoLogo from './SVG/NoLogo'
+import PlaywrightLogo from './SVG/PlaywrightLogo'
+import VueJsLogo from './SVG/VueJsLogo'
+import TailwindcssLogo from './SVG/TailwindcssLogo'
+import ReduxLogo from './SVG/ReduxLogo'
 
 const skillsList = [
   { HTML: HtmlLogo },
@@ -34,7 +38,11 @@ const skillsList = [
   { MongoDB: MongoDBLogo },
   { MySQL: MySQLLogo },
   { Firebase: FireBaseLogo },
-  { WordPress: WordPressLogo }
+  { WordPress: WordPressLogo },
+  { Playwright: PlaywrightLogo },
+  { 'Vue.js': VueJsLogo },
+  { Tailwindcss: TailwindcssLogo },
+  { Redux: ReduxLogo }
 ]
 
 const Skills = ({ skills }) => {

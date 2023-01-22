@@ -16,6 +16,7 @@ export default async function RootLayout ({ children }) {
     <html lang="en">
       <Head />
       <body>
+        <script>0</script>
         <div className={`${poppins.className} container`}>
             <Navigation basicInfo={basicInfo} projects={projects}>
               <main className={'main'}>

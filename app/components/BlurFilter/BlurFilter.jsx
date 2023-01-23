@@ -1,11 +1,9 @@
 'use client'
 
-import styles from './styles/BlurFilter.module.css'
+import { BlurFilterContainer } from './styles/BlurFilter.styledComponents'
 
 const BlurFilter = ({ open, handleClick }) => {
-  return (
-    <div className={`${styles.container} ${open ? styles.open : ''}`} onClick={handleClick}></div>
-  )
+  return <BlurFilterContainer menuOpen={open} onClick={handleClick}></BlurFilterContainer>
 }
 
 export default BlurFilter

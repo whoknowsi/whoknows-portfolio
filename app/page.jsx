@@ -3,6 +3,7 @@ import Title from './components/Title'
 import { getProjects } from '@/services/projects'
 import { getBasicInfo } from '@/services/basic-info'
 import Head from './head'
+import Footer from './components/Footer/Footer'
 
 export default async function Home () {
   const projects = await getProjects()
@@ -15,6 +16,7 @@ export default async function Home () {
       </Head>
       <Title name={basicInfo.name} lastName={basicInfo.lastName} nickname={basicInfo.nickName} />
       <LastProjects projects={projects} />
+      <Footer />
     </>
   )
 }

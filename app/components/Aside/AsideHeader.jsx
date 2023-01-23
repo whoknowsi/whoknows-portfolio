@@ -6,7 +6,7 @@ export const AsideHeader = ({ name, lastName, description, handleMainClick }) =>
     <AsideHeaderContainer>
       <ProfilePictureContainer>
         <Link href="/" onClick={handleMainClick}>
-          <StyledImage priority={true} src="/images/portrait.jpg" width="1944" height="2025" alt="portrait photo" />
+          <StyledImage priority={true} src="/images/portrait.jpg" width="288" height="300" alt="portrait photo" />
         </Link>
       </ProfilePictureContainer>
       <DescriptionContainer>

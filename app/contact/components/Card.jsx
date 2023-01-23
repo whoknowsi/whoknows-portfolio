@@ -1,13 +1,13 @@
 import Link from 'next/link'
-import styles from './styles/Card.module.css'
+import { CardContainer, CardLi } from './styles/ContactInformation.styledComponents'
 
 const Card = ({ data }) => {
   return (
-    <div className={styles.container}>
+    <CardContainer>
       <ul>
         {data.map(({ name, description, url, Icon }) => {
           return (
-            <li key={name}>
+            <CardLi key={name}>
               <strong>{name}</strong>
                 {url
                   ? <Link rel="noopener noreferrer" target="_blank" href={url} aria-label={name}>
@@ -18,11 +18,11 @@ const Card = ({ data }) => {
                   </Link>
                   : description
                 }
-            </li>
+            </CardLi>
           )
         })}
       </ul>
-    </div>
+    </CardContainer>
   )
 }
 

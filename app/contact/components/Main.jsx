@@ -1,3 +1,5 @@
+'use client'
+
 import ContactForm from './ContactForm'
 import ContactInformation from './ContactInformation'
 

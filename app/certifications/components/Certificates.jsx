@@ -1,16 +1,18 @@
-import styles from './styles/Certificates.module.css'
+'use client'
+
+import { CertificatesContainer, StyledCertificateSection } from './styles/Certificates.styledComponents'
 import Certificate from './Certificate'
 
 const Certificates = ({ certificates }) => {
   return (
-    <div className={styles.container}>
+    <StyledCertificateSection>
       <h2>Certifications</h2>
-      <div className={styles.certificatesContainer}>
+      <CertificatesContainer>
           {certificates.map((certificate) => (
             <Certificate key={certificate.credentialId} certificate={certificate} />
           ))}
-      </div>
-    </div>
+      </CertificatesContainer>
+    </StyledCertificateSection>
   )
 }
 

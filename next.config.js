@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  compiler: {
+    styledComponents: true
+  },
   experimental: {
-    appDir: true,
+    appDir: true
   },
   env: {
     API_BASE_URL: 'https://personal-data-api.vercel.app',

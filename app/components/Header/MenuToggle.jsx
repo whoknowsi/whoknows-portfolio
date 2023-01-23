@@ -1,15 +1,15 @@
 'use client'
 
 import { FaBars } from 'react-icons/fa'
-import styles from './styles/MenuTogge.module.css'
+import { MenuToggleContainer, MenuToggleButton } from './styles/MenuToggle.styledComponents'
 
 const MenuToggle = ({ handleMenuToggle, open, asideOpen }) => {
   return (
-    <div className={styles.container}>
-      <button className={`${styles.menuToggle} ${open ? styles.open : asideOpen ? styles.asideOpen : ''}`} onClick={ handleMenuToggle } aria-label="hamburger menu">
+    <MenuToggleContainer>
+      <MenuToggleButton menuOpen={open} asideOpen={asideOpen} onClick={ handleMenuToggle } aria-label="hamburger menu">
         <FaBars />
-      </button>
-    </div>
+      </MenuToggleButton>
+    </MenuToggleContainer>
   )
 }
 

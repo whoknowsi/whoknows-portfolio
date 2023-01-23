@@ -1,10 +1,10 @@
-import styles from './styles/Footer.module.css'
+import { StyledFooter } from './styles/Footer.styledComponents'
 
 const Footer = () => {
   return (
-    <div className={styles.container}>
-        <span>Thanks for visiting ♥</span>
-    </div>
+    <StyledFooter>
+      <span>Thanks for visiting ♥</span>
+    </StyledFooter>
   )
 }
 

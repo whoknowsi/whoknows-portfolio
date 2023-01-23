@@ -5,12 +5,11 @@ import Aside from './Aside/Aside'
 import Header from './Header/Header'
 import BackgroundPatron from './Background/BackgroundPatron'
 import BlurFilter from './BlurFilter/BlurFilter'
-import {usePathname, useSearchParams} from 'next/navigation'
+import { usePathname, useSearchParams } from 'next/navigation'
 import Loading from './loading'
 import Footer from './Footer/Footer'
 
-export default function Navigation({ basicInfo, projects, children }) {
-  
+export default function Navigation ({ basicInfo, projects, children }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [asideOpen, setAsideOpen] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -26,7 +25,6 @@ export default function Navigation({ basicInfo, projects, children }) {
       setLoading(false)
       timeoutRefEnd.current = null
     }, 300)
-
   }, [pathname, searchParams])
 
   const startLoading = (path) => {
@@ -34,9 +32,9 @@ export default function Navigation({ basicInfo, projects, children }) {
     setAsideOpen(false)
     scrollableEl.current?.scrollTo(0, 0)
 
-    if(path === pathname) return 
+    if (path === pathname) return
 
-    if(timeoutRefEnd.current) {
+    if (timeoutRefEnd.current) {
       clearTimeout(timeoutRefEnd.current)
       timeoutRefEnd.current = null
     }
@@ -54,13 +52,25 @@ export default function Navigation({ basicInfo, projects, children }) {
       <div ref={scrollableEl} className="scrollContainer">
         <main className={'main'}>
           {loading ? <Loading /> : children}
-          {!loading && <Footer /> }
+          {!loading && <Footer />}
         </main>
       </div>
-      <Aside info={basicInfo} handleAsideToggle={handleAsideToggle} open={asideOpen} menuOpen={menuOpen} loading={startLoading} />
+      <Aside
+        info={basicInfo}
+        handleAsideToggle={handleAsideToggle}
+        open={asideOpen}
+        menuOpen={menuOpen}
+        loading={startLoading}
+      />
       <BackgroundPatron open={menuOpen || asideOpen} />
       <BlurFilter open={menuOpen || asideOpen} handleClick={handleMainClick} />
-      <Header handleMenuToggle={handleMenuToggle} open={menuOpen} asideOpen={asideOpen} projects={projects} loading={startLoading}/>
+      <Header
+        handleMenuToggle={handleMenuToggle}
+        open={menuOpen}
+        asideOpen={asideOpen}
+        projects={projects}
+        loading={startLoading}
+      />
     </div>
   )
 }

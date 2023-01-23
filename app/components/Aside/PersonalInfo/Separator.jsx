@@ -1,12 +1,12 @@
-import styles from './styles/Separator.module.css'
+import { SeparatorContainer, SeparatorHr } from './styles/PersonalInfo.styledComponents'
 
 const Separator = ({ title }) => {
   return (
-    <div className={styles.container}>
-      <hr />
+    <SeparatorContainer>
+      <SeparatorHr />
       <h3>{title}</h3>
-      <hr />
-    </div>
+      <SeparatorHr />
+    </SeparatorContainer>
   )
 }
 

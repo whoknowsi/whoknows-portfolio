@@ -1,5 +1,3 @@
-import styles from './styles/Skills.module.css'
-import { useEffect, useState } from 'react'
 import BootstrapLogo from './SVG/BootstrapLogo'
 import CssLogo from './SVG/CssLogo'
 import ExpressJsLogo from './SVG/ExpressJsLogo'
@@ -21,6 +19,7 @@ import PlaywrightLogo from './SVG/PlaywrightLogo'
 import VueJsLogo from './SVG/VueJsLogo'
 import TailwindcssLogo from './SVG/TailwindcssLogo'
 import ReduxLogo from './SVG/ReduxLogo'
+import { SkillsContainer } from './styles/Skills.styledComponents'
 
 const skillsList = [
   { HTML: HtmlLogo },
@@ -45,58 +44,18 @@ const skillsList = [
   { Redux: ReduxLogo }
 ]
 
-const Skills = ({ skills }) => {
-  const [props, setProps] = useState(null)
-
-  useEffect(() => {
-    setTimeout(() => {
-      const htmlEl = document.querySelector('html')
-      const styles = getComputedStyle(htmlEl)
-
-      const grayColor = styles.getPropertyValue('--text-color-gray-semi-dark')
-      const darkGrayColor = styles.getPropertyValue('--text-color-gray-dark')
-      const backgroundColor = styles.getPropertyValue('--back-color')
-      const lightBackgroundColor = styles.getPropertyValue('--middle-color-light')
-
-      const grayColorHover = styles.getPropertyValue('--text-color-vivid')
-      const darkGrayColorHover = styles.getPropertyValue('--text-color-vivid-dark')
-
-      setProps({
-        colors: {
-          grayColor,
-          darkGrayColor,
-          backgroundColor,
-          lightBackgroundColor
-        },
-        hoverColors: {
-          grayColor: grayColorHover,
-          darkGrayColor: darkGrayColorHover,
-          backgroundColor,
-          lightBackgroundColor
-        },
-        width: 32,
-        height: 32
-      })
-    }, 50)   
-  }, [])
-
-  const SkillsMapped = () => {
-    return (
-      props && skills.map((skill) => {
+const Skills = ({ skills }) => (
+  <SkillsContainer>
+    {
+      skills.map((skill) => {
         const foundSkill = skillsList.find(x => skill === (Object.keys(x)[0]).toString())
         const Component = foundSkill ? Object.values(foundSkill)[0] : NoLogo
         const label = skill
 
-        return <Component key={label} name={label} {...props} />
+        return <Component key={label} name={label} />
       })
-    )
-  }
-
-  return (
-    <div className={styles.container}>
-      { props && SkillsMapped() }
-    </div>
-  )
-}
+    }
+  </SkillsContainer>
+)
 
 export default Skills

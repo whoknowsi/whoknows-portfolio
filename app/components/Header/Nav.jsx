@@ -1,11 +1,9 @@
 'use client'
-
-import styles from './styles/Nav.module.css'
-import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { FaFolderOpen, FaCloud, FaCertificate, FaAddressBook } from 'react-icons/fa'
 import { IoHome } from 'react-icons/io5'
 import { usePathname } from 'next/navigation'
+import { NavLi, NavLink, NavUl, ProjectsLi, ProjectsLink, ProjectsUl, StyledNav } from './styles/Nav.styledComponents'
 
 const Nav = ({ open, projects, handleMenuToggle, loading }) => {
   const pathname = usePathname()
@@ -62,51 +60,49 @@ const Nav = ({ open, projects, handleMenuToggle, loading }) => {
   }
 
   return (
-    <nav className={`${styles.container} ${open ? styles.open : ''}`}>
-        <ul ref={list}>
-          <li className={pathname === '/' ? styles.active : ''}>
-            <Link href={'/'} onClick={() => setLoading('/')}>
-              <IoHome />
-              <div>Home</div>
-            </Link>
-          </li>
-          <li className={pathname.includes('/projects') ? styles.active : ''}>
-            <Link href={'/projects'} onClick={handleClick}>
-              <FaFolderOpen />
-              <div>Projects</div>
-            </Link>
-            <ul ref={projectsList} className={`${styles.projects}`}>
-              {
-                projects.map(({ _id, name }) => (
-                    <li key={_id} className={pathname.includes(_id) ? styles.active : ''}>
-                      <Link href={`/projects/${_id}`} onClick={() => setLoading(`/projects/${_id}`)}>
-                        <span>{name}</span>
-                      </Link>
-                    </li>
-                ))
-              }
-            </ul>
-          </li>
-          <li className={pathname === '/deployments' ? styles.active : ''}>
-            <Link href={'/deployments'} onClick={() => setLoading('/deployments')}>
-              <FaCloud />
-              <div>Deployments</div>
-            </Link>
-          </li>
-          <li className={pathname === '/certifications' ? styles.active : ''}>
-            <Link href={'/certifications'} onClick={() => setLoading('/certifications')}>
-              <FaCertificate />
-              <div>Certifications</div>
-            </Link>
-          </li>
-          <li className={pathname === '/contact' ? styles.active : ''}>
-            <Link href={'/contact'} onClick={() => setLoading('/contact')}>
-              <FaAddressBook />
-              <div>Contact</div>
-            </Link>
-          </li>
-        </ul>
-    </nav>
+    <StyledNav open={open}>
+      <NavUl ref={list}>
+        <NavLi active={pathname === '/'}>
+          <NavLink href={'/'} onClick={() => setLoading('/')}>
+            <IoHome />
+            <div>Home</div>
+          </NavLink>
+        </NavLi>
+        <NavLi active={pathname.includes('/projects')}>
+          <NavLink href={'/projects'} onClick={handleClick}>
+            <FaFolderOpen />
+            <div>Projects</div>
+          </NavLink>
+          <ProjectsUl ref={projectsList}>
+            {projects.map(({ _id, name }) => (
+              <ProjectsLi key={_id} active={pathname.includes(_id)}>
+                <ProjectsLink href={`/projects/${_id}`} onClick={() => setLoading(`/projects/${_id}`)}>
+                  <span>{name}</span>
+                </ProjectsLink>
+              </ProjectsLi>
+            ))}
+          </ProjectsUl>
+        </NavLi>
+        <NavLi active={pathname === '/deployments'}>
+          <NavLink href={'/deployments'} onClick={() => setLoading('/deployments')}>
+            <FaCloud />
+            <div>Deployments</div>
+          </NavLink>
+        </NavLi>
+        <NavLi active={pathname === '/certifications'}>
+          <NavLink href={'/certifications'} onClick={() => setLoading('/certifications')}>
+            <FaCertificate />
+            <div>Certifications</div>
+          </NavLink>
+        </NavLi>
+        <NavLi active={pathname === '/contact'}>
+          <NavLink href={'/contact'} onClick={() => setLoading('/contact')}>
+            <FaAddressBook />
+            <div>Contact</div>
+          </NavLink>
+        </NavLi>
+      </NavUl>
+    </StyledNav>
   )
 }
 

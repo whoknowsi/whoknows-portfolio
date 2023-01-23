@@ -1,4 +1,4 @@
-export default function Head ({children}) {
+export default function Head ({ children }) {
   return (
     <>
         {children && children}

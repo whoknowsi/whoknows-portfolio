@@ -1,40 +1,35 @@
 'use client'
 
 import { Oval } from 'react-loader-spinner'
-import { useEffect, useState } from 'react'
+import styled from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
-const Loading = () => {
-  const [colors, setColors] = useState([])
+export const Container = styled.div`
+  height: calc(100vh - 6em);
+  max-height: 80em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  useEffect(() => {
-    const body = document.querySelector('body')
-    const styles = getComputedStyle(body)
-    const color = styles.getPropertyValue('--text-color-vivid')
-    const secondaryColor = styles.getPropertyValue('--text-color-vivid-dark')
-    setColors([color, secondaryColor])
+  & svg {
+    width: 3em;
+    height: 3em;
+  }
+`
 
-    body.classList.add('loading')
-    return body.classList.remove('loading')
-  }, [])
-
-  return (
-    <div className='loadingContainer'>
-      {
-        colors.length !== 0 && (
-          <Oval
-            color={colors[0]}
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-            ariaLabel='oval-loading'
-            secondaryColor={colors[1]}
-            strokeWidth={2}
-            strokeWidthSecondary={2}
-          >Loading</Oval>
-        )
-      }
-    </div>
-  )
-}
+const Loading = () => (
+  <Container>
+      <Oval
+        color={theme.colors.textVivid}
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+        ariaLabel='oval-loading'
+        secondaryColor={theme.colors.textVividDark}
+        strokeWidth={2}
+        strokeWidthSecondary={2}
+      >Loading</Oval>
+  </Container>
+)
 
 export default Loading

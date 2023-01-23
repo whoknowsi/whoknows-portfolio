@@ -1,6 +1,6 @@
-import Head from '@/app/head'
 import { getProjects } from '@/services/projects'
-import Main from './components/Main'
+import Head from '@/app/head'
+import Projects from './components/Projects'
 
 export default async function Contact () {
   const projects = await getProjects()
@@ -10,7 +10,7 @@ export default async function Contact () {
       <Head>
         <title>{'Whoknows | Projects'}</title>
       </Head>
-      <Main projects={projects} />
+      <Projects projects={projects} />
     </>
   )
 }

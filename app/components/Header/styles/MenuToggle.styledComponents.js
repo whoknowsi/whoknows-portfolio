@@ -41,6 +41,7 @@ export const MenuToggleButton = styled.button`
     ${({ asideOpen }) =>
       asideOpen &&
       ` 
+        pointer-events: none;
         opacity: 0.5;
       `}
   }

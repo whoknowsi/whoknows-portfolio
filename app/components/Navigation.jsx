@@ -9,8 +9,14 @@ export default function Navigation ({ basicInfo, projects, children }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [asideOpen, setAsideOpen] = useState(false)
 
-  const handleMenuToggle = () => setMenuOpen(!menuOpen)
-  const handleAsideToggle = () => setAsideOpen(!asideOpen)
+  const handleMenuToggle = () => {
+    if (!menuOpen && asideOpen) setAsideOpen(false)
+    setMenuOpen(!menuOpen)
+  }
+  const handleAsideToggle = () => {
+    if (!asideOpen && menuOpen) setMenuOpen(false)
+    setAsideOpen(!asideOpen)
+  }
 
   const handleMainClick = () => {
     if (menuOpen) setMenuOpen(false)

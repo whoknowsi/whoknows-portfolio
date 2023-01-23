@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
 export const BlurFilterContainer = styled.div`
   position: absolute;
@@ -21,7 +22,7 @@ export const BlurFilterContainer = styled.div`
       pointer-events: all !important;
     `}
 
-  @media ${({ theme }) => theme.device.md} {
+  @media ${theme.device.md} {
     backdrop-filter: blur(0px);
   }
 `

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
 export const Container = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ export const Container = styled.div`
   z-index: 10;
 `
 export const Span = styled.span`
-  color: ${({ theme }) => theme.colors.textVivid};
+  color: ${theme.colors.textVivid};
   font-size: 1.1em;
 `
 
@@ -18,6 +19,6 @@ export const Strong = styled.strong`
 
 export const IntroductionContainer = styled.div`
   padding: 2em;
-  background-color: ${({ theme }) => theme.colors.middleLight};
-  box-shadow: ${({ theme }) => theme.shadows.borderShadowBlock};
+  background-color: ${theme.colors.middleLight};
+  box-shadow: ${theme.shadows.borderShadowBlock};
 `

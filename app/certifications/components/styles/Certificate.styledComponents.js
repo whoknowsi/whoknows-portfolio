@@ -1,4 +1,5 @@
 import styled, { keyframes, css } from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
 export const CertificateSectionContainer = styled.article`
   position: relative;
@@ -48,7 +49,7 @@ export const CertificateContainer = styled.div`
     border-top-right-radius: 50%;
   }
 
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${theme.device.xs} {
     margin-right: 2.5em;
   }
 `

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
 export const HeaderContainer = styled.header`
   position: absolute;
@@ -6,10 +7,10 @@ export const HeaderContainer = styled.header`
   top: 0;
   bottom: 0;
 
-  @media ${({ theme }) => theme.device.md} {
+  @media ${theme.device.md} {
     position: fixed;
-    height: ${({ theme }) => theme.header.height};
-    background-color: ${({ theme }) => theme.colors.back};
+    height: ${theme.header.height};
+    background-color: ${theme.colors.back};
     left: 0;
     right: 0;
     top: 0;
@@ -27,15 +28,15 @@ export const MenuContainer = styled.div`
   bottom: 0;
   display: flex;
   flex-direction: column;
-  width: ${({ theme }) => theme.header.widthOpen};
-  transform: translateX(calc(${({ theme }) => theme.header.widthOpen} - ${({ theme }) => theme.header.width}));
-  transition: transform ${({ theme }) => theme.transitions.menuOpenTime} ${({ theme }) => theme.transitions.menuOpenEase};
+  width: ${theme.header.widthOpen};
+  transform: translateX(calc(${theme.header.widthOpen} - ${theme.header.width}));
+  transition: transform ${theme.transitions.menuOpenTime} ${theme.transitions.menuOpenEase};
   z-index: 25;
 
   & > * {
-    -webkit-box-shadow: ${({ theme }) => theme.shadows.borderShadow};
-    -moz-box-shadow: ${({ theme }) => theme.shadows.borderShadow};
-    box-shadow: ${({ theme }) => theme.shadows.borderShadow};
+    -webkit-box-shadow: ${theme.shadows.borderShadow};
+    -moz-box-shadow: ${theme.shadows.borderShadow};
+    box-shadow: ${theme.shadows.borderShadow};
   }
 
   ${({ menuOpen }) =>
@@ -47,8 +48,8 @@ export const MenuContainer = styled.div`
     }
   `}
 
-  @media ${({ theme }) => theme.device.md} {
-    transform: translateX(${({ theme }) => theme.header.widthOpen});
+  @media ${theme.device.md} {
+    transform: translateX(${theme.header.widthOpen});
     position: fixed;
     top: 0;
     right: 0;

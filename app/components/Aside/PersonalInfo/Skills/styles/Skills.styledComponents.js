@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
 export const SkillsContainer = styled.div`
   display: grid;
@@ -9,7 +10,7 @@ export const SkillsContainer = styled.div`
 
 export const Bubble = styled.div`
   position: absolute;
-  background-color: ${({ theme }) => theme.colors.textVivid};
+  background-color: ${theme.colors.textVivid};
   color: var(--middle-color);
   padding: 0.40em 1em;
   bottom: calc(2.7em * 1.2);
@@ -21,7 +22,7 @@ export const Bubble = styled.div`
   font-size: .8em;
   font-weight: 500;
   z-index: 50;
-  border: 3px solid ${({ theme }) => theme.colors.textVivid};
+  border: 3px solid ${theme.colors.textVivid};
   text-align: center;
   transform: translateY(.1em);
 
@@ -34,7 +35,7 @@ export const Bubble = styled.div`
     width: 0;
     height: 0;
     border: 0.75em solid transparent;
-    border-top-color: ${({ theme }) => theme.colors.textVivid};
+    border-top-color: ${theme.colors.textVivid};
     border-bottom: none;
     z-index: 55;
 `

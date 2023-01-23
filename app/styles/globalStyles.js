@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -22,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
     --menu-open-cubic: ease-out;
     --border-shadow: 0px 0px 7px 0px rgba(15, 15, 20, 0.2);
     --border-shadow-block: 0px 2.5px 12px 0 rgb(15 15 20 / 20%);
-    --montain-gradient: linear-gradient(0deg, ${({ theme }) => theme.colors.front} 0%, ${({ theme }) => theme.transitions.middle} 100%);
+    --montain-gradient: linear-gradient(0deg, ${theme.colors.front} 0%, ${theme.transitions.middle} 100%);
     --svg-basic-height: 1.5em;
     --aside-width: 18em;
     --header-width: 5em;
@@ -41,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     max-width: 100vw;
     overflow: hidden;
-    font-family: ${({ theme }) => theme.fonts.poppins}, sans-serif;
+    font-family: ${theme.fonts.poppins}, sans-serif;
     font-size: clamp(.9em, 1em, min(1.7vh, 1em));
   }
 
@@ -63,7 +64,7 @@ const GlobalStyle = createGlobalStyle`
   h2,
   h3,
   h4 {
-    color: ${({ theme }) => theme.colors.textHighlight};
+    color: ${theme.colors.textHighlight};
   }
 
   h1 {
@@ -79,7 +80,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    color: ${({ theme }) => theme.colors.textGray};
+    color: ${theme.colors.textGray};
     font-size: max(.9em, 12px);
   }
 
@@ -92,16 +93,16 @@ const GlobalStyle = createGlobalStyle`
   }
 
   svg {
-    color: ${({ theme }) => theme.colors.textGrayDark};
+    color: ${theme.colors.textGrayDark};
     user-select: none;
-    height: ${({ theme }) => theme.svg.height};
+    height: ${theme.svg.height};
     width: auto;
     transition: color .3s ease-in-out;
   }
 
 
   svg:hover {
-    color: ${({ theme }) => theme.colors.textHighlight}
+    color: ${theme.colors.textHighlight}
   }
 
   a {
@@ -111,7 +112,7 @@ const GlobalStyle = createGlobalStyle`
 
 
   .container {
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: ${theme.colors.background};
     height: 100vh;
     width: 100vw;
     padding: 1em;
@@ -121,8 +122,8 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     width: 100%;
     height: 100%;
-    max-width: calc(${({ theme }) => theme.root.maxWidth} - 2em);
-    background: linear-gradient(0deg, ${({ theme }) => theme.colors.backgroundFront} 0%, ${({ theme }) => theme.colors.front} 100%);
+    max-width: calc(${theme.root.maxWidth} - 2em);
+    background: linear-gradient(0deg, ${theme.colors.backgroundFront} 0%, ${theme.colors.front} 100%);
     -webkit-box-shadow: 0px 0px 20px 0px rgba(20, 20, 30, .2);
     -moz-box-shadow: 0px 0px 20px 0px rgba(20, 20, 30, .2);
     box-shadow: 0px 0px 20px 0px rgba(20, 20, 30, .2);
@@ -133,13 +134,13 @@ const GlobalStyle = createGlobalStyle`
 
   .scrollContainer {
     position: absolute;
-    left:${({ theme }) => theme.aside.width};
+    left:${theme.aside.width};
     bottom: 0;
     top: 0;
-    right: ${({ theme }) => theme.header.width};
+    right: ${theme.header.width};
     z-index: 5;
     overflow-y: overlay;
-    transition: transform ${({ theme }) => theme.transitions.menuOpenTime} ${({ theme }) => theme.transitions.menuOpenEase};
+    transition: transform ${theme.transitions.menuOpenTime} ${theme.transitions.menuOpenEase};
   }
 
   .main {
@@ -148,7 +149,7 @@ const GlobalStyle = createGlobalStyle`
     justify-content: center;
     align-items: center;
     gap: 1em;
-    transition: transform ${({ theme }) => theme.transitions.menuOpenTime} ${({ theme }) => theme.transitions.menuOpenEase};
+    transition: transform ${theme.transitions.menuOpenTime} ${theme.transitions.menuOpenEase};
     padding: 2em;
   }
 
@@ -183,11 +184,11 @@ const GlobalStyle = createGlobalStyle`
   input:-webkit-autofill:focus, 
   input:-webkit-autofill:active,
   input:-internal-autofill-selected {
-      -webkit-box-shadow: 0 0 0px 5em ${({ theme }) => theme.colors.middle} inset;
-      -webkit-text-fill-color: ${({ theme }) => theme.colors.textHightlight} !important;
+      -webkit-box-shadow: 0 0 0px 5em ${theme.colors.middle} inset;
+      -webkit-text-fill-color: ${theme.colors.textHightlight} !important;
   }
 
-  @media ${({ theme }) => theme.device.md} { {
+  @media ${theme.device.md} { {
     .container {
       padding: 0;
       position: absolute;
@@ -209,7 +210,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .main {
-      margin-top: ${({ theme }) => theme.header.height};
+      margin-top: ${theme.header.height};
       padding: 2em;
       height: fit-content;
     }

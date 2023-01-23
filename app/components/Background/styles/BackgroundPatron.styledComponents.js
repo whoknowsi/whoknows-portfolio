@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
 export const BackgourndPatronContainer = styled.div`
   position: absolute;
@@ -7,7 +8,7 @@ export const BackgourndPatronContainer = styled.div`
   bottom: 0;
   filter: blur(1px) brightness(1);
   opacity: 0.5;
-  transition: transform ${({ theme }) => theme.transitions.menuOpenTime} ${({ theme }) => theme.transitions.menuOpenEase};
+  transition: transform ${theme.transitions.menuOpenTime} ${theme.transitions.menuOpenEase};
   width: 100vw;
   overflow: hidden;
 
@@ -21,7 +22,7 @@ export const BackgourndPatronContainer = styled.div`
     `
   }
 
-  @media ${({ theme }) => theme.device.md} {
+  @media ${theme.device.md} {
     ${({ menuOpen }) =>
       menuOpen && `
         transform: translateX(0em);

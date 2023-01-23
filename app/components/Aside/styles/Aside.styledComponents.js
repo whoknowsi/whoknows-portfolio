@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
 export const AsideContainer = styled.aside`
   position: absolute;
@@ -16,14 +17,14 @@ export const AsideContainer = styled.aside`
   z-index: 25;
   pointer-events: all !important;
 
-  @media ${({ theme }) => theme.device.md} {
+  @media ${theme.device.md} {
     position: fixed;
     height: auto;
     left: 0;
     top: 0;
     bottom: 0;
     transform: translateX(-100%);
-    transition: transform ${({ theme }) => theme.transitions.menuOpenTime} ${({ theme }) => theme.transitions.menuOpenEase};
+    transition: transform ${theme.transitions.menuOpenTime} ${theme.transitions.menuOpenEase};
 
     ${({ asideOpen }) => asideOpen && `
         transform: translateX(0);
@@ -45,9 +46,9 @@ export const Button = styled.button`
   background: none;
   font-size: 1em;
   right: 2em;
-  top: calc(${({ theme }) => theme.header.height} / 2 - ${({ theme }) => theme.svg.height} / 2);
+  top: calc(${theme.header.height} / 2 - ${theme.svg.height} / 2);
 
-  @media ${({ theme }) => theme.device.md} {
+  @media ${theme.device.md} {
     display: flex;
     transition: transform var(--menu-open-transition) var(--menu-open-cubic);
     transition-property: transform, opacity;

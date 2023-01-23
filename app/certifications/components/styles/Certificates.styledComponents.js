@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
 export const StyledCertificateSection = styled.section`
   width: 100%;
@@ -21,11 +22,11 @@ export const CertificatesContainer = styled.div`
     background: var(--back-color);
   }
 
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${theme.device.xs} {
     width: 100%;
   }
 
-  @media ${({ theme }) => theme.device.md} {
+  @media ${theme.device.md} {
     width: 97.5%;
   }
 `

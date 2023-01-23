@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
 export const LastProjectsContainer = styled.section`
   width: 100%;
@@ -18,7 +19,7 @@ export const ProjectsContainer = styled.div`
   flex-wrap: wrap;
   position: relative;
 
-  @media ${({ theme }) => theme.device.md} {
+  @media ${theme.device.md} {
     justify-content: center;
   }
 `

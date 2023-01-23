@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import styled from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
 export const AsideHeaderContainer = styled.section`
-  background-color: ${({ theme }) => theme.colors.middle};
+  background-color: ${theme.colors.middle};
   height: 16em;
   width: 100%;
   display: flex;
@@ -10,9 +11,9 @@ export const AsideHeaderContainer = styled.section`
   justify-content: center;
   flex-direction: column;
   gap: 1em;
-  -webkit-box-shadow: ${({ theme }) => theme.shadows.borderShadow};
-  -moz-box-shadow: ${({ theme }) => theme.shadows.borderShadow};
-  box-shadow: ${({ theme }) => theme.shadows.borderShadow};
+  -webkit-box-shadow: ${theme.shadows.borderShadow};
+  -moz-box-shadow: ${theme.shadows.borderShadow};
+  box-shadow: ${theme.shadows.borderShadow};
 `
 
 export const ProfilePictureContainer = styled.div`
@@ -45,7 +46,7 @@ export const H2 = styled.h2`
   transition-property: transform, color;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.textVivid};
+    color: ${theme.colors.textVivid};
     transform: scale(1.01);
   }
 `

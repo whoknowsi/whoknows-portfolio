@@ -1,8 +1,9 @@
 import styled from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
 export const LenguageToggleContainer = styled.section`
-  background-color: ${({ theme }) => theme.colors.middle};
-  padding: 1em calc(2.5em - ${({ theme }) => theme.svg.height} / 2);
+  background-color: ${theme.colors.middle};
+  padding: 1em calc(2.5em - ${theme.svg.height} / 2);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -13,9 +14,9 @@ export const LenguageToggleContainer = styled.section`
 `
 
 export const LenguageToggleButton = styled.button`
-  width: ${({ theme }) => theme.svg.height};
-  height: ${({ theme }) => theme.svg.height};
-  background-color: ${({ theme }) => theme.colors.textVivid};
+  width: ${theme.svg.height};
+  height: ${theme.svg.height};
+  background-color: ${theme.colors.textVivid};
   border-radius: 50%;
   display: flex;
   align-items: center;

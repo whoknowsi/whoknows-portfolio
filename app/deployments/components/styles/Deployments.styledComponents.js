@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
 export const Container = styled.section`
   display: flex;
@@ -37,12 +38,12 @@ export const HeaderTable = styled.div`
     color: var(--text-color-highlight);
   }
 
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${theme.device.xs} {
     gap: 1em;
     padding: .5em 1.5em;
   }
 
-  @media ${({ theme }) => theme.device.sm} {
+  @media ${theme.device.sm} {
     grid-template-columns: 1fr 4em 2.5em 4em;
   }
 `
@@ -107,12 +108,12 @@ export const RowTable = styled.div`
     
   `}
 
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${theme.device.xs} {
     gap: 1em;
     padding: .5em 1.5em;
   }
 
-  @media ${({ theme }) => theme.device.sm} {
+  @media ${theme.device.sm} {
     grid-template-columns: 1fr 4em 2.5em 4em;
   }
 `
@@ -124,7 +125,7 @@ export const HeaderDescription = styled.h3`
   overflow: hidden;
   width: 100%;
 
-  @media ${({ theme }) => theme.device.sm} {
+  @media ${theme.device.sm} {
     display: none;
   }
 `
@@ -136,7 +137,7 @@ export const RowDescrition = styled.p`
   overflow: hidden;
   width: 100%;
 
-  @media ${({ theme }) => theme.device.sm} {
+  @media ${theme.device.sm} {
     display: none;
   }
 `

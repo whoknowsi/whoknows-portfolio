@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { FaFileDownload } from 'react-icons/fa'
 import styled from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
 export const PersonalInfoContainer = styled.section`
   display: flex;
@@ -16,7 +17,7 @@ export const PersonalInfoContainer = styled.section`
 `
 
 export const CvContainer = styled.div`
-  color: ${({ theme }) => theme.colors.textGray};
+  color: ${theme.colors.textGray};
 `
 
 export const CvSvg = styled(FaFileDownload)`
@@ -29,7 +30,7 @@ export const CvLink = styled(Link)`
   gap: .5em;
   transition: color .3s ease-in-out;
   &:hover, &:hover ${CvSvg} {
-    color: ${({ theme }) => theme.colors.textHighlight}
+    color: ${theme.colors.textHighlight}
   }
 `
 export const SeparatorContainer = styled.div`
@@ -42,7 +43,7 @@ export const SeparatorContainer = styled.div`
 export const SeparatorHr = styled.hr`
   flex: 1;
   height: 1px;
-  background-color: ${({ theme }) => theme.colors.textGrayDark};
+  background-color: ${theme.colors.textGrayDark};
   border: none;
 `
 
@@ -56,10 +57,10 @@ export const BasicInfoLi = styled.li`
   align-items: center;
   justify-content: space-between;
   font-size: .8em;
-  color: ${({ theme }) => theme.colors.textGray};
+  color: ${theme.colors.textGray};
   line-height: 1.75em;
 `
 
 export const BasicInfoStrong = styled.strong`
-  color: ${({ theme }) => theme.colors.textHighlight};
+  color: ${theme.colors.textHighlight};
 `

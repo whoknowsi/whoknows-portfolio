@@ -1,5 +1,6 @@
 import { FaCircle } from 'react-icons/fa'
 import styled from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
 export const FirstSectionContainer = styled.section`
   overflow: hidden;
@@ -8,7 +9,7 @@ export const FirstSectionContainer = styled.section`
   flex: 1;
   width: 100%;
 
-  @media ${({ theme }) => theme.device.md} {
+  @media ${theme.device.md} {
     max-height: none;
     height: auto;
   }
@@ -34,7 +35,7 @@ export const ImagesContainer = styled.div`
     aspect-ratio: 16/9;
   }
 
-  @media ${({ theme }) => theme.device.md} {
+  @media ${theme.device.md} {
     height: calc((100vw - 2em) * 0.5625);
   }
 `
@@ -57,7 +58,7 @@ export const ImageContainer = styled.div`
   `}
 
   @media
-  ${({ theme }) => theme.device.md} {
+  ${theme.device.md} {
     width: calc(min(var(--max-width), 100vw) - 4em);
   }
 `
@@ -131,14 +132,11 @@ export const SliderSvg = styled(FaCircle)`
   color: inherit;
   filter: drop-shadow(1px 1px 4px rgb(0 0 0 / 0.2));
 
-  ${({ selected }) => {
-    console.log(selected)
-    return selected
+  ${({ selected }) => selected
       ? `
         color: var(--text-color-vivid) !important;
         transform: scale(1.05);`
       : ''
-    }
   };
 `
 
@@ -149,7 +147,7 @@ export const DetailsContainer = styled.div`
   height: -webkit-fill-available;
   max-height: inherit;
 
-  @media ${({ theme }) => theme.device.md} {
+  @media ${theme.device.md} {
     flex-wrap: wrap;
   }
 `
@@ -163,7 +161,7 @@ export const Description = styled.div`
   height: fit-content;
   max-height: inherit;
 
-  @media ${({ theme }) => theme.device.md} {
+  @media ${theme.device.md} {
     flex-basis: 60%;
   }
 `
@@ -188,7 +186,7 @@ export const Details = styled.div`
     color: var(--text-color-highlight);
   }
 
-  @media ${({ theme }) => theme.device.md} {
+  @media ${theme.device.md} {
     flex: 1;
     min-width: 16em;
   }

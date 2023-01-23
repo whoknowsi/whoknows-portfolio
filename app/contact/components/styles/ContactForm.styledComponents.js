@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
+import { theme } from '@/app/styles/themeStyles'
 
 export const FormSectionContainer = styled.section`
   display: flex;
@@ -12,7 +13,7 @@ export const FormContainer = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  box-shadow: ${({ theme }) => theme.shadows.borderShadowBlock};
+  box-shadow: ${theme.shadows.borderShadowBlock};
   flex: 1;
 `
 
@@ -130,7 +131,7 @@ const ellipsis = keyframes`
 
 export const StyledForm = styled.form`
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.middleLight};
+  background-color: ${theme.colors.middleLight};
   padding: 2em;
   display: flex;
   flex-direction: column;

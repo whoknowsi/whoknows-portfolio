@@ -15,13 +15,18 @@ export default async function RootLayout ({ children }) {
     <html lang="en">
       <Head />
       <body>
-        <StyledComponentsRegistry>
-          <div className={`${poppins.className} container`}>
-              <Navigation basicInfo={basicInfo} projects={projects}>
+        <div className={`${poppins.className} container`}>
+          <div className={'content'}>
+            <Navigation basicInfo={basicInfo} projects={projects} />
+            <StyledComponentsRegistry>
+              <div className="scrollContainer">
+                <main className={'main'}>
                   {children}
-              </Navigation>
+                </main>
+              </div>
+            </StyledComponentsRegistry>
           </div>
-        </StyledComponentsRegistry>
+        </div>
       </body>
     </html>
   )

@@ -5,7 +5,7 @@ import { IoHome } from 'react-icons/io5'
 import { usePathname } from 'next/navigation'
 import { NavLi, NavLink, NavUl, ProjectsLi, ProjectsLink, ProjectsUl, StyledNav } from './styles/Nav.styledComponents'
 
-const Nav = ({ open, projects, handleMenuToggle, loading }) => {
+const Nav = ({ open, projects, handleMenuToggle, handleMainClick }) => {
   const pathname = usePathname()
   const list = useRef(null)
   const projectsList = useRef(null)
@@ -55,15 +55,11 @@ const Nav = ({ open, projects, handleMenuToggle, loading }) => {
     setMaxHeight(setMaxHeightOfProjectsList())
   }, [projects.length])
 
-  const setLoading = (url) => {
-    loading(url)
-  }
-
   return (
     <StyledNav open={open}>
       <NavUl ref={list}>
         <NavLi active={pathname === '/'}>
-          <NavLink href={'/'} onClick={() => setLoading('/')}>
+          <NavLink href={'/'} onClick={handleMainClick}>
             <IoHome />
             <div>Home</div>
           </NavLink>
@@ -76,7 +72,7 @@ const Nav = ({ open, projects, handleMenuToggle, loading }) => {
           <ProjectsUl ref={projectsList}>
             {projects.map(({ _id, name }) => (
               <ProjectsLi key={_id} active={pathname.includes(_id)}>
-                <ProjectsLink href={`/projects/${_id}`} onClick={() => setLoading(`/projects/${_id}`)}>
+                <ProjectsLink href={`/projects/${_id}`} onClick={handleMainClick}>
                   <span>{name}</span>
                 </ProjectsLink>
               </ProjectsLi>
@@ -84,19 +80,19 @@ const Nav = ({ open, projects, handleMenuToggle, loading }) => {
           </ProjectsUl>
         </NavLi>
         <NavLi active={pathname === '/deployments'}>
-          <NavLink href={'/deployments'} onClick={() => setLoading('/deployments')}>
+          <NavLink href={'/deployments'} onClick={handleMainClick}>
             <FaCloud />
             <div>Deployments</div>
           </NavLink>
         </NavLi>
         <NavLi active={pathname === '/certifications'}>
-          <NavLink href={'/certifications'} onClick={() => setLoading('/certifications')}>
+          <NavLink href={'/certifications'} onClick={handleMainClick}>
             <FaCertificate />
             <div>Certifications</div>
           </NavLink>
         </NavLi>
         <NavLi active={pathname === '/contact'}>
-          <NavLink href={'/contact'} onClick={() => setLoading('/contact')}>
+          <NavLink href={'/contact'} onClick={handleMainClick}>
             <FaAddressBook />
             <div>Contact</div>
           </NavLink>

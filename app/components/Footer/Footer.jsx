@@ -1,3 +1,5 @@
+'use client'
+
 import { StyledFooter } from './styles/Footer.styledComponents'
 
 const Footer = () => {

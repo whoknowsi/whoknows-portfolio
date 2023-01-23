@@ -17,14 +17,12 @@ export default function DeploymentsElement ({ deployments }) {
           <h3>Status</h3>
         </HeaderTable>
         {deployments.map(({ _id, name, description, repoUrl, url, status }) => {
-          console.log(status)
           const currStatus = {
             ok: status === 'OK',
             unknow: status === 'UNKNOW',
             down: status === 'DOWN'
           }
 
-          console.log(currStatus)
           return (
             <RowTable status={currStatus} key={_id}>
               <p>{name}</p>

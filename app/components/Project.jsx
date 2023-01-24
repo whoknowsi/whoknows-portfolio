@@ -9,7 +9,6 @@ const Project = ({ name, description, media, _id }) => {
   const router = useRouter()
   const handleClick = () => {
     router.push(`/projects/${_id}`)
-    document.querySelector('.scrollContainer')?.scrollTo(0, 0)
   }
 
   const handleMiddleClick = (e) => {

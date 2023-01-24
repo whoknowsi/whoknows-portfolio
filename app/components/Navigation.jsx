@@ -1,14 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Aside from './Aside/Aside'
 import Header from './Header/Header'
 import BackgroundPatron from './Background/BackgroundPatron'
 import BlurFilter from './BlurFilter/BlurFilter'
+import { usePathname } from 'next/navigation'
 
 export default function Navigation ({ basicInfo, projects }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [asideOpen, setAsideOpen] = useState(false)
+  const pathname = usePathname()
+
+  useEffect(() => {
+    document.querySelector('.scrollContainer')?.scrollTo(0, 0)
+  }, [pathname])
 
   const handleMenuToggle = () => {
     if (!menuOpen && asideOpen) setAsideOpen(false)
@@ -20,7 +26,6 @@ export default function Navigation ({ basicInfo, projects }) {
   }
 
   const handleMainClick = () => {
-    document.querySelector('.scrollContainer')?.scrollTo(0, 0)
     if (menuOpen) setMenuOpen(false)
     if (asideOpen) setAsideOpen(false)
   }

@@ -29,7 +29,7 @@
   }
   .menuToggle {
     transition: transform var(--menu-open-transition) var(--menu-open-cubic);
-    transition-property: transform opacity;
+    transition-property: transform, opacity;
     transform: translateX(calc(var(--header-width) * -1));
   }
   .menuToggle.open {
@@ -37,6 +37,7 @@
   }
 
   .menuToggle.asideOpen {
+    pointer-events: none;
     opacity: 0.5;
   }
 }

@@ -5,7 +5,8 @@ import Aside from './Aside/Aside'
 import Header from './Header/Header'
 import BackgroundPatron from './Background/BackgroundPatron'
 import BlurFilter from './BlurFilter/BlurFilter'
-export default function Navigation ({ basicInfo, projects, children }) {
+
+export default function Navigation ({ basicInfo, projects }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [asideOpen, setAsideOpen] = useState(false)
 
@@ -26,20 +27,20 @@ export default function Navigation ({ basicInfo, projects, children }) {
   return (
     <>
       <Aside
-        handleMainClick={handleMainClick}
         info={basicInfo}
-        handleAsideToggle={handleAsideToggle}
         open={asideOpen}
         menuOpen={menuOpen}
+        handleMainClick={handleMainClick}
+        handleAsideToggle={handleAsideToggle}
       />
       <BackgroundPatron open={menuOpen || asideOpen} />
       <BlurFilter open={menuOpen || asideOpen} handleClick={handleMainClick} />
       <Header
-        handleMainClick={handleMainClick}
-        handleMenuToggle={handleMenuToggle}
+        projects={projects}
         open={menuOpen}
         asideOpen={asideOpen}
-        projects={projects}
+        handleMainClick={handleMainClick}
+        handleMenuToggle={handleMenuToggle}
       />
     </>
   )

@@ -1,35 +1,34 @@
 'use client'
 
 import { Oval } from 'react-loader-spinner'
-import styled from 'styled-components'
-import { theme } from '@/app/styles/themeStyles'
+import styles from './styles/loading.module.css'
 
-export const Container = styled.div`
-  height: calc(100vh - 6em);
-  max-height: 80em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  & svg {
-    width: 3em;
-    height: 3em;
+const Loading = () => {
+  const rootColors = {
+    '--text-color-vivid': '#FFC107',
+    '--text-color-vivid-dark': '#DFA100'
   }
-`
+  const colors = {
+    primary: rootColors['--text-color-vivid'],
+    secondary: rootColors['--text-color-vivid-dark']
+  }
 
-const Loading = () => (
-  <Container>
+  return (
+    <div className={styles.loadingContainer}>
       <Oval
-        color={theme.colors.textVivid}
+        color={colors.primary}
         wrapperStyle={{}}
         wrapperClass=""
         visible={true}
-        ariaLabel='oval-loading'
-        secondaryColor={theme.colors.textVividDark}
+        ariaLabel="oval-loading"
+        secondaryColor={colors.secondary}
         strokeWidth={2}
         strokeWidthSecondary={2}
-      >Loading</Oval>
-  </Container>
-)
+      >
+        Loading
+      </Oval>
+    </div>
+  )
+}
 
 export default Loading

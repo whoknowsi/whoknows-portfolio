@@ -1,5 +1,3 @@
-'use client'
-
 import ContactForm from './ContactForm'
 import ContactInformation from './ContactInformation'
 
@@ -13,14 +11,14 @@ const socialMediaIcons = [
   { instagram: FaInstagram }
 ]
 
-const capitalizeFirstLetter = str => str.charAt(0).toUpperCase() + str.slice(1)
+const capitalizeFirstLetter = (str) => str.charAt(0).toUpperCase() + str.slice(1)
 
 const Main = ({ info }) => {
   const { country, city, email, socialMedia, phone } = info
 
   const mappedMedias = (urls) => {
     return urls.map((url) => {
-      const icon = socialMediaIcons.find(x => url.includes(Object.keys(x)[0]))
+      const icon = socialMediaIcons.find((x) => url.includes(Object.keys(x)[0]))
       const Icon = icon ? Object.values(icon)[0] : FaMehBlank
       const label = icon ? Object.keys(icon)[0] : 'social network'
       return {
@@ -44,13 +42,12 @@ const Main = ({ info }) => {
           { name: 'Country', description: country },
           { name: 'City', description: city }
         ]}
-        secondCard={
-          mappedMedias(socialMedia)
-        }
+        secondCard={mappedMedias(socialMedia)}
         thirdCard={[
           { name: 'Email', description: email },
           { name: 'Phone', description: parsePhone(phone) }
-        ]} />
+        ]}
+      />
       <ContactForm />
     </>
   )

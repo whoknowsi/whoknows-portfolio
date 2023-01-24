@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  padding: 1em 0;
+  background-color: var(--middle-color);
+  -webkit-box-shadow: var(--border-shadow);
+  -moz-box-shadow: var(--border-shadow);
+  box-shadow: var(--border-shadow);
+}
+
+.container a {
+  height: var(--svg-basic-height);
+}

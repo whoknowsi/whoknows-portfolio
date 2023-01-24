@@ -1,6 +1,6 @@
 import { use } from 'react'
 import { getDeployments } from './services/deployments'
-import DeploymentsElement from './components/Deployments'
+import DeploymentsElement from './components/DeploymentsElement'
 import Head from '@/app/head'
 import Footer from '../components/Footer/Footer'
 

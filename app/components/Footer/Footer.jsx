@@ -1,12 +1,10 @@
-'use client'
-
-import { StyledFooter } from './styles/Footer.styledComponents'
+import styles from './styles/Footer.module.css'
 
 const Footer = () => {
   return (
-    <StyledFooter>
-      <span>Thanks for visiting ♥</span>
-    </StyledFooter>
+    <div className={styles.container}>
+        <span>Thanks for visiting ♥</span>
+    </div>
   )
 }
 

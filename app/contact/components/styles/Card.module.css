@@ -1,0 +1,26 @@
+.container {
+  padding: 2em;
+  background-color: var(--middle-color-light);
+  min-width: 19em;
+  flex: 1;
+  box-shadow: var(--border-shadow-block)
+}
+
+
+.container ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: .8em;
+  color: var(--text-color-gray);
+  line-height: 1.75em;
+}
+
+.container ul li strong {
+  color: var(--text-color-highlight)
+}
+
+.container a,
+.container svg {
+  height: 1.5em;
+}

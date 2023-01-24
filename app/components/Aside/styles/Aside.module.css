@@ -1,0 +1,61 @@
+.container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--aside-width);
+  background-color: var(--back-color);
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: var(--border-shadow);
+  -moz-box-shadow: var(--border-shadow);
+  box-shadow: var(--border-shadow);
+  flex-shrink: 0;
+  z-index: 25;
+  pointer-events: all !important;
+}
+
+.asideToggle {
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-size: 1em;
+  right: 2em;
+  top: calc(var(--header-height) / 2 - var(--svg-basic-height)/2);
+}
+
+@media (max-width: 1023px) {
+  .container {
+    position: fixed;
+    height:auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: transform var(--menu-open-transition) var(--menu-open-cubic);
+  }
+  .container.menuOpen {
+    pointer-events: none !important;
+  }
+
+  .container.menuOpen > button {
+    opacity: 0.5;
+  }
+
+  .container.open {
+    transform: translateX(0);
+  }
+  .asideToggle {
+    display: flex;
+    transition: transform var(--menu-open-transition) var(--menu-open-cubic);
+    transition-property: transform, opacity;
+    transform: translateX(var(--header-width));
+  }
+  .container.open .asideToggle {
+    transform: translateX(0);
+  }
+}

@@ -1,23 +1,10 @@
 'use client'
 
+import styles from './styles/Project.module.css'
 import Image from 'next/image'
-import { FaGithub, FaLink } from 'react-icons/fa'
+import { FaGithub, FaLink, FaCircle } from 'react-icons/fa'
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
-import {
-  Description,
-  Details,
-  DetailsContainer,
-  FirstSectionContainer,
-  ImageContainer,
-  ImagesContainer,
-  Next,
-  Prev,
-  SecondSectionContainer,
-  SliderPoints,
-  ImagesSlider,
-  SliderSvg
-} from './styles/Project.styledComponents'
 
 const Project = ({ project }) => {
   const { name, description, createdAt, status, repoUrl, url, media } = project
@@ -104,42 +91,42 @@ const Project = ({ project }) => {
 
   return (
     <>
-      <FirstSectionContainer>
+      <div className={styles.container}>
         <h2>{name}</h2>
-        <ImagesContainer>
-          <Prev ref={prev} onClick={handlePrev}>
+        <div className={styles.imagesContainer}>
+          <div ref={prev} className={styles.prev} onClick={handlePrev}>
             <span>{'<'}</span>
-          </Prev>
-          <Next ref={next} onClick={handleNext}>
+          </div>
+          <div ref={next} className={styles.next} onClick={handleNext}>
             <span>{'>'}</span>
-          </Next>
-          <SliderPoints>
+          </div>
+          <div className={styles.sliderPoints}>
             {media.map((url, i) => (
-              <SliderSvg
+              <FaCircle
                 key={'pointer ' + url}
-                selected={i + 1 === currentImg}
+                className={`${i + 1 === currentImg && styles.selectedSlide}`}
                 id={i}
                 onClick={() => handleClickSlide(i + 1)}
               />
             ))}
-          </SliderPoints>
-          <ImagesSlider ref={slider}>
+          </div>
+          <div className={styles.imagesSlider} ref={slider}>
             {media.map((url, i) => (
-              <ImageContainer key={url} current={currentImg - 1 === i}>
+              <div key={url} className={`${styles.imageContainer} ${currentImg - 1 === i ? styles.current : ''}`}>
                 <Image src={url} fill alt={`${name} image ${i}`} />
-              </ImageContainer>
+              </div>
             ))}
-          </ImagesSlider>
-        </ImagesContainer>
-      </FirstSectionContainer>
-      <SecondSectionContainer>
+          </div>
+        </div>
+      </div>
+      <div className={styles.secondSectionContainer}>
         <h2>Project details</h2>
-        <DetailsContainer>
-          <Description>
+        <div className={styles.detailsContainer}>
+          <div className={styles.description}>
             <h3>Description</h3>
             <p>{description}</p>
-          </Description>
-          <Details>
+          </div>
+          <div className={styles.details}>
             <ul>
               <li>
                 <strong>Date:</strong>
@@ -166,9 +153,9 @@ const Project = ({ project }) => {
                 </li>
               )}
             </ul>
-          </Details>
-        </DetailsContainer>
-      </SecondSectionContainer>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

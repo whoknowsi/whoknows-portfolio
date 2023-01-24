@@ -1,12 +1,12 @@
-import { LenguageToggleButton, LenguageToggleContainer } from './styles/LenguageToggle.styledComponents'
+import styles from './styles/LenguageToggle.module.css'
 
 const LenguageToggle = ({ open }) => {
   return (
-    <LenguageToggleContainer>
-      <LenguageToggleButton tabIndex={open ? 0 : -1}>
+    <div className={styles.container}>
+      <button tabIndex={open ? 0 : -1}>
         <span>EN</span>
-      </LenguageToggleButton>
-    </LenguageToggleContainer>
+      </button>
+    </div>
   )
 }
 

@@ -1,4 +1,4 @@
-import { BasicInfoContainer, BasicInfoLi, BasicInfoStrong } from './styles/PersonalInfo.styledComponents'
+import styles from './styles/BasicInfo.module.css'
 
 const getAgeFrom = (dateOfBirth) => {
   const birthSplited = dateOfBirth.split('/')
@@ -10,13 +10,13 @@ const BasicInfo = ({ info }) => {
   const { dateOfBirth, country, city } = info
 
   return (
-    <BasicInfoContainer>
+    <div className={styles.container}>
       <ul>
-        <BasicInfoLi><BasicInfoStrong>Country:</BasicInfoStrong>{country}</BasicInfoLi>
-        <BasicInfoLi><BasicInfoStrong>City:</BasicInfoStrong>{city}</BasicInfoLi>
-        <BasicInfoLi><BasicInfoStrong>Age:</BasicInfoStrong>{getAgeFrom(dateOfBirth)}</BasicInfoLi>
+        <li><strong>Country:</strong>{country}</li>
+        <li><strong>City:</strong>{city}</li>
+        <li><strong>Age:</strong>{getAgeFrom(dateOfBirth)}</li>
       </ul>
-    </BasicInfoContainer>
+    </div>
   )
 }
 

@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex: 1;
+  flex-shrink: 1;
+  padding: 1.5em;
+  gap: 1.25em;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "13.1.4",
     "dotenv": "^16.0.3",
     "next": "13.1.4",
     "nodemailer": "^6.9.0",
@@ -17,8 +16,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-loader-spinner": "^5.3.4",
-    "sharp": "^0.31.3",
-    "styled-components": "^5.3.6"
+    "sharp": "^0.31.3"
   },
   "devDependencies": {
     "eslint-config-next": "13.1.4",

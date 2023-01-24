@@ -1,11 +1,11 @@
+import styles from './styles/BackgroundPatron.module.css'
 import Montains from './Montains'
-import { BackgourndPatronContainer } from './styles/BackgroundPatron.styledComponents'
 
 const BackgroundPatron = ({ open }) => {
   return (
-    <BackgourndPatronContainer menuOpen={open}>
+    <div className={`${styles.container} ${open ? styles.open : ''}`}>
       <Montains />
-    </BackgourndPatronContainer>
+    </div>
   )
 }
 

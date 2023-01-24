@@ -1,16 +1,16 @@
+import styles from './styles/ContactInformation.module.css'
 import Card from './Card'
-import { CardsContainer, ContactInformationContainer } from './styles/ContactInformation.styledComponents'
 
 const ContactInformation = ({ firstCard, secondCard, thirdCard }) => {
   return (
-    <ContactInformationContainer>
+    <div className={styles.container}>
       <h2>Contact information</h2>
-      <CardsContainer>
+      <div className={styles.cardsContainer}>
           <Card data={firstCard} />
           <Card data={secondCard} />
           <Card data={thirdCard} />
-      </CardsContainer>
-    </ContactInformationContainer>
+      </div>
+    </div>
   )
 }
 

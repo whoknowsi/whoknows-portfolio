@@ -1,3 +1,4 @@
+import styles from './styles/Skills.module.css'
 import BootstrapLogo from './SVG/BootstrapLogo'
 import CssLogo from './SVG/CssLogo'
 import ExpressJsLogo from './SVG/ExpressJsLogo'
@@ -19,7 +20,6 @@ import PlaywrightLogo from './SVG/PlaywrightLogo'
 import VueJsLogo from './SVG/VueJsLogo'
 import TailwindcssLogo from './SVG/TailwindcssLogo'
 import ReduxLogo from './SVG/ReduxLogo'
-import { SkillsContainer } from './styles/Skills.styledComponents'
 
 const skillsList = [
   { HTML: HtmlLogo },
@@ -45,17 +45,15 @@ const skillsList = [
 ]
 
 const Skills = ({ skills }) => (
-  <SkillsContainer>
-    {
-      skills.map((skill) => {
-        const foundSkill = skillsList.find(x => skill === (Object.keys(x)[0]).toString())
-        const Component = foundSkill ? Object.values(foundSkill)[0] : NoLogo
-        const label = skill
+  <div className={styles.container}>
+    {skills.map((skill) => {
+      const foundSkill = skillsList.find((x) => skill === Object.keys(x)[0].toString())
+      const Component = foundSkill ? Object.values(foundSkill)[0] : NoLogo
+      const label = skill
 
-        return <Component key={label} name={label} />
-      })
-    }
-  </SkillsContainer>
+      return <Component key={label} name={label} />
+    })}
+  </div>
 )
 
 export default Skills

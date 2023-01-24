@@ -1,0 +1,132 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: var(--text-color-gray);
+  background-color: var(--back-color);
+  font-size: .95em;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 2em 0;
+}
+
+.container > ul {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1em;
+  width: 100%;
+  justify-content: center;
+}
+
+.container > ul > li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.container > ul > li > a {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0 2em;
+}
+
+.container >  ul > li > a:hover {
+  color: var(--text-color-highlight)
+}
+
+.container >  ul > li.active > a {
+  color: var(--text-color-vivid)
+}
+
+.container >  ul > li.active > a:hover {
+  color: var(--text-color-vivid-light)
+}
+
+.container >  ul > li > a > svg {
+  width: 1.5em;
+  height: 1.5em;
+  transition: transform 0.3s ease-in-out;
+  transition-property: transform, color;
+}
+
+.container >  ul > li.active > a > svg{
+  color: var(--text-color-vivid);
+  transform: scale(1.1)
+}
+
+.container >  ul > li > a:hover > svg {
+  color: inherit;
+  transform: scale(1.2);
+}
+
+.container > ul > li > a > div {
+  color: inherit;
+  opacity: 0;
+  transition-property: color, transform, opacity;
+  transition-duration: var(--menu-open-transition);
+  transition-timing-function: ease-out;
+  cursor: pointer;
+  transform: translateX(5em);
+}
+
+
+.container.open > ul > li > a > div {
+  transform: translateX(0em);
+  opacity: 1;
+}
+
+.projects {
+  height: -1em;
+  flex-direction: column;
+  padding: 0;
+  display: flex;
+  max-height: 0;
+  transition: max-height .65s ease-in-out;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.projects li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  filter: brightness(.9);
+  background-color: var(--back-color);
+  transition: filter .2s ease-in-out;
+  transition-property:  color, filter, box-shadow;
+}
+
+.projects li:first-child {
+  margin-top: 1em;
+  box-shadow: inset 0 .3em .5em 0 rgb(15 15 20 / 20%);
+}
+
+.projects li:last-child {
+  box-shadow: inset 0 -.3em .5em 0 rgb(15 15 20 / 10%);
+}
+
+.projects li a {
+  transition: color var(--menu-open-transition) ease-out;
+  padding: .7em 2em;
+  width: 100%;
+}
+
+.projects li a span {
+  font-size: .9em;
+}
+
+.projects .active {
+  color: var(--text-color-vivid);
+}
+
+.projects li:hover {
+  color: var(--text-color-highlight);
+  filter: brightness(1);
+  box-shadow: none;
+}
+
+.projects .active:hover {
+  color: var(--text-color-vivid-light);
+}

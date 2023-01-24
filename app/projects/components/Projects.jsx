@@ -1,14 +1,12 @@
-'use client'
-
+import styles from './styles/Projects.module.css'
 import { dateDDMMYYYYToTimestamp } from '@/utils/utils'
 import Project from '../../components/Project'
-import { ProjectsContainer } from './styles/Projects.styledComponents'
 
 const Projects = ({ projects }) => {
   return (
     <>
       <h2>My projects</h2>
-      <ProjectsContainer>
+      <div className={styles.projectsContainer}>
         {
           [...projects]
             .sort((a, b) => dateDDMMYYYYToTimestamp(b.createdAt) - dateDDMMYYYYToTimestamp(a.createdAt))
@@ -16,7 +14,7 @@ const Projects = ({ projects }) => {
               <Project key={props._id} {...props} />
             ))
         }
-      </ProjectsContainer>
+      </div>
     </>
   )
 }

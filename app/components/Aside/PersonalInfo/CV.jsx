@@ -1,12 +1,14 @@
-import { CvContainer, CvLink, CvSvg } from './styles/PersonalInfo.styledComponents'
+import Link from 'next/link'
+import styles from './styles/CV.module.css'
+import { FaFileDownload } from 'react-icons/fa'
 
 const CV = ({ path }) => {
   return (
-    <CvContainer>
-      <CvLink href={`${process.env.API_BASE_URL}${path}`} target="_blank" rel="noopener noreferrer" aria-label={'download curriculum vitae'}>
-        Download <CvSvg />
-      </CvLink>
-    </CvContainer>
+    <div className={styles.container}>
+      <Link href={`${process.env.API_BASE_URL}${path}`} target="_blank" rel="noopener noreferrer" aria-label={'download curriculum vitae'}>
+        Download <FaFileDownload />
+      </Link>
+    </div>
   )
 }
 

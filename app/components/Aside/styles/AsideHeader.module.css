@@ -1,0 +1,48 @@
+.container {
+  background-color: var(--middle-color);
+  height: 16em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+  -webkit-box-shadow: var(--border-shadow);
+  -moz-box-shadow: var(--border-shadow);
+  box-shadow: var(--border-shadow);
+}
+
+.profilePictureContainer {
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.profilePictureContainer img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+.profilePictureContainer img:hover {
+  transform: scale(1.1);
+}
+
+.descriptionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.descriptionContainer h2 {
+  transition: transform 0.3s ease-in-out;
+  transition-property: transform, color;
+}
+
+.descriptionContainer h2:hover {
+  color: var(--text-color-vivid);
+  transform: scale(1.01)
+}

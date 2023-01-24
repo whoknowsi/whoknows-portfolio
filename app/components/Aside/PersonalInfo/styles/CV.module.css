@@ -1,0 +1,17 @@
+.container {
+  color: var(--text-color-gray)
+}
+
+.container a {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+}
+
+.container a, .container svg {
+  transition: color .3s ease-in-out;
+}
+
+.container a:hover, .container a:hover svg {
+  color: var(--text-color-highlight)
+}

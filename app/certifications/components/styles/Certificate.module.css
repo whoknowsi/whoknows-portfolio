@@ -1,0 +1,148 @@
+.container {
+  position: relative;
+}
+
+.certificateContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  background-color: var(--middle-color-light);
+  box-shadow: var(--border-shadow-block);
+  margin-right: 3em;
+  position: relative;
+  gap: 1em;
+}
+
+.certificateContainer::before {
+    content: '';
+    height: 0.75em;
+    width: 0.75em;
+    background-color: var(--middle-color-light);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    position: absolute;
+    top: .7em;
+    right: -.375em;
+    border-top-right-radius: 50%;
+}
+
+.date {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  background-color: var(--middle-color);
+  padding: .5em 1.25em;
+  border-radius: 5em;
+  font-size: .65em;
+  color: var(--text-color-gray-dark);
+  box-shadow: inset 0 .1em .5em 0 rgba(29, 29, 39, 0.5);
+}
+
+.date span {
+  opacity: 0.8;
+}
+
+.container h3 {
+  margin-bottom: 0;
+  line-height: .9em;
+  font-size: 1.2em;
+}
+
+.container h4 {
+  margin-bottom: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  font-size: .9em ;
+}
+
+.content button {
+  color: var(--text-color-vivid);
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color .3s ease-in-out;
+  transition-property: color, transform;
+}
+
+.content button:hover {
+  color: var(--text-color-vivid-light);
+  transform: scale(1.005);
+}
+
+.container a {
+  font-size: .9em;
+  word-wrap: break-word;
+  color: var(--text-color-gray);
+  cursor: pointer;
+}
+
+.container a:hover {
+  color: var(--text-color-highlight)
+}
+
+.title span {
+  color: var(--text-color-gray-dark);
+  font-size: .8em;
+  font-style: italic;
+}
+
+.credentialId {
+  word-wrap: break-word;
+}
+
+.dotContainer {
+  position: absolute;
+  top: 1em;
+  right: 0.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: solid 3px var(--text-color-vivid);
+  background: var(--back-color);
+  pointer-events: none;
+}
+
+.backDot {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: var(--text-color-highlight);
+  opacity: 0;
+  animation-duration: 0.8s;
+}
+
+.backDot.animated {
+  animation-name: dotAnimation;
+  animation-iteration-count: infinite;
+}
+
+@keyframes dotAnimation {
+  from {
+    opacity: .7;
+    width: 1em;
+    height: 1em;
+  }
+  to {
+    opacity: 0;
+    width: 1.7em;
+    height: 1.7em;
+  }
+}
+
+@media (max-width: 423px) {
+  .certificateContainer {
+    margin-right: 2.5em;
+  }
+}

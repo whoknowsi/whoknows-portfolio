@@ -42,12 +42,16 @@ const LastProjects = ({ projects }) => {
     return () => window.removeEventListener('resize', handleResize)
   }, [maxProjectsOnLine])
 
+  const handleClick = () => {
+    document.querySelector('.scrollContainer')?.scrollTo(0, 0)
+  }
+
   return (
     <div className={styles.container}>
       <h2>My last projects</h2>
       <div ref={projectsContainer} className={styles.projectsContainer}>
         <div className={styles.viewMore}>
-          <Link href="/projects">View more...</Link>
+          <Link href="/projects" onClick={handleClick}>View more...</Link>
         </div>
         {maxProjectsOnLine ? (
           [...projects]

@@ -20,6 +20,7 @@ export default function Navigation ({ basicInfo, projects }) {
   }
 
   const handleMainClick = () => {
+    document.querySelector('.scrollContainer')?.scrollTo(0, 0)
     if (menuOpen) setMenuOpen(false)
     if (asideOpen) setAsideOpen(false)
   }

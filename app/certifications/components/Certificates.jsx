@@ -2,7 +2,7 @@ import Certificate from './Certificate'
 
 const Certificates = ({ certificates }) => {
   return (
-    <div className='certificatesSectionContaine'>
+    <div className='certificatesSectionContainer'>
       <h2>Certifications</h2>
       <div className='certificatesContainer'>
           {certificates.map((certificate) => (

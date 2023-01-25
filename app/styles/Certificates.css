@@ -1,5 +1,60 @@
-.container {
+.certificatesSectionContainer {
+  width: 100%;
+}
+
+.certificatesContainer {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 95%;
+}
+
+.certificatesContainer::before {
+  content: '';
+  position: absolute;
+  top: 0.5em;
+  right: 0.25em;
+  height: calc(100% - .5em);
+  width: 0.30em;
+  background: var(--back-color);
+}
+
+@media (max-width: 1023px) {
+.certificatesContainer {
+  width: 97.5%;
+}
+}
+
+@media (max-width: 423px) {
+.certificatesContainer {
+  width: 100%;
+}
+}
+
+.certificateArticleContainer {
+  position: relative;
+}
+
+.certificateArticleContainer h3 {
+  margin-bottom: 0;
+  line-height: .9em;
+  font-size: 1.2em;
+}
+
+.certificateArticleContainer h4 {
+  margin-bottom: 0;
+}
+
+.certificateArticleContainer a {
+  font-size: .9em;
+  word-wrap: break-word;
+  color: var(--text-color-gray);
+  cursor: pointer;
+}
+
+.certificateArticleContainer a:hover {
+  color: var(--text-color-highlight)
 }
 
 .certificateContainer {
@@ -26,7 +81,7 @@
     border-top-right-radius: 50%;
 }
 
-.date {
+.certificateDate {
   position: absolute;
   right: 1em;
   top: 1em;
@@ -38,28 +93,18 @@
   box-shadow: inset 0 .1em .5em 0 rgba(29, 29, 39, 0.5);
 }
 
-.date span {
+.certificateDate span {
   opacity: 0.8;
 }
 
-.container h3 {
-  margin-bottom: 0;
-  line-height: .9em;
-  font-size: 1.2em;
-}
-
-.container h4 {
-  margin-bottom: 0;
-}
-
-.content {
+.certificateContent {
   display: flex;
   flex-direction: column;
   gap: 1em;
   font-size: .9em ;
 }
 
-.content button {
+.certificateContent button {
   color: var(--text-color-vivid);
   cursor: pointer;
   background: none;
@@ -68,33 +113,22 @@
   transition-property: color, transform;
 }
 
-.content button:hover {
+.certificateContent button:hover {
   color: var(--text-color-vivid-light);
   transform: scale(1.005);
 }
 
-.container a {
-  font-size: .9em;
-  word-wrap: break-word;
-  color: var(--text-color-gray);
-  cursor: pointer;
-}
-
-.container a:hover {
-  color: var(--text-color-highlight)
-}
-
-.title span {
+.certificateTitle span {
   color: var(--text-color-gray-dark);
   font-size: .8em;
   font-style: italic;
 }
 
-.credentialId {
+.certificateCredentialId {
   word-wrap: break-word;
 }
 
-.dotContainer {
+.certificateDotContainer {
   position: absolute;
   top: 1em;
   right: 0.4em;
@@ -103,7 +137,7 @@
   justify-content: center;
 }
 
-.dot {
+.certificateDot {
   position: absolute;
   width: 1em;
   height: 1em;
@@ -113,7 +147,7 @@
   pointer-events: none;
 }
 
-.backDot {
+.certificateBackDot {
   position: absolute;
   width: 1em;
   height: 1em;
@@ -123,7 +157,7 @@
   animation-duration: 0.8s;
 }
 
-.backDot.animated {
+.certificateBackDot.dotAnimated {
   animation-name: dotAnimation;
   animation-iteration-count: infinite;
 }

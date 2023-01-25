@@ -1,4 +1,12 @@
 import './styles/global.css'
+import './styles/Certificates.css'
+import './styles/Projects.css'
+import './styles/Project.css'
+import './styles/Deployments.css'
+import './styles/Home.css'
+import './styles/ProjectCard.css'
+import './styles/Contact.css'
+
 import Head from './head'
 
 import Navigation from './components/Navigation'

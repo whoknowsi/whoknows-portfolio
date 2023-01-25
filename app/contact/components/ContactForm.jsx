@@ -1,9 +1,8 @@
 'use client'
 
-import styles from './styles/ContactForm.module.css'
-import { FaUserAlt, FaAt, FaEnvelopeOpen } from 'react-icons/fa'
 import { useState, useRef } from 'react'
 import { sendContactMessage } from './services/contact'
+import { FaUserAlt, FaAt, FaEnvelopeOpen } from 'react-icons/fa'
 
 const ContactForm = () => {
   const [name, setName] = useState('')
@@ -17,8 +16,8 @@ const ContactForm = () => {
     const somethingIsEmpty = !name || !email || !message
     if (somethingIsEmpty) return
     setSendingMessage(true)
-    not.current.classList.remove(styles.error)
-    not.current.classList.remove(styles.sent)
+    not.current.classList.remove('contactError')
+    not.current.classList.remove('contactSent')
     not.current.textContent = 'Sending Message '
 
     const response = await sendContactMessage({ name, email, message })
@@ -26,10 +25,10 @@ const ContactForm = () => {
       setName('')
       setEmail('')
       setMessage('')
-      not.current.classList.add(styles.sent)
+      not.current.classList.add('contactSent')
       not.current.textContent = 'Message sent!'
     } else {
-      not.current.classList.add(styles.error)
+      not.current.classList.add('contactError')
       not.current.textContent = 'Error sending message!'
     }
 
@@ -37,11 +36,11 @@ const ContactForm = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <section className='contactSectionContainer'>
       <h2>Get in touch</h2>
-      <div className={styles.formContainer}>
-        <form onSubmit={handleSubmit} className={sendingMessage ? styles.sendingMessage : ''}>
-          <div className={styles.inputContainer}>
+      <div className='contactFormContainer'>
+        <form onSubmit={handleSubmit} className={sendingMessage && 'contactSendingMessage'}>
+          <div className='contactInputContainer'>
             <input
               type="text"
               placeholder='Name'
@@ -50,7 +49,7 @@ const ContactForm = () => {
             ></input>
             <label><FaUserAlt /></label>
           </div>
-          <div className={styles.inputContainer}>
+          <div className='contactInputContainer'>
             <input
               type="email"
               placeholder='Email'
@@ -59,7 +58,7 @@ const ContactForm = () => {
             ></input>
             <label><FaAt /></label>
           </div>
-          <div className={styles.inputContainer}>
+          <div className='contactInputContainer'>
             <textarea
               placeholder='Message...'
               value={message}
@@ -67,13 +66,13 @@ const ContactForm = () => {
             ></textarea>
             <label><FaEnvelopeOpen /></label>
           </div>
-          <div className={styles.footer}>
+          <div className='contactFooter'>
             <p ref={not}>Sending Message </p>
             <button disabled={!name || !message || !email || sendingMessage}>SEND MESSAGE</button>
           </div>
         </form>
       </div>
-    </div>
+    </section>
   )
 }
 

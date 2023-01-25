@@ -1,0 +1,189 @@
+.contactInformationSectionContainer {
+  width: 100%;
+}
+
+.contactInformationCardsContainer {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.contactCardContainer {
+  padding: 2em;
+  background-color: var(--middle-color-light);
+  min-width: 19em;
+  flex: 1;
+  box-shadow: var(--border-shadow-block)
+}
+
+
+.contactCardContainer ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: .8em;
+  color: var(--text-color-gray);
+  line-height: 1.75em;
+}
+
+.contactCardContainer ul li strong {
+  color: var(--text-color-highlight)
+}
+
+.contactCardContainer a,
+.contactCardContainer svg {
+  height: 1.5em;
+}
+
+.contactSectionContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+
+.contactSectionContainer button {
+  border: none;
+  outline: none;
+  background-color: var(--text-color-vivid);
+  color: var(--back-color);
+  font-weight: 600;
+  font-size: .8em;
+  padding: 1em 2em;
+  width: fit-content;
+  align-self: flex-end;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+  transition-property: background, filter;
+}
+
+.contactSectionContainer button:disabled {
+filter: brightness(.6);
+}
+
+.contactFormContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--border-shadow-block);
+  flex: 1;
+}
+
+.contactFormContainer form {
+  width: 100%;
+  background-color: var(--middle-color-light);
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+  height: 100%;
+  flex: 1;
+}
+
+.contactInputContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.contactInputContainer:nth-child(3) {
+  flex: 1;
+}
+
+.contactInputContainer label {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1.25em;
+  color: var(--text-color-gray);
+  background-color: var(--back-color);
+  transition: background .5s ease-in-out;
+}
+
+.contactInputContainer input, .contactInputContainer textArea {
+  flex: 1;
+  background-color: var(--middle-color);
+  color: var(--text-color-highlight);
+  padding: 1.25em;
+}
+
+.contactInputContainer svg {
+  pointer-events: none;
+  color: inherit;
+  font-size: .5em;
+  transition: color .2s ease-in-out;
+}
+
+.contactInputContainer input:focus + label,
+.contactInputContainer textArea:focus + label {
+  background-color: var(--text-color-vivid);
+  color: var(--back-color);;
+}
+
+.contactInputContainer input:not(:placeholder-shown) + label,
+.contactInputContainer textArea:not(:placeholder-shown) + label {
+  background-color: var(--text-color-vivid);
+  color: var(--back-color);
+}
+
+.contactFooter {
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: flex-end;
+margin-top: 1em;
+flex-wrap: wrap-reverse;
+gap: 1em;
+}
+
+.contactFooter p {
+visibility: hidden;
+color: var(--text-color-vivid);
+flex: 1;
+min-width: fit-content;
+}
+
+.contactFooter p.contactError {
+color:rgb(247 95 49);
+visibility: visible;
+}
+
+.contactFooter p.contactSent {
+color:rgb(33, 214, 103);
+visibility: visible;
+}
+
+.contactFormContainer form.contactSendingMessage .contactFooter p {
+visibility: visible;
+}
+
+.contactFooter p:not(.contactError):not(.contactSent):after {
+overflow: hidden;
+display: inline-block;
+vertical-align: bottom;
+content: ".\00a0.\00a0.\00a0";
+}
+
+.contactFormContainer form.contactSendingMessage .contactFooter p:not(.contactError):not(.contactSent):after {
+width: 0px;
+-webkit-animation: ellipsis steps(4,end) 0.8s infinite;      
+animation: ellipsis steps(4,end) 0.8s infinite;
+}
+
+@keyframes ellipsis {
+to {
+  width: 1.6em;    
+}
+}
+
+@-webkit-keyframes ellipsis {
+to {
+  width: 1.6em;     
+}
+}

@@ -1,13 +1,12 @@
-import styles from './styles/Deployments.module.css'
 import { FaGithub, FaLink, FaDotCircle } from 'react-icons/fa'
 import Link from 'next/link'
 import Head from '@/app/head'
 
 const DeploymentsElement = ({ deployments }) => {
   const statusTypes = {
-    OK: styles.ok,
-    UNKNOW: styles.unknow,
-    DOWN: styles.down
+    OK: 'rowOk',
+    UNKNOW: 'rowUnknow',
+    DOWN: 'rowDown'
   }
 
   return (
@@ -15,22 +14,22 @@ const DeploymentsElement = ({ deployments }) => {
       <Head>
         <title>Whoknows | Deployments</title>
       </Head>
-      <div className={styles.container}>
+      <section className='deploymentsSectionContainer'>
         <h2>Deployments</h2>
-        <section className={styles.deploymentsContainer}>
-            <div className={styles.header}>
+        <section className='deploymentsContainer'>
+            <div className='deploymentsHeader'>
               <h3>Name</h3>
-              <h3 className={styles.description}>Description</h3>
+              <h3 className='deploymentsDescription'>Description</h3>
               <h3>Repo</h3>
               <h3>Url</h3>
               <h3>Status</h3>
             </div>
           {deployments.map(({ _id, name, description, repoUrl, url, status }) => {
-            const statusClass = styles.row + ' ' + statusTypes[status]
+            const statusClass = 'deploymentsRow' + ' ' + statusTypes[status]
             return (
               <div className={statusClass} key={_id} >
                 <p>{name}</p>
-                <p className={styles.description}>{description}</p>
+                <p className='deploymentsDescription'>{description}</p>
                 <Link href={repoUrl} target="_blank" rel="noopener noreferrer" aria-label={`${name} repository`}><FaGithub /></Link>
                 <Link href={url} target="_blank" rel="noopener noreferrer" aria-label={`${name} website`}><FaLink /></Link>
                 <p><FaDotCircle /></p>
@@ -38,7 +37,7 @@ const DeploymentsElement = ({ deployments }) => {
             )
           })}
         </section>
-      </div>
+      </section>
   </>
   )
 }

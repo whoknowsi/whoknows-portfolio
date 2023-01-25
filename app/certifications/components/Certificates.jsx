@@ -1,11 +1,10 @@
-import styles from './styles/Certificates.module.css'
 import Certificate from './Certificate'
 
 const Certificates = ({ certificates }) => {
   return (
-    <div className={styles.container}>
+    <div className='certificatesSectionContaine'>
       <h2>Certifications</h2>
-      <div className={styles.certificatesContainer}>
+      <div className='certificatesContainer'>
           {certificates.map((certificate) => (
             <Certificate key={certificate.credentialId} certificate={certificate} />
           ))}

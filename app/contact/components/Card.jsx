@@ -1,9 +1,8 @@
 import Link from 'next/link'
-import styles from './styles/Card.module.css'
 
 const Card = ({ data }) => {
   return (
-    <div className={styles.container}>
+    <div className='contactCardContainer'>
       <ul>
         {data.map(({ name, description, url, Icon }) => {
           return (

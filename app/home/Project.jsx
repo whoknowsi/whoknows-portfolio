@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import styles from './styles/Project.module.css'
 import { useRouter } from 'next/navigation'
 
 const Project = ({ name, description, media, _id }) => {
@@ -17,17 +16,17 @@ const Project = ({ name, description, media, _id }) => {
   }
 
   return name ? (
-    <div className={styles.container} onClick={handleClick} onMouseDown={handleMiddleClick}>
+    <div className='projectCardContainer' onClick={handleClick} onMouseDown={handleMiddleClick}>
       <Link href={`/projects/${_id}`}>
         <h3>{name}</h3>
       </Link>
-      <div className={styles.imageContainer}>
+      <div className='projectCardImageContainer'>
         <Image src={media[0]} fill alt={name} />
       </div>
       <p>{description}</p>
     </div>
   ) : (
-    <div className={styles.containerPlaceHolder}></div>
+    <div className='projectCardContainerPlaceHolder'></div>
   )
 }
 

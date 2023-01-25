@@ -188,6 +188,20 @@ textarea {
   resize: none;
 }
 
+footer {
+  width: 100%;
+  padding: .75em 2em; 
+  background-color: var(--middle-color-light);
+  color: var(--text-color-gray);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: var(--border-shadow-block);
+}
+footer span {
+  font-size: .8em;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 

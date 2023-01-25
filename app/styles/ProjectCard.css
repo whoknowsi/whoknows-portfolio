@@ -1,0 +1,48 @@
+.projectCardContainer {
+  padding: 2em;
+  background-color: var(--middle-color-light);
+  min-width: 19em;
+  flex: 1;
+  box-shadow: var(--border-shadow-block);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform .2s ease-in-out;
+}
+
+.projectCardContainer h3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: .5em;
+}
+
+.projectCardContainer p {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.projectCardContainer:hover {
+  transform: scale(1.05);
+}
+
+.projectCardContainerPlaceHolder {
+  width: 100%;
+  background-color: var(--middle-color-light);
+  height: 25em;
+  min-width: 19em;
+}
+
+.projectCardImageContainer {
+  width: 100%;
+  margin-bottom: .5em;
+}
+
+.projectCardImageContainer img {
+  position: inherit !important;
+  object-fit: contain;
+  aspect-ratio: 16/9;
+}

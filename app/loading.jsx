@@ -1,7 +1,6 @@
 'use client'
 
 import { Oval } from 'react-loader-spinner'
-import styles from './styles/loading.module.css'
 
 const Loading = () => {
   const rootColors = {
@@ -14,7 +13,7 @@ const Loading = () => {
   }
 
   return (
-    <div className={styles.loadingContainer}>
+    <div className='loadingContainer'>
       <Oval
         color={colors.primary}
         wrapperStyle={{}}

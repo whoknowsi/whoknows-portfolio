@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import styles from './styles/LastProjects.module.css'
 import Project from './Project'
 import { useRef, useEffect, useState } from 'react'
 import { dateDDMMYYYYToTimestamp } from '../../utils/utils'
@@ -43,10 +42,10 @@ const LastProjects = ({ projects }) => {
   }, [maxProjectsOnLine])
 
   return (
-    <div className={styles.container}>
+    <section className='lastProjectsSectionContainer'>
       <h2>My last projects</h2>
-      <div ref={projectsContainer} className={styles.projectsContainer}>
-        <div className={styles.viewMore}>
+      <div ref={projectsContainer} className='lastProjectsContainer'>
+        <div className='lastProjectsViewMore'>
           <Link href="/projects">View more...</Link>
         </div>
         {maxProjectsOnLine ? (
@@ -61,7 +60,7 @@ const LastProjects = ({ projects }) => {
           <Project />
         )}
       </div>
-    </div>
+    </section>
   )
 }
 

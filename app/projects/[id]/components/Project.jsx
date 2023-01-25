@@ -1,10 +1,9 @@
 'use client'
 
-import styles from './styles/Project.module.css'
 import Image from 'next/image'
-import { FaGithub, FaLink, FaCircle } from 'react-icons/fa'
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
+import { FaGithub, FaLink, FaCircle } from 'react-icons/fa'
 
 const Project = ({ project }) => {
   const { name, description, createdAt, status, repoUrl, url, media } = project
@@ -91,42 +90,42 @@ const Project = ({ project }) => {
 
   return (
     <>
-      <div className={styles.container}>
+      <section className='projectFirstSectionContainer'>
         <h2>{name}</h2>
-        <div className={styles.imagesContainer}>
-          <div ref={prev} className={styles.prev} onClick={handlePrev}>
+        <div className='projectImagesContainer'>
+          <div ref={prev} className='projectPrev' onClick={handlePrev}>
             <span>{'<'}</span>
           </div>
-          <div ref={next} className={styles.next} onClick={handleNext}>
+          <div ref={next} className='projectNext' onClick={handleNext}>
             <span>{'>'}</span>
           </div>
-          <div className={styles.sliderPoints}>
+          <div className='projectSliderPoints'>
             {media.map((url, i) => (
               <FaCircle
                 key={'pointer ' + url}
-                className={`${i + 1 === currentImg && styles.selectedSlide}`}
+                className={`${i + 1 === currentImg && 'projectSelectedSlider'}`}
                 id={i}
                 onClick={() => handleClickSlide(i + 1)}
               />
             ))}
           </div>
-          <div className={styles.imagesSlider} ref={slider}>
+          <div className='projectImagesSlider' ref={slider}>
             {media.map((url, i) => (
-              <div key={url} className={`${styles.imageContainer} ${currentImg - 1 === i ? styles.current : ''}`}>
+              <div key={url} className={`projectImageContainer ${currentImg - 1 === i && 'projectCurrent'}`}>
                 <Image src={url} fill alt={`${name} image ${i}`} />
               </div>
             ))}
           </div>
         </div>
-      </div>
-      <div className={styles.secondSectionContainer}>
+      </section>
+      <section className='projectSecondSectionContainer'>
         <h2>Project details</h2>
-        <div className={styles.detailsContainer}>
-          <div className={styles.description}>
+        <div className='projectDetailsContainer'>
+          <div className='projectDescription'>
             <h3>Description</h3>
             <p>{description}</p>
           </div>
-          <div className={styles.details}>
+          <div className='projectDetails'>
             <ul>
               <li>
                 <strong>Date:</strong>
@@ -155,7 +154,7 @@ const Project = ({ project }) => {
             </ul>
           </div>
         </div>
-      </div>
+      </section>
     </>
   )
 }

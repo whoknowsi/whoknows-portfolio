@@ -1,5 +1,5 @@
-import LastProjects from './components/LastProjects'
-import Title from './components/Title'
+import LastProjects from './home/LastProjects'
+import Title from './home/Title'
 import { getProjects } from '@/services/projects'
 import { getBasicInfo } from '@/services/basic-info'
 import Head from './head'

@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import styles from './styles/Certificate.module.css'
 
 const Certificate = ({ certificate }) => {
   const { name, description, issuingOrganization, expires, expirationDate, issueDate, credentialId, credentialURL } =
@@ -44,30 +43,30 @@ const Certificate = ({ certificate }) => {
   }, [isHover])
 
   return (
-    <div className={styles.container} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <div className={styles.dotContainer}>
-        <div ref={dot} className={`${styles.backDot} ${isHover || isAnimating ? styles.animated : ''}`}></div>
-        <div className={styles.dot}></div>
+    <div className='certificateArticleContainer' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <div className='certificateDotContainer'>
+        <div ref={dot} className={`certificateBackDot ${(isHover || isAnimating) && 'dotAnimated'}`}></div>
+        <div className='certificateDot'></div>
       </div>
-      <div className={styles.certificateContainer}>
-        <div className={styles.date}>
+      <div className='certificateContainer'>
+        <div className='certificateDate'>
           <span>{fromApiDateToVerboseDate(issueDate, expirationDate, expires)}</span>
         </div>
-        <section className={styles.title}>
+        <section className='certificateTitle'>
           <h3>{name}</h3>
           <span>{issuingOrganization}</span>
         </section>
-        <section className={styles.content}>
+        <section className='certificateContent'>
           <article>
             <h4>Description:</h4>
-            <p className={styles.description}>
+            <p className='certificateDescription'>
               {showingMore ? description : `${description.split('.')[0]}.`}{' '}
               <button onClick={handleReadMore}>{showingMore ? 'Show less' : '... Read more'}</button>
             </p>
           </article>
           <article>
             <h4>Credential ID:</h4>
-            <p className={styles.credentialId}>{credentialId}</p>
+            <p className='certificateCredentialId'>{credentialId}</p>
           </article>
           <article>
             <h4>Credential URL:</h4>

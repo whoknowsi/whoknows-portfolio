@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/font": "^13.1.6",
     "dotenv": "^16.0.3",
     "next": "13.1.4",
     "nodemailer": "^6.9.0",

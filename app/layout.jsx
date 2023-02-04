@@ -12,12 +12,16 @@ import Head from './head'
 import Navigation from './components/Navigation'
 import { getBasicInfo } from '@/services/basic-info'
 import { getProjects } from '@/services/projects'
+
+import { Poppins } from '@next/font/google'
+const poppins = Poppins({ weight: ['300', '400', '600'], subsets: ['latin'] })
+
 export default async function RootLayout ({ children }) {
   const basicInfo = await getBasicInfo()
   const projects = await getProjects()
 
   return (
-    <html lang="en">
+    <html className={poppins.className} lang="en">
       <Head />
       <body>
         <div className='container'>

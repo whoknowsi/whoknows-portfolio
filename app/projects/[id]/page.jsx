@@ -1,20 +1,24 @@
 import Footer from '@/app/components/Footer/Footer'
 import Head from '@/app/head'
-import { getProjects } from '@/services/projects'
+import { getProjectsBy } from '@/services/projects'
 import Project from './components/Project'
-import ProjectNotFound from './components/ProjectNotFound'
 
-export default async function Contact ({ params }) {
-  const projects = await getProjects()
-  const id = params.id
-  const project = projects.find((project) => project._id === id)
-
+export default async function ProjectPage ({ params }) {
+  const { id } = params
+  const project = await getProjectsBy(id)
   return (
     <>
       <Head>
-        <title>{`Whoknows | ${project?.name ? project.name : 'Project not found'}`}</title>
+        <title>{`Whoknows | ${project.name}`}</title>
       </Head>
-      {project ? <><Project project={project} /><Footer /></> : <ProjectNotFound />}
+      <><Project project={project} /><Footer /></>
     </>
   )
+}
+
+export async function generateStaticParams () {
+  const projects = await getProjectsBy()
+  return projects.map(({ _id }) => ({
+    id: _id
+  }))
 }

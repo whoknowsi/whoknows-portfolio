@@ -1,12 +1,12 @@
 import LastProjects from './home/LastProjects'
 import Title from './home/Title'
-import { getProjects } from '@/services/projects'
+import { getProjectsBy } from '@/services/projects'
 import { getBasicInfo } from '@/services/basic-info'
 import Head from './head'
 import Footer from './components/Footer/Footer'
 
 export default async function Home () {
-  const projects = await getProjects()
+  const projects = await getProjectsBy()
   const basicInfo = await getBasicInfo()
 
   return (

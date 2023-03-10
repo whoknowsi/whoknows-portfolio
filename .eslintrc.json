@@ -13,6 +13,7 @@
     "sourceType": "module"
   },
   "rules": {
-    "multiline-ternary": 0
+    "multiline-ternary": 0,
+    "space-before-function-paren": "off"
   }
 }

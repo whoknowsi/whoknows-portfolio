@@ -24,10 +24,10 @@ const DeploymentsElement = ({ deployments }) => {
               <h3>Url</h3>
               <h3>Status</h3>
             </div>
-          {deployments.map(({ _id, name, description, repoUrl, url, status }) => {
+          {deployments.map(({ id, name, description, repoUrl, url, status }) => {
             const statusClass = 'deploymentsRow' + ' ' + statusTypes[status]
             return (
-              <div className={statusClass} key={_id} >
+              <div className={statusClass} key={id} >
                 <p>{name}</p>
                 <p className='deploymentsDescription'>{description}</p>
                 <Link href={repoUrl} target="_blank" rel="noopener noreferrer" aria-label={`${name} repository`}><FaGithub /></Link>

@@ -1,6 +1,6 @@
 
 import Main from './components/Main'
-import { getBasicInfo } from '@/services/basic-info'
+import { getBasicInfo } from '@/services/basic-info-service'
 import Head from '@/app/head'
 import Footer from '../components/Footer/Footer'
 

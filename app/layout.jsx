@@ -10,8 +10,8 @@ import './styles/Contact.css'
 import Head from './head'
 
 import Navigation from './components/Navigation'
-import { getBasicInfo } from '@/services/basic-info'
-import { getProjectsBy } from '@/services/projects'
+import { getBasicInfo } from '@/services/basic-info-service'
+import { getProjectsBy } from '@/services/projects-service'
 
 import { Poppins } from '@next/font/google'
 const poppins = Poppins({ weight: ['300', '400', '600'], subsets: ['latin'] })

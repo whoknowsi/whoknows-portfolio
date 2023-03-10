@@ -1,7 +1,7 @@
 import LastProjects from './home/LastProjects'
 import Title from './home/Title'
-import { getProjectsBy } from '@/services/projects'
-import { getBasicInfo } from '@/services/basic-info'
+import { getProjectsBy } from '@/services/projects-service'
+import { getBasicInfo } from '@/services/basic-info-service'
 import Head from './head'
 import Footer from './components/Footer/Footer'
 

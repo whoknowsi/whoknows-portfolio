@@ -71,9 +71,9 @@ const Nav = ({ open, projects, handleMenuToggle, handleMainClick }) => {
             <div>Projects</div>
           </Link>
           <ul ref={projectsList} className={`${styles.projects}`}>
-            {projects.map(({ _id, name }) => (
-              <li key={_id} className={pathname.includes(_id) ? styles.active : ''}>
-                <Link href={`/projects/${_id}`} onClick={handleMainClick}>
+            {projects.map(({ id, name }) => (
+              <li key={id} className={pathname.includes(id) ? styles.active : ''}>
+                <Link href={`/projects/${id}`} onClick={handleMainClick}>
                   <span>{name}</span>
                 </Link>
               </li>

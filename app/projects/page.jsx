@@ -1,4 +1,4 @@
-import { getProjectsBy } from '@/services/projects'
+import { getProjectsBy } from '@/services/projects-service'
 import Head from '@/app/head'
 import Projects from './components/Projects'
 import Footer from '../components/Footer/Footer'

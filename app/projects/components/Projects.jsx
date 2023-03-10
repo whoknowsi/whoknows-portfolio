@@ -10,7 +10,7 @@ const Projects = ({ projects }) => {
           [...projects]
             .sort((a, b) => dateDDMMYYYYToTimestamp(b.createdAt) - dateDDMMYYYYToTimestamp(a.createdAt))
             .map((props) => (
-              <Project key={props._id} {...props} />
+              <Project key={props.id} {...props} />
             ))
         }
       </div>

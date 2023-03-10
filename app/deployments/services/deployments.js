@@ -1,4 +1,4 @@
-const url = `https://personal-data-api.vercel.app/deployments`
+const url = 'https://personal-data-api.vercel.app/deployments'
 const checkApi = 'https://is-alive.whoknows.workers.dev/check'
 
 export async function getDeployments() {

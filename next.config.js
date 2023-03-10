@@ -5,7 +5,7 @@ const nextConfig = {
     appDir: true
   },
   env: {
-    API_BASE_URL: 'https://personal-data-api.vercel.app',
+    API_BASE_URL: 'https://whoknows-portfolio.netlify.app',
     API_CHECK_URL: 'https://is-alive.whoknows.workers.dev/check'
   },
   images: {

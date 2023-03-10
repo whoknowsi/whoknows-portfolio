@@ -1,4 +1,4 @@
-export default async function handler (req, res) {
+export default async function handler(req, res) {
   require('dotenv').config()
   const nodemailer = require('nodemailer')
   const transporter = nodemailer.createTransport({
@@ -22,6 +22,6 @@ export default async function handler (req, res) {
     await transporter.sendMail(mailData)
     res.status(200).json({ message: 'Message sent successfully' })
   } catch (error) {
-    res.status(400).json(error)
+    res.status(400).json({ message: 'Failed to send message', error })
   }
 }

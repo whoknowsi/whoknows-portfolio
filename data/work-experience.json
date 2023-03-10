@@ -1,0 +1,21 @@
+[
+  {
+    "id": "63b8f38cf483595b65d60a28",
+    "company": "CEGA Electrónica S.A.",
+    "title": "Intern",
+    "employmentType": "Internship",
+    "location": {
+      "city": "Mendoza",
+      "country": "Argentina"
+    },
+    "locationType": "On-site",
+    "startDate": "01/10/2017",
+    "endDate": "01/11/2017",
+    "responsabilities": [
+      "Assembly and soldering of circuit boards",
+      "Quality control",
+      "Loading programs onto Arduino systems"
+    ],
+    "skills": []
+  }
+]

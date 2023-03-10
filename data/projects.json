@@ -1,0 +1,77 @@
+[
+  {
+    "id": "63b98541944da1cb9ec7a66b",
+    "name": "Sparky Solutions",
+    "description": "This website was built using Next.js and pure CSS, with the help of the styled components library for a single reusable React component. The site is fully responsive and features three pages: home, about, and contact us.",
+    "createdAt": "31/12/2022",
+    "status": "Completed",
+    "deployed": true,
+    "repoUrl": "https://github.com/whoknowsi/sparky-solutions",
+    "url": "https://whoknowsi.github.io/sparky-solutions/",
+    "media": [
+      "https://raw.githubusercontent.com/whoknowsi/sparky-solutions/main/screenshots/home.png",
+      "https://raw.githubusercontent.com/whoknowsi/sparky-solutions/main/screenshots/about.png",
+      "https://raw.githubusercontent.com/whoknowsi/sparky-solutions/main/screenshots/contact.png"
+    ],
+    "client": "whoknowsi"
+  },
+  {
+    "id": "63b987a1f4ac00c0e16828d2",
+    "name": "Personal data API",
+    "description": "My public REST API for personal information. Use HTTP requests to view my certificates, projects, studies, work experience and more. This API is built with MongoDB, Mongoose, Express, and Node.js, and follows REST architecture. I am also using Jest for testing. This API is being consumed by my portfolio.",
+    "createdAt": "02/01/2023",
+    "status": "Completed",
+    "deployed": true,
+    "repoUrl": "https://github.com/whoknowsi/personal-data-api",
+    "url": "https://personal-data-api.vercel.app/",
+    "media": [
+      "https://raw.githubusercontent.com/whoknowsi/personal-data-api/master/screenshots/test-coverage.png",
+      "https://raw.githubusercontent.com/whoknowsi/personal-data-api/master/screenshots/endpoints.png"
+    ],
+    "client": "whoknowsi"
+  },
+  {
+    "id": "63b98bf41bcfa94f72f66bc1",
+    "name": "Netflix clone",
+    "description": "Netflix clone is a responsive web application made in React, which allows users to view images of movies and TV shows. It uses the TMDB API to get information and images of the movies and shows.",
+    "createdAt": "02/02/2022",
+    "status": "Completed",
+    "deployed": true,
+    "repoUrl": "https://github.com/whoknowsi/netflixclone",
+    "url": "https://whoknowsi.github.io/netflixclone/",
+    "media": [
+      "https://raw.githubusercontent.com/whoknowsi/netflixclone/master/screenshots/desktop.png",
+      "https://raw.githubusercontent.com/whoknowsi/netflixclone/master/screenshots/mobile.png"
+    ],
+    "client": "whoknowsi"
+  },
+  {
+    "id": "63c66dfe904e11daf999857b",
+    "name": "Task List",
+    "description": "This website is a task list application built using Vue.js 3 and Vite, utilizing the Tailwind CSS framework for its design. It offers a user-friendly interface and intuitive functionality, allowing users to easily create, mark as completed, edit, and delete tasks utilizing local storage. This website is deployed on Netlify, a popular platform for hosting web applications. ",
+    "createdAt": "17/01/2023",
+    "status": "Completed",
+    "deployed": true,
+    "repoUrl": "https://github.com/whoknowsi/todo-list-vue",
+    "url": "https://whoknows-todo-list-vue.netlify.app/",
+    "media": [
+      "https://raw.githubusercontent.com/whoknowsi/todo-list-vue/master/screenshots/mobile.png",
+      "https://raw.githubusercontent.com/whoknowsi/todo-list-vue/master/screenshots/desktop.png"
+    ],
+    "client": "whoknowsi"
+  },
+  {
+    "id": "63cc887e007698614c96ca08",
+    "name": "PedidosYa Scraper API",
+    "description": "I am implementing a project that uses web scraping via Playwright to gather information from PedidosYa. I am then utilizing Cloudflare Workers and Hono to create an API for the collected information. The data is stored in JSON files and images are optimized using the Sharp library. These files are periodically uploaded to a MongoDB for backup.",
+    "createdAt": "20/01/2023",
+    "status": "In progress",
+    "deployed": false,
+    "repoUrl": "https://github.com/whoknowsi/pedidosya-scraper-api/",
+    "media": [
+      "https://raw.githubusercontent.com/whoknowsi/pedidosya-scraper-api/master/screenshots/products.png",
+      "https://raw.githubusercontent.com/whoknowsi/pedidosya-scraper-api/master/screenshots/categories.png"
+    ],
+    "client": "whoknowsi"
+  }
+]

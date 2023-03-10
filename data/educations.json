@@ -1,0 +1,14 @@
+[
+  {
+    "id": "63b8f38cf483595b65d60a21",
+    "school": "Universidad de Buenos Aires",
+    "degree": "Bachelor's degree",
+    "fieldOfStudy": "Bachelor of Computer Science",
+    "startDate": "01/01/2021",
+    "location": {
+      "city": "Buenos Aires",
+      "country": "Argentina"
+    },
+    "media": []
+  }
+]

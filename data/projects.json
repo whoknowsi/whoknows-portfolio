@@ -9,9 +9,9 @@
     "repoUrl": "https://github.com/whoknowsi/sparky-solutions",
     "url": "https://whoknowsi.github.io/sparky-solutions/",
     "media": [
-      "https://raw.githubusercontent.com/whoknowsi/sparky-solutions/main/screenshots/home.png",
-      "https://raw.githubusercontent.com/whoknowsi/sparky-solutions/main/screenshots/about.png",
-      "https://raw.githubusercontent.com/whoknowsi/sparky-solutions/main/screenshots/contact.png"
+      "/images/projects/sparky-solutions/home.webp",
+      "/images/projects/sparky-solutions/about.webp",
+      "/images/projects/sparky-solutions/contact.webp"
     ],
     "client": "whoknowsi"
   },
@@ -25,8 +25,8 @@
     "repoUrl": "https://github.com/whoknowsi/personal-data-api",
     "url": "https://personal-data-api.vercel.app/",
     "media": [
-      "https://raw.githubusercontent.com/whoknowsi/personal-data-api/master/screenshots/test-coverage.png",
-      "https://raw.githubusercontent.com/whoknowsi/personal-data-api/master/screenshots/endpoints.png"
+      "/images/projects/personal-data-api/test-coverage.webp",
+      "/images/projects/personal-data-api/endpoints.webp"
     ],
     "client": "whoknowsi"
   },
@@ -40,8 +40,8 @@
     "repoUrl": "https://github.com/whoknowsi/netflixclone",
     "url": "https://whoknowsi.github.io/netflixclone/",
     "media": [
-      "https://raw.githubusercontent.com/whoknowsi/netflixclone/master/screenshots/desktop.png",
-      "https://raw.githubusercontent.com/whoknowsi/netflixclone/master/screenshots/mobile.png"
+      "/images/projects/netflixclone/desktop.webp",
+      "/images/projects/netflixclone/mobile.webp"
     ],
     "client": "whoknowsi"
   },
@@ -55,8 +55,8 @@
     "repoUrl": "https://github.com/whoknowsi/todo-list-vue",
     "url": "https://whoknows-todo-list-vue.netlify.app/",
     "media": [
-      "https://raw.githubusercontent.com/whoknowsi/todo-list-vue/master/screenshots/mobile.png",
-      "https://raw.githubusercontent.com/whoknowsi/todo-list-vue/master/screenshots/desktop.png"
+      "/images/projects/todo-list-vue/mobile.webp",
+      "/images/projects/todo-list-vue/desktop.webp"
     ],
     "client": "whoknowsi"
   },
@@ -69,8 +69,8 @@
     "deployed": false,
     "repoUrl": "https://github.com/whoknowsi/pedidosya-scraper-api/",
     "media": [
-      "https://raw.githubusercontent.com/whoknowsi/pedidosya-scraper-api/master/screenshots/products.png",
-      "https://raw.githubusercontent.com/whoknowsi/pedidosya-scraper-api/master/screenshots/categories.png"
+      "/images/projects/pedidosya-scraper-api/products.webp",
+      "/images/projects/pedidosya-scraper-api/categories.webp"
     ],
     "client": "whoknowsi"
   }

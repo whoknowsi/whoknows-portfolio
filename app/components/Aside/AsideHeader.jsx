@@ -2,12 +2,23 @@ import Link from 'next/link'
 import styles from './styles/AsideHeader.module.css'
 import Image from 'next/image'
 
-export const AsideHeader = ({ name, lastName, description, handleMainClick }) => {
+export const AsideHeader = ({
+  name,
+  lastName,
+  description,
+  handleMainClick
+}) => {
   return (
     <section className={styles.container}>
       <div className={styles.profilePictureContainer}>
         <Link href="/" onClick={handleMainClick}>
-          <Image priority={true} src="/images/portrait.jpg" width="288" height="300" alt="portrait photo" />
+          <Image
+            priority={true}
+            src="/images/portrait.webp"
+            width="288"
+            height="300"
+            alt="portrait photo"
+          />
         </Link>
       </div>
       <div className={styles.descriptionContainer}>

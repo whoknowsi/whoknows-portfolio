@@ -23,7 +23,7 @@
     "status": "Completed",
     "deployed": true,
     "repoUrl": "https://github.com/whoknowsi/personal-data-api",
-    "url": "https://personal-data-api.vercel.app/",
+    "url": "https://personal-data-api.netlify.app/.netlify/functions/api/",
     "media": [
       "/images/projects/personal-data-api/test-coverage.webp",
       "/images/projects/personal-data-api/endpoints.webp"

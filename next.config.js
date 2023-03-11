@@ -11,6 +11,7 @@ const nextConfig = {
     API_CHECK_URL: 'https://is-alive.whoknows.workers.dev/check'
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',

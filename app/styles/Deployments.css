@@ -7,10 +7,11 @@
 .deploymentsContainer {
   display: grid;
   width: 100%;
-  row-gap: .5em;
+  row-gap: 0.5em;
 }
 
-.deploymentsRow, .deploymentsHeader {
+.deploymentsRow,
+.deploymentsHeader {
   background-color: var(--middle-color-light);
   box-shadow: var(--border-shadow-block);
   padding: 1em 1.5em;
@@ -21,7 +22,6 @@
   row-gap: 1em;
   justify-items: center;
   align-items: center;
-  
 }
 
 .deploymentsHeader h3 {
@@ -29,22 +29,22 @@
 }
 
 .deploymentsRow {
-  transition: background .3s ease-in-out
+  transition: background 0.3s ease-in-out;
 }
 
 .deploymentsRow a {
   height: 1.5em;
 }
 
-.deploymentsRow p:first-child, .header h3:first-child {
+.deploymentsRow p:first-child,
+.header h3:first-child {
   justify-self: start;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   width: 100%;
-  color: var(--text-color-highlight)
+  color: var(--text-color-highlight);
 }
-
 
 .deploymentsRow.rowOk:hover {
   background-color: rgba(26, 146, 66, 0.1);
@@ -55,7 +55,11 @@
 }
 
 .deploymentsRow.rowDown:hover {
-  background-color: rgba(168, 69, 39, 0.1);;
+  background-color: rgba(168, 69, 39, 0.1);
+}
+
+.deploymentsRow.rowLoading:hover {
+  background-color: rgba(87, 64, 14, 0.1);
 }
 
 .deploymentsDescription {
@@ -67,7 +71,8 @@
 }
 
 @media (max-width: 767px) {
-  .deploymentsRow, .deploymentsHeader {
+  .deploymentsRow,
+  .deploymentsHeader {
     grid-template-columns: 1fr 4em 2.5em 4em;
   }
 
@@ -76,11 +81,9 @@
   }
 }
 
-.deploymentsRow.rowOk p svg,
-.deploymentsRow.rowUnknow p svg,
-.deploymentsRow.rowDown p svg {
-  font-size: .6em;
-  transition: transform .5s ease-in-out;
+.deploymentsRow svg {
+  font-size: 0.6em;
+  transition: transform 0.5s ease-in-out;
 }
 
 .deploymentsRow:hover .rowOk svg,
@@ -89,22 +92,47 @@
   transform: scale(1.2);
 }
 
+.deploymentsRow.rowLoading p svg {
+  color: var(--text-color-vivid-dark);
+  animation-name: pulseAnimation;
+  animation-iteration-count: infinite;
+  animation-duration: 1.8s;
+}
+
+@keyframes pulseAnimation {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
+}
+
 .deploymentsRow.rowOk p svg {
-  color: rgba(26, 146, 66, 1);;
+  color: rgba(26, 146, 66, 1);
+  transition: all ease-in-out 1s;
 }
 
 .deploymentsRow.rowUnknow p svg {
   color: rgb(168, 156, 43);
+  transition: all ease-in-out 1s;
 }
 
 .deploymentsRow.rowDown p svg {
   color: rgba(168, 69, 39, 0.904);
+  transition: all ease-in-out 1s;
 }
 
 @media (max-width: 423px) {
-  .deploymentsRow, .deploymentsHeader {
+  .deploymentsRow,
+  .deploymentsHeader {
     gap: 1em;
-    padding: .5em 1.5em;
+    padding: 0.5em 1.5em;
   }
-  
 }

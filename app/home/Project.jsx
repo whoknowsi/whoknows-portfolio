@@ -16,17 +16,25 @@ const Project = ({ name, description, media, id }) => {
   }
 
   return name ? (
-    <div className='projectCardContainer' onClick={handleClick} onMouseDown={handleMiddleClick}>
+    <div
+      className="projectCardContainer"
+      onClick={handleClick}
+      onMouseDown={handleMiddleClick}
+    >
       <Link href={`/projects/${id}`}>
         <h3>{name}</h3>
       </Link>
-      <div className='projectCardImageContainer'>
-        <Image src={media[0]} fill alt={name} />
+      <div className="projectCardImageContainer">
+        <Image
+          src={`${process.env.STATICS_BASE_URL}${media[0]}`}
+          fill
+          alt={name}
+        />
       </div>
       <p>{description}</p>
     </div>
   ) : (
-    <div className='projectCardContainerPlaceHolder'></div>
+    <div className="projectCardContainerPlaceHolder"></div>
   )
 }
 

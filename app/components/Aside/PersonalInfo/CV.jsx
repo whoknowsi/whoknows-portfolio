@@ -5,7 +5,12 @@ import { FaFileDownload } from 'react-icons/fa'
 const CV = ({ path }) => {
   return (
     <div className={styles.container}>
-      <Link href={`${process.env.API_BASE_URL}${path}`} target="_blank" rel="noopener noreferrer" aria-label={'download curriculum vitae'}>
+      <Link
+        href={`${process.env.STATICS_BASE_URL}${path}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={'download curriculum vitae'}
+      >
         Download <FaFileDownload />
       </Link>
     </div>

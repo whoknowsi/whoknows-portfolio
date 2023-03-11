@@ -15,7 +15,9 @@ const Project = ({ project }) => {
   useEffect(() => {
     const handleResize = () => {
       if (!slider.current.style.transform) return
-      const toTranslate = `translateX(${-getValueToTranslate() * (currentImg - 1)}px)`
+      const toTranslate = `translateX(${
+        -getValueToTranslate() * (currentImg - 1)
+      }px)`
       slider.current.style.transform = toTranslate
     }
 
@@ -30,13 +32,20 @@ const Project = ({ project }) => {
     const htmlEl = document.querySelector('body')
     const styles = getComputedStyle(htmlEl)
 
-    const emToPixels = (em) => Number(styles.fontSize.split('px')[0]) * Number(em.split('em')[0])
+    const emToPixels = (em) =>
+      Number(styles.fontSize.split('px')[0]) * Number(em.split('em')[0])
 
-    const maxWidth = Number(styles.getPropertyValue('--max-width').split('px')[0])
+    const maxWidth = Number(
+      styles.getPropertyValue('--max-width').split('px')[0]
+    )
     const vw = window.innerWidth
     const isMobile = window.innerWidth <= 1023
-    const headerWidth = isMobile ? 0 : emToPixels(styles.getPropertyValue('--header-width'))
-    const asideWidth = isMobile ? 0 : emToPixels(styles.getPropertyValue('--aside-width'))
+    const headerWidth = isMobile
+      ? 0
+      : emToPixels(styles.getPropertyValue('--header-width'))
+    const asideWidth = isMobile
+      ? 0
+      : emToPixels(styles.getPropertyValue('--aside-width'))
     const paddingWidth = isMobile ? emToPixels('4em') : emToPixels('6em')
 
     return Math.min(maxWidth, vw) - headerWidth - asideWidth - paddingWidth
@@ -50,15 +59,21 @@ const Project = ({ project }) => {
 
     next.current.style.visibility = 'visible'
 
-    const currentTranslate = fromTranslateToNumber(slider.current.style.transform)
-    const toTranslate = `translateX(${currentTranslate + getValueToTranslate()}px)`
+    const currentTranslate = fromTranslateToNumber(
+      slider.current.style.transform
+    )
+    const toTranslate = `translateX(${
+      currentTranslate + getValueToTranslate()
+    }px)`
     slider.current.style.transform = toTranslate
 
     setCurrentImage(currentImg - 1)
   }
 
   const handleNext = () => {
-    if (currentImg === media.length - 1) next.current.style.visibility = 'hidden'
+    if (currentImg === media.length - 1) {
+      next.current.style.visibility = 'hidden'
+    }
     if (currentImg === media.length) return
 
     prev.current.style.visibility = 'visible'
@@ -90,16 +105,16 @@ const Project = ({ project }) => {
 
   return (
     <>
-      <section className='projectFirstSectionContainer'>
+      <section className="projectFirstSectionContainer">
         <h2>{name}</h2>
-        <div className='projectImagesContainer'>
-          <div ref={prev} className='projectPrev' onClick={handlePrev}>
+        <div className="projectImagesContainer">
+          <div ref={prev} className="projectPrev" onClick={handlePrev}>
             <span>{'<'}</span>
           </div>
-          <div ref={next} className='projectNext' onClick={handleNext}>
+          <div ref={next} className="projectNext" onClick={handleNext}>
             <span>{'>'}</span>
           </div>
-          <div className='projectSliderPoints'>
+          <div className="projectSliderPoints">
             {media.map((url, i) => (
               <FaCircle
                 key={'pointer ' + url}
@@ -109,23 +124,32 @@ const Project = ({ project }) => {
               />
             ))}
           </div>
-          <div className='projectImagesSlider' ref={slider}>
+          <div className="projectImagesSlider" ref={slider}>
             {media.map((url, i) => (
-              <div key={url} className={`projectImageContainer ${currentImg - 1 === i && 'projectCurrent'}`}>
-                <Image src={url} fill alt={`${name} image ${i}`} />
+              <div
+                key={url}
+                className={`projectImageContainer ${
+                  currentImg - 1 === i && 'projectCurrent'
+                }`}
+              >
+                <Image
+                  src={`${process.env.STATICS_BASE_URL}${url}`}
+                  fill
+                  alt={`${name} image ${i}`}
+                />
               </div>
             ))}
           </div>
         </div>
       </section>
-      <section className='projectSecondSectionContainer'>
+      <section className="projectSecondSectionContainer">
         <h2>Project details</h2>
-        <div className='projectDetailsContainer'>
-          <div className='projectDescription'>
+        <div className="projectDetailsContainer">
+          <div className="projectDescription">
             <h3>Description</h3>
             <p>{description}</p>
           </div>
-          <div className='projectDetails'>
+          <div className="projectDetails">
             <ul>
               <li>
                 <strong>Date:</strong>
@@ -138,7 +162,12 @@ const Project = ({ project }) => {
               {repoUrl && (
                 <li>
                   <strong>Repo:</strong>
-                  <Link href={repoUrl} target="_blank" rel="noopener noreferrer" aria-label={`${name} repository`}>
+                  <Link
+                    href={repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${name} repository`}
+                  >
                     <FaGithub />
                   </Link>
                 </li>
@@ -146,7 +175,12 @@ const Project = ({ project }) => {
               {url && (
                 <li>
                   <strong>Website:</strong>
-                  <Link href={url} target="_blank" rel="noopener noreferrer" aria-label={`${name} website`}>
+                  <Link
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${name} website`}
+                  >
                     <FaLink />
                   </Link>
                 </li>

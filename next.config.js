@@ -5,8 +5,18 @@ const nextConfig = {
     appDir: true
   },
   env: {
-    API_BASE_URL: 'https://whoknows-portfolio.netlify.app',
+    STATICS_BASE_URL: 'https://personal-data-api.netlify.app',
+    API_BASE_URL:
+      'https://personal-data-api.netlify.app/.netlify/functions/api',
     API_CHECK_URL: 'https://is-alive.whoknows.workers.dev/check'
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'personal-data-api.netlify.app'
+      }
+    ]
   }
 }
 

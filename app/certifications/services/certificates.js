@@ -1,7 +1,9 @@
-import certificates from '@/data/certificates.json'
+const url = `${process.env.API_BASE_URL}/certificates`
 
 const getCertificates = async () => {
-  return certificates
+  const response = await fetch(url)
+  const data = await response.json()
+  return data.results ? data.results : []
 }
 
 export { getCertificates }

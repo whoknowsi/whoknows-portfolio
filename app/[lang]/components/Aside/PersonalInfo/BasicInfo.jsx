@@ -6,15 +6,15 @@ const getAgeFrom = (dateOfBirth) => {
   return Math.floor((new Date() - birth) / 31557600000) // Divide by 1000*60*60*24*365.25
 }
 
-const BasicInfo = ({ info }) => {
+const BasicInfo = ({ info, dictionary }) => {
   const { dateOfBirth, country, city } = info
 
   return (
     <div className={styles.container}>
       <ul>
-        <li><strong>Country:</strong>{country}</li>
-        <li><strong>City:</strong>{city}</li>
-        <li><strong>Age:</strong>{getAgeFrom(dateOfBirth)}</li>
+        <li><strong>{dictionary.country}:</strong>{country}</li>
+        <li><strong>{dictionary.city}:</strong>{city}</li>
+        <li><strong>{dictionary.age}:</strong>{getAgeFrom(dateOfBirth)}</li>
       </ul>
     </div>
   )

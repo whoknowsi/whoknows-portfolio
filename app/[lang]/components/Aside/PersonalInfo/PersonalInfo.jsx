@@ -5,14 +5,15 @@ import Separator from './Separator'
 import Skills from './Skills/Skills'
 
 const PersonalInfo = (info) => {
+  const { dictionary } = info
   const { skills, ...basicInfo } = info.info
   return (
     <div className={styles.container}>
-      <BasicInfo info={basicInfo} />
-      <Separator title={'Skills'} />
+      <BasicInfo info={basicInfo} dictionary={dictionary} />
+      <Separator title={dictionary.titles.skills} />
       <Skills skills={skills} />
-      <Separator title={'CV'} />
-      <CV path={basicInfo.CV} />
+      <Separator title={dictionary.titles.cv} />
+      <CV path={basicInfo.CV} dictionary={dictionary} />
     </div>
   )
 }

@@ -14,6 +14,7 @@ import { getBasicInfo } from '@/services/basic-info-service'
 import { getProjectsBy } from '@/services/projects-service'
 
 import { Poppins } from '@next/font/google'
+import { getDictionary } from '@/get-dictionary'
 const poppins = Poppins({ weight: ['300', '400', '600'], subsets: ['latin'] })
 
 export async function generateStaticParams() {
@@ -23,6 +24,7 @@ export async function generateStaticParams() {
 export default async function RootLayout({ children, params }) {
   const basicInfo = await getBasicInfo({ lang: params.lang })
   const projects = await getProjectsBy({ lang: params.lang })
+  const dictionary = await getDictionary({ locale: params.lang })
 
   return (
     <html className={poppins.className} lang={params.lang}>
@@ -30,7 +32,7 @@ export default async function RootLayout({ children, params }) {
       <body>
         <div className="container">
           <div className={'content'}>
-            <Navigation basicInfo={basicInfo} projects={projects} />
+            <Navigation basicInfo={basicInfo} projects={projects} dictionary={dictionary} />
             <div className="scrollContainer">
               <main className={'main'}>{children}</main>
             </div>

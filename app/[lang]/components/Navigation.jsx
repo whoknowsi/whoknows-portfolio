@@ -7,7 +7,7 @@ import BackgroundPatron from './Background/BackgroundPatron'
 import BlurFilter from './BlurFilter/BlurFilter'
 import { usePathname } from 'next/navigation'
 
-export default function Navigation ({ basicInfo, projects }) {
+export default function Navigation ({ basicInfo, projects, dictionary }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [asideOpen, setAsideOpen] = useState(false)
   const pathname = usePathname()
@@ -38,6 +38,7 @@ export default function Navigation ({ basicInfo, projects }) {
         menuOpen={menuOpen}
         handleMainClick={handleMainClick}
         handleAsideToggle={handleAsideToggle}
+        dictionary={dictionary.aside}
       />
       <BackgroundPatron open={menuOpen || asideOpen} />
       <BlurFilter open={menuOpen || asideOpen} handleClick={handleMainClick} />
@@ -47,6 +48,7 @@ export default function Navigation ({ basicInfo, projects }) {
         asideOpen={asideOpen}
         handleMainClick={handleMainClick}
         handleMenuToggle={handleMenuToggle}
+        dictionary={dictionary.menu}
       />
     </>
   )

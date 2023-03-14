@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styles from './styles/CV.module.css'
 import { FaFileDownload } from 'react-icons/fa'
 
-const CV = ({ path }) => {
+const CV = ({ path, dictionary }) => {
   return (
     <div className={styles.container}>
       <Link
@@ -11,7 +11,7 @@ const CV = ({ path }) => {
         rel="noopener noreferrer"
         aria-label={'download curriculum vitae'}
       >
-        Download <FaFileDownload />
+        {dictionary.cv} <FaFileDownload />
       </Link>
     </div>
   )

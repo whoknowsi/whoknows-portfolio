@@ -1,0 +1,72 @@
+{
+  "aside": {
+    "country": "País",
+    "city": "Ciudad",
+    "age": "Edad",
+    "titles": {
+      "skills": "Habilidades",
+      "cv": "Cv"
+    },
+    "cv": "Descargar"
+  },
+  "menu": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "deployments": "Despliegues",
+    "certifications": "Certificados",
+    "contact": "Contacto"
+  },
+  "home": {
+    "firstTitle": "Conoce al creador: La cara detrás del trabajo",
+    "secondTitle": "Mis últimos proyectos",
+    "viewMore": "Ver más"
+  },
+  "projects": {
+    "title": "Detalles del proyecto",
+    "description": "Descripción",
+    "info": {
+      "date": "Fecha",
+      "status": "Estado",
+      "repo": "Repo"
+    }
+  },
+  "deployments": {
+    "title": "Despliegues",
+    "tableTitle": {
+      "name": "Nombre",
+      "description": "Descripción",
+      "repo": "Repo",
+      "url": "Url",
+      "status": "Estado"
+    }
+  },
+  "certifications": {
+    "title": "Certificados",
+    "months": ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+    "description": "Descripción",
+    "readMore": "Leer más",
+    "readLess": "Leer menos",
+    "credentialId": "Credencial ID",
+    "credentialUrl": "Credencial URL"
+  },
+  "contact": {
+    "firstTitle": "Información de contacto",
+    "secondTitle": "Ponerse en contacto",
+    "info": {
+      "cuontry": "País",
+      "city": "Ciudad",
+      "email": "Email",
+      "phone": "Celular"
+    },
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Mensaje",
+      "sendMessage": "Enviar Mensaje",
+      "sendingMessage": "Enviando mensaje",
+      "success": "¡Mensaje enviado!",
+      "error": "Error enviando el mensaje"
+    }
+  },
+  "footer": "Gracias por visitar"
+}

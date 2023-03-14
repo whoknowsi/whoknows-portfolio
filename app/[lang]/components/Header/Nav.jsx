@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation'
 import { i18n } from '@/i18n-config'
 import { getCurrentLocale } from '@/utils/utils'
 
-const Nav = ({ open, projects, handleMenuToggle, handleMainClick }) => {
+const Nav = ({ open, projects, handleMenuToggle, handleMainClick, dictionary }) => {
   const pathname = usePathname()
   const list = useRef(null)
   const projectsList = useRef(null)
@@ -64,13 +64,13 @@ const Nav = ({ open, projects, handleMenuToggle, handleMainClick }) => {
         <li className={i18n.locales.some((locale) => ('/' + locale) === pathname) ? styles.active : ''}>
           <Link href={`/${getCurrentLocale(pathname)}`} onClick={handleMainClick}>
             <IoHome />
-            <div>Home</div>
+            <div>{dictionary.home}</div>
           </Link>
         </li>
         <li className={pathname.includes('projects') ? styles.active : ''}>
           <Link href={`/${getCurrentLocale(pathname)}/projects`} onClick={handleClick}>
             <FaFolderOpen />
-            <div>Projects</div>
+            <div>{dictionary.projects}</div>
           </Link>
           <ul ref={projectsList} className={`${styles.projects}`}>
             {projects.map(({ id, name }) => (
@@ -85,19 +85,19 @@ const Nav = ({ open, projects, handleMenuToggle, handleMainClick }) => {
         <li className={pathname.includes('deployments') ? styles.active : ''}>
           <Link href={`/${getCurrentLocale(pathname)}/deployments`} onClick={handleMainClick}>
             <FaCloud />
-            <div>Deployments</div>
+            <div>{dictionary.deployments}</div>
           </Link>
         </li>
         <li className={pathname.includes('certifications') ? styles.active : ''}>
           <Link href={`/${getCurrentLocale(pathname)}/certifications`} onClick={handleMainClick}>
             <FaCertificate />
-            <div>Certifications</div>
+            <div>{dictionary.certifications}</div>
           </Link>
         </li>
         <li className={pathname.includes('contact') ? styles.active : ''}>
           <Link href={`/${getCurrentLocale(pathname)}/contact`} onClick={handleMainClick}>
             <FaAddressBook />
-            <div>Contact</div>
+            <div>{dictionary.contact}</div>
           </Link>
         </li>
       </ul>

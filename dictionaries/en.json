@@ -1,0 +1,72 @@
+{
+  "aside": {
+    "country": "Country",
+    "city": "City",
+    "age": "Age",
+    "titles": {
+      "skills": "Skills",
+      "cv": "Cv"
+    },
+    "cv": "Download"
+  },
+  "menu": {
+    "home": "Home",
+    "projects": "Projects",
+    "deployments": "Deployments",
+    "certifications": "Certifications",
+    "contact": "Contact"
+  },
+  "home": {
+    "firstTitle": "Meet the Maker: The Face Behind the Work",
+    "secondTitle": "My last projects",
+    "viewMore": "View more"
+  },
+  "projects": {
+    "title": "Project details",
+    "description": "Description",
+    "info": {
+      "date": "Date",
+      "status": "Status",
+      "repo": "Repo"
+    }
+  },
+  "deployments": {
+    "title": "Deployments",
+    "tableTitle": {
+      "name": "Name",
+      "description": "Description",
+      "repo": "Repo",
+      "url": "Url",
+      "status": "Status"
+    }
+  },
+  "certifications": {
+    "title": "Certifications",
+    "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    "description": "Description",
+    "readMore": "Read more",
+    "readLess": "Read less",
+    "credentialId": "Credential ID",
+    "credentialUrl": "Credential URL"
+  },
+  "contact": {
+    "firstTitle": "Contact Information",
+    "secondTitle": "Get In Touch",
+    "info": {
+      "cuontry": "Country",
+      "city": "City",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "sendMessage": "Send Message",
+      "sendingMessage": "Sending Message",
+      "success": "Message sent!",
+      "error": "Error sending message"
+    }
+  },
+  "footer": "Thanks for visiting"
+}

@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "deploy": "netlify deploy --build --prod",
+    "deploy": "netlify deploy --build --skip-functions-cache",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -11,17 +11,15 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.2.32",
-    "@next/font": "13.1.6",
-    "@vercel/next": "3.6.3",
+    "@next/font": "13.2.4",
     "dotenv": "16.0.3",
     "negotiator": "^0.6.3",
     "next": "13.2.4",
-    "nodemailer": "6.9.0",
+    "nodemailer": "6.9.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "4.7.1",
-    "react-loader-spinner": "5.3.4",
-    "sharp": "^0.31.3"
+    "react-icons": "4.8.0",
+    "react-loader-spinner": "5.3.4"
   },
   "devDependencies": {
     "eslint-config-next": "13.2.4",

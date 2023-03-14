@@ -9,7 +9,7 @@ const Header = ({ handleMenuToggle, open, asideOpen, projects, handleMainClick, 
       <div className={`${styles.menuContainer} ${open ? styles.open : ''}`}>
         <MenuToggle handleMenuToggle={handleMenuToggle} open={open} asideOpen={asideOpen}/>
         <Nav handleMainClick={handleMainClick} handleMenuToggle={handleMenuToggle} open={open} projects={projects} lang={lang} dictionary={dictionary} />
-        <LenguageToggle open={open} />
+        <LenguageToggle open={open} dictionary={dictionary} />
       </div>
     </header>
   )

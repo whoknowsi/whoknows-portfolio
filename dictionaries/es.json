@@ -17,17 +17,23 @@
     "contact": "Contacto"
   },
   "home": {
-    "firstTitle": "Conoce al creador: La cara detrás del trabajo",
+    "firstTitle": "Conoce al Creador: La Cara Detrás del Trabajo",
     "secondTitle": "Mis últimos proyectos",
+    "firstPartDescription": "Hola, soy",
+    "secondPartDescription": "desarrollador web y estudiante de Ciencias de la Computación. Me especializo en desarrollar aplicaciones y sitios web que resuelven problemas y mejoran la vida de las personas. Estoy en constante aprendizaje y explorando nuevas tecnologías para mejorar mis habilidades y ofrecer soluciones de alta calidad para mis clientes.",
     "viewMore": "Ver más"
   },
   "projects": {
+    "title": "Mis proyectos"
+  },
+  "project": {
     "title": "Detalles del proyecto",
     "description": "Descripción",
     "info": {
       "date": "Fecha",
       "status": "Estado",
-      "repo": "Repo"
+      "repo": "Repo",
+      "website": "Sitio web"
     }
   },
   "deployments": {

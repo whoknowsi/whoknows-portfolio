@@ -1,7 +1,7 @@
-const Footer = () => {
+const Footer = async ({ text }) => {
   return (
     <footer>
-        <span>Thanks for visiting ♥</span>
+        <span>{text} ♥</span>
     </footer>
   )
 }

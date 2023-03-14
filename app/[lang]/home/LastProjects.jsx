@@ -6,7 +6,7 @@ import { useRef, useEffect, useState } from 'react'
 import { dateDDMMYYYYToTimestamp, getCurrentLocale } from '@/utils/utils'
 import { usePathname } from 'next/navigation'
 
-const LastProjects = ({ projects }) => {
+const LastProjects = ({ projects, dictionary }) => {
   const pathname = usePathname()
   const maxProjectsToShow = 3
   const projectsContainer = useRef(null)
@@ -45,10 +45,10 @@ const LastProjects = ({ projects }) => {
 
   return (
     <section className="lastProjectsSectionContainer">
-      <h2>My last projects</h2>
+      <h2>{dictionary.secondTitle}</h2>
       <div ref={projectsContainer} className="lastProjectsContainer">
         <div className="lastProjectsViewMore">
-          <Link href={`/${getCurrentLocale(pathname)}/projects`}>View more...</Link>
+          <Link href={`/${getCurrentLocale(pathname)}/projects`}>{dictionary.viewMore}...</Link>
         </div>
         {maxProjectsOnLine ? (
           [...projects]

@@ -13,7 +13,7 @@ const socialMediaIcons = [
 
 const capitalizeFirstLetter = (str) => str.charAt(0).toUpperCase() + str.slice(1)
 
-const Main = ({ info }) => {
+const Main = ({ info, dictionary }) => {
   const { country, city, email, socialMedia, phone } = info
 
   const mappedMedias = (urls) => {
@@ -39,16 +39,17 @@ const Main = ({ info }) => {
     <>
       <ContactInformation
         firstCard={[
-          { name: 'Country', description: country },
-          { name: 'City', description: city }
+          { name: dictionary.info.cuontry, description: country },
+          { name: dictionary.info.city, description: city }
         ]}
         secondCard={mappedMedias(socialMedia)}
         thirdCard={[
-          { name: 'Email', description: email },
-          { name: 'Phone', description: parsePhone(phone) }
+          { name: dictionary.info.email, description: email },
+          { name: dictionary.info.phone, description: parsePhone(phone) }
         ]}
+        dictionary={dictionary}
       />
-      <ContactForm />
+      <ContactForm dictionary={dictionary} />
     </>
   )
 }

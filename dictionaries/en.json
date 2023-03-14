@@ -19,15 +19,21 @@
   "home": {
     "firstTitle": "Meet the Maker: The Face Behind the Work",
     "secondTitle": "My last projects",
+    "firstPartDescription": "Hi, I'm",
+    "secondPartDescription": "a web developer and computer science student. I specialize in building web applications and websites that solve problems and improve people's lives. I'm constantly learning and exploring new technologies and work approaches to improve my skills and offer high-quality solutions to my clients.",
     "viewMore": "View more"
   },
   "projects": {
+    "title": "My projects"
+  },
+  "project": {
     "title": "Project details",
     "description": "Description",
     "info": {
       "date": "Date",
       "status": "Status",
-      "repo": "Repo"
+      "repo": "Repo",
+      "website": "Website"
     }
   },
   "deployments": {

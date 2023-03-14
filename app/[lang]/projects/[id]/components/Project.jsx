@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import { FaGithub, FaLink, FaCircle } from 'react-icons/fa'
 
-const Project = ({ project }) => {
+const Project = ({ project, dictionary }) => {
   const { name, description, createdAt, status, repoUrl, url, media } = project
   const slider = useRef(null)
   const next = useRef(null)
@@ -143,25 +143,25 @@ const Project = ({ project }) => {
         </div>
       </section>
       <section className="projectSecondSectionContainer">
-        <h2>Project details</h2>
+        <h2>{dictionary.title}</h2>
         <div className="projectDetailsContainer">
           <div className="projectDescription">
-            <h3>Description</h3>
+            <h3>{dictionary.description}</h3>
             <p>{description}</p>
           </div>
           <div className="projectDetails">
             <ul>
               <li>
-                <strong>Date:</strong>
+                <strong>{dictionary.info.date}:</strong>
                 {createdAt}
               </li>
               <li>
-                <strong>Status:</strong>
+                <strong>{dictionary.info.status}:</strong>
                 {status}
               </li>
               {repoUrl && (
                 <li>
-                  <strong>Repo:</strong>
+                  <strong>{dictionary.info.repo}:</strong>
                   <Link
                     href={repoUrl}
                     target="_blank"
@@ -174,7 +174,7 @@ const Project = ({ project }) => {
               )}
               {url && (
                 <li>
-                  <strong>Website:</strong>
+                  <strong>{dictionary.info.website}:</strong>
                   <Link
                     href={url}
                     target="_blank"

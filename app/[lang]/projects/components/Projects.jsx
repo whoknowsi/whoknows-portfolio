@@ -1,10 +1,10 @@
 import { dateDDMMYYYYToTimestamp } from '@/utils/utils'
 import Project from '../../home/Project'
 
-const Projects = ({ projects, lang }) => {
+const Projects = ({ projects, lang, dictionary }) => {
   return (
     <>
-      <h2>My projects</h2>
+      <h2>{dictionary.title}</h2>
       <div className='projectsContainer'>
         {
           [...projects]

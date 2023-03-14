@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
-const Certificate = ({ certificate }) => {
+const Certificate = ({ certificate, dictionary }) => {
   const { name, description, issuingOrganization, expires, expirationDate, issueDate, credentialId, credentialURL } =
     certificate
   const [showingMore, setShowingMore] = useState(false)
@@ -15,7 +15,7 @@ const Certificate = ({ certificate }) => {
     setShowingMore(!showingMore)
   }
 
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  const months = dictionary.months
 
   const fromApiDateToVerboseDate = (initialDate, finalDate, expires) => {
     // eslint-disable-next-line no-unused-vars
@@ -58,18 +58,18 @@ const Certificate = ({ certificate }) => {
         </section>
         <section className='certificateContent'>
           <article>
-            <h4>Description:</h4>
+            <h4>{dictionary.description}:</h4>
             <p className='certificateDescription'>
               {showingMore ? description : `${description.split('.')[0]}.`}{' '}
-              <button onClick={handleReadMore}>{showingMore ? 'Show less' : '... Read more'}</button>
+              <button onClick={handleReadMore}>{showingMore ? dictionary.readLess : `... ${dictionary.readMore}` }</button>
             </p>
           </article>
           <article>
-            <h4>Credential ID:</h4>
+            <h4>{dictionary.credentialId}:</h4>
             <p className='certificateCredentialId'>{credentialId}</p>
           </article>
           <article>
-            <h4>Credential URL:</h4>
+            <h4>{dictionary.credentialUrl}:</h4>
             <Link href={credentialURL} target="_blank" rel="noopener noreferrer" aria-label={`${name} certificate url`}>
               {credentialURL}
             </Link>

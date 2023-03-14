@@ -1,0 +1,79 @@
+{
+  "aside": {
+    "country": "País",
+    "city": "Ciudad",
+    "age": "Edad",
+    "titles": {
+      "skills": "Habilidades",
+      "cv": "Cv"
+    },
+    "cv": "Descargar"
+  },
+  "menu": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "deployments": "Despliegues",
+    "certifications": "Certificados",
+    "contact": "Contacto",
+    "langToggle": "Change to english"
+  },
+  "home": {
+    "firstTitle": "Conoce al Creador: La Cara Detrás del Trabajo",
+    "secondTitle": "Mis últimos proyectos",
+    "firstPartDescription": "Hola, soy",
+    "secondPartDescription": "desarrollador web y estudiante de Ciencias de la Computación. Me especializo en desarrollar aplicaciones y sitios web que resuelven problemas y mejoran la vida de las personas. Estoy en constante aprendizaje y explorando nuevas tecnologías para mejorar mis habilidades y ofrecer soluciones de alta calidad para mis clientes.",
+    "viewMore": "Ver más"
+  },
+  "projects": {
+    "title": "Mis proyectos"
+  },
+  "project": {
+    "title": "Detalles del proyecto",
+    "description": "Descripción",
+    "info": {
+      "date": "Fecha",
+      "status": "Estado",
+      "repo": "Repo",
+      "website": "Sitio web"
+    }
+  },
+  "deployments": {
+    "title": "Despliegues",
+    "tableTitle": {
+      "name": "Nombre",
+      "description": "Descripción",
+      "repo": "Repo",
+      "url": "Url",
+      "status": "Estado"
+    }
+  },
+  "certifications": {
+    "title": "Certificados",
+    "months": ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+    "description": "Descripción",
+    "readMore": "Leer más",
+    "readLess": "Leer menos",
+    "credentialId": "Credencial ID",
+    "credentialUrl": "Credencial URL"
+  },
+  "contact": {
+    "firstTitle": "Información de contacto",
+    "secondTitle": "Ponerse en contacto",
+    "info": {
+      "cuontry": "País",
+      "city": "Ciudad",
+      "email": "Email",
+      "phone": "Celular"
+    },
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Mensaje",
+      "sendMessage": "Enviar Mensaje",
+      "sendingMessage": "Enviando mensaje",
+      "success": "¡Mensaje enviado!",
+      "error": "Error enviando el mensaje"
+    }
+  },
+  "footer": "Gracias por visitar"
+}

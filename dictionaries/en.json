@@ -1,0 +1,79 @@
+{
+  "aside": {
+    "country": "Country",
+    "city": "City",
+    "age": "Age",
+    "titles": {
+      "skills": "Skills",
+      "cv": "Cv"
+    },
+    "cv": "Download"
+  },
+  "menu": {
+    "home": "Home",
+    "projects": "Projects",
+    "deployments": "Deployments",
+    "certifications": "Certifications",
+    "contact": "Contact",
+    "langToggle": "Cambiar a español"
+  },
+  "home": {
+    "firstTitle": "Meet the Maker: The Face Behind the Work",
+    "secondTitle": "My last projects",
+    "firstPartDescription": "Hi, I'm",
+    "secondPartDescription": "a web developer and computer science student. I specialize in building web applications and websites that solve problems and improve people's lives. I'm constantly learning and exploring new technologies and work approaches to improve my skills and offer high-quality solutions to my clients.",
+    "viewMore": "View more"
+  },
+  "projects": {
+    "title": "My projects"
+  },
+  "project": {
+    "title": "Project details",
+    "description": "Description",
+    "info": {
+      "date": "Date",
+      "status": "Status",
+      "repo": "Repo",
+      "website": "Website"
+    }
+  },
+  "deployments": {
+    "title": "Deployments",
+    "tableTitle": {
+      "name": "Name",
+      "description": "Description",
+      "repo": "Repo",
+      "url": "Url",
+      "status": "Status"
+    }
+  },
+  "certifications": {
+    "title": "Certifications",
+    "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    "description": "Description",
+    "readMore": "Read more",
+    "readLess": "Read less",
+    "credentialId": "Credential ID",
+    "credentialUrl": "Credential URL"
+  },
+  "contact": {
+    "firstTitle": "Contact Information",
+    "secondTitle": "Get In Touch",
+    "info": {
+      "cuontry": "Country",
+      "city": "City",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "sendMessage": "Send Message",
+      "sendingMessage": "Sending Message",
+      "success": "Message sent!",
+      "error": "Error sending message"
+    }
+  },
+  "footer": "Thanks for visiting"
+}

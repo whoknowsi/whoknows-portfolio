@@ -1,0 +1,73 @@
+.container {
+  background-color: var(--middle-color);
+  padding: 1em calc(2.5em - var(--svg-basic-height) / 2);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.container button {
+  width: var(--svg-basic-height);
+  height: var(--svg-basic-height);
+  background-color: var(--text-color-vivid);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: transform ease-in-out .2s;
+  position: relative;
+}
+
+.container button:hover {
+  transform: scale(1.1);
+}
+
+.bubble {
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  transform: translate(-105%, 50%);
+  background-color: var(--text-color-vivid);
+  color: var(--middle-color);
+  padding: 0.4em .8em;
+  opacity: 0;
+  width: max-content;
+  transition: all .3s cubic-bezier(.11,.11,.37,1.07);;
+  pointer-events: none;
+  border-radius: 1em;
+  font-size: 1em;
+  font-weight: 500;
+  z-index: 50;
+  border: 3px solid var(--text-color-vivid);
+  text-align: center;
+}
+
+.bubble::before {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border: 0.75em solid transparent;
+  border-left-color: var(--text-color-vivid);
+  border-right: none;
+  z-index: 55;
+}
+
+.bubble.hover {
+  opacity: 1;
+  transform: translate(-110%, 50%);
+  padding: 0.4em 1em;
+}
+
+.container a {
+  font-size: .75em;
+  line-height: .5em;
+  text-transform: uppercase;
+  font-weight: 600;
+}

@@ -3,8 +3,9 @@
 import { useState, useRef } from 'react'
 import { sendContactMessage } from './services/contact'
 import { FaUserAlt, FaAt, FaEnvelopeOpen } from 'react-icons/fa'
+import Card from './Card'
 
-const ContactForm = ({ dictionary }) => {
+const ContactForm = ({ dictionary, info }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -35,10 +36,24 @@ const ContactForm = ({ dictionary }) => {
     setSendingMessage(false)
   }
 
+  const { email: personalEmail, phone } = info
+
+  const parsePhone = ({ countryCode, areaCode, number }) => {
+    const numberFirstPart = number.toString().slice(0, Math.floor(number.toString().length / 2))
+    const numberSecondPart = number.toString().slice(Math.floor(number.toString().length / 2))
+    return `+${countryCode} ${areaCode} ${numberFirstPart} ${numberSecondPart}`
+  }
+
   return (
-    <section className='contactSectionContainer'>
-      <h2>{dictionary.secondTitle}</h2>
+    <section id="contact" className='contactSectionContainer'>
+      <h2 className='contactSectionContainer_titleMobile'>{dictionary.secondTitle}</h2>
       <div className='contactFormContainer'>
+        <h2 className='contactSectionContainer_titleDesktop'>{dictionary.secondTitle}</h2>
+        <Card data={[
+          { name: dictionary.info.email, description: personalEmail },
+          { name: dictionary.info.phone, description: parsePhone(phone) }
+        ]}
+        />
         <form onSubmit={handleSubmit} className={sendingMessage && 'contactSendingMessage'}>
           <div className='contactInputContainer'>
             <input

@@ -8,6 +8,7 @@
   flex-direction: column;
   cursor: pointer;
   transition: transform .2s ease-in-out;
+  border-radius: .5em;
 }
 
 .projectCardContainer h3 {
@@ -32,8 +33,9 @@
 .projectCardContainerPlaceHolder {
   width: 100%;
   background-color: var(--middle-color-light);
-  height: 25em;
+  height: 22.5em;
   min-width: 19em;
+  border-radius: .5em;
 }
 
 .projectCardImageContainer {

@@ -1,24 +1,24 @@
 .container {
   background-color: var(--middle-color);
-  padding: 1em calc(2.5em - var(--svg-basic-height) / 2);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform ease-in-out .2s;
+  height: 100%;
+  width: var(--header-height);
   position: relative;
 }
 
-.container button {
-  width: var(--svg-basic-height);
-  height: var(--svg-basic-height);
+.container > p {
   background-color: var(--text-color-vivid);
+  width: calc(var(--svg-basic-height) + .1em);
+  height: calc(var(--svg-basic-height) + .1em);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  cursor: pointer;
-  transition: transform ease-in-out .2s;
-  position: relative;
+  color: #333;
 }
 
 .container button:hover {
@@ -29,7 +29,7 @@
   position: absolute;
   bottom: 50%;
   left: 0;
-  transform: translate(-105%, 50%);
+  transform: translate(-95%, 50%);
   background-color: var(--text-color-vivid);
   color: var(--middle-color);
   padding: 0.4em .8em;
@@ -61,7 +61,7 @@
 
 .bubble.hover {
   opacity: 1;
-  transform: translate(-110%, 50%);
+  transform: translate(-100%, 50%);
   padding: 0.4em 1em;
 }
 
@@ -70,4 +70,14 @@
   line-height: .5em;
   text-transform: uppercase;
   font-weight: 600;
+}
+
+@media (max-width: 568px) {
+  .container {
+    position: fixed;
+    right: 0;
+    bottom: 1em;
+    background-color: transparent;
+    height: auto;
+  }
 }

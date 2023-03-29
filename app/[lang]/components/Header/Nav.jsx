@@ -1,105 +1,100 @@
 'use client'
+
 import styles from './styles/Nav.module.css'
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
-import { FaFolderOpen, FaCloud, FaCertificate, FaAddressBook } from 'react-icons/fa'
-import { IoHome } from 'react-icons/io5'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { i18n } from '@/i18n-config'
 import { getCurrentLocale } from '@/utils/utils'
+import { IoHome } from 'react-icons/io5'
+import { useEffect } from 'react'
 
-const Nav = ({ open, projects, handleMenuToggle, handleMainClick, dictionary }) => {
+const Nav = ({ open, dictionary }) => {
+  const router = useRouter()
   const pathname = usePathname()
-  const list = useRef(null)
-  const projectsList = useRef(null)
-  const [projectsOpen, setProjectsOpen] = useState(false)
-  const [maxHeight, setMaxHeight] = useState(0)
 
-  const setMaxHeightOnEl = () => {
-    projectsList.current.style.maxHeight = `${maxHeight}em`
-  }
-
-  const resetMaxHeightOnEl = () => {
-    projectsList.current.style.maxHeight = '0px'
-  }
-
-  const handleClick = (e) => {
+  const handleMainClick = async (e, link) => {
     e.preventDefault()
-    projectsOpen ? resetMaxHeightOnEl() : setMaxHeightOnEl()
-    setProjectsOpen(!projectsOpen)
-    !open && handleMenuToggle()
+    const anchor = link.split('#')[1]
+    const el = document.querySelector(`#${anchor}`)
+    if (el) {
+      router.push(link)
+      el.scrollIntoView({ behavior: 'smooth' })
+      return
+    }
+
+    router.push(link)
   }
 
   useEffect(() => {
-    if (!list) return
-    const interval = 0.03
-    let delay = 0
-    for (const iterator of list.current.childNodes) {
-      iterator.children[0].style.transitionDelay = `${delay.toFixed(3)}s`
-      delay += interval
-    }
-  }, [list])
-
-  useEffect(() => {
-    if (!open) {
-      setProjectsOpen(false)
-      resetMaxHeightOnEl()
-    }
-  }, [open])
-
-  useEffect(() => {
-    const setMaxHeightOfProjectsList = () => {
-      const margin = 1
-      const projectsSpace = projects.length * 3
-      const totalHeight = projectsSpace + margin
-      return totalHeight
-    }
-
-    setMaxHeight(setMaxHeightOfProjectsList())
-  }, [projects.length])
+    console.log(pathname.split('/').length)
+  }, [pathname])
 
   return (
     <nav className={`${styles.container} ${open ? styles.open : ''}`}>
-      <ul ref={list}>
-        <li className={i18n.locales.some((locale) => ('/' + locale) === pathname) ? styles.active : ''}>
-          <Link href={`/${getCurrentLocale(pathname)}`} onClick={handleMainClick}>
+      <ul>
+        <li
+          className={
+            i18n.locales.some((locale) => '/' + locale === pathname)
+              ? styles.active
+              : ''
+          }
+        >
+          <Link href={`/${getCurrentLocale(pathname)}`}>
             <IoHome />
             <div>{dictionary.home}</div>
           </Link>
         </li>
         <li className={pathname.includes('projects') ? styles.active : ''}>
-          <Link href={`/${getCurrentLocale(pathname)}/projects`} onClick={handleClick}>
-            <FaFolderOpen />
+          <Link href={`/${getCurrentLocale(pathname)}/projects`}>
             <div>{dictionary.projects}</div>
           </Link>
-          <ul ref={projectsList} className={`${styles.projects}`}>
-            {projects.map(({ id, name }) => (
-              <li key={id} className={pathname.includes(id) ? styles.active : ''}>
-                <Link href={`/${getCurrentLocale(pathname)}/projects/${id}`} onClick={handleMainClick}>
-                  <span>{name}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
         </li>
-        <li className={pathname.includes('deployments') ? styles.active : ''}>
-          <Link href={`/${getCurrentLocale(pathname)}/deployments`} onClick={handleMainClick}>
-            <FaCloud />
-            <div>{dictionary.deployments}</div>
-          </Link>
-        </li>
-        <li className={pathname.includes('certifications') ? styles.active : ''}>
-          <Link href={`/${getCurrentLocale(pathname)}/certifications`} onClick={handleMainClick}>
-            <FaCertificate />
-            <div>{dictionary.certifications}</div>
-          </Link>
-        </li>
-        <li className={pathname.includes('contact') ? styles.active : ''}>
-          <Link href={`/${getCurrentLocale(pathname)}/contact`} onClick={handleMainClick}>
-            <FaAddressBook />
-            <div>{dictionary.contact}</div>
-          </Link>
-        </li>
+        {pathname.split('/').length < 3 && (
+          <>
+            <li
+              className={pathname.includes('#deployments') ? styles.active : ''}
+            >
+              <Link
+                href={`/${getCurrentLocale(pathname)}#deployments`}
+                onClick={(e) =>
+                  handleMainClick(
+                    e,
+                    `/${getCurrentLocale(pathname)}#deployments`
+                  )
+                }
+              >
+                <div>{dictionary.deployments}</div>
+              </Link>
+            </li>
+            <li
+              className={
+                pathname.includes('#certifications') ? styles.active : ''
+              }
+            >
+              <Link
+                href={`/${getCurrentLocale(pathname)}#certifications`}
+                onClick={(e) =>
+                  handleMainClick(
+                    e,
+                    `/${getCurrentLocale(pathname)}#certifications`
+                  )
+                }
+              >
+                <div>{dictionary.certifications}</div>
+              </Link>
+            </li>
+            <li className={pathname.includes('#contact') ? styles.active : ''}>
+              <Link
+                href={`/${getCurrentLocale(pathname)}#contact`}
+                onClick={(e) =>
+                  handleMainClick(e, `/${getCurrentLocale(pathname)}#contact`)
+                }
+              >
+                <div>{dictionary.contact}</div>
+              </Link>
+            </li>
+          </>
+        )}
       </ul>
     </nav>
   )

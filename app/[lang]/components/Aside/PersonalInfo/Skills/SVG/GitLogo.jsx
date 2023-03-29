@@ -1,3 +1,4 @@
+'use client'
 import SvgContainer from '../SvgContainer'
 
 const GitLogo = ({ colors, width, height, hoverColors, name }) => {

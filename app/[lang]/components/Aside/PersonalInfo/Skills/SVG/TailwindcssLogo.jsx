@@ -1,4 +1,4 @@
-
+'use client'
 import SvgContainer from '../SvgContainer'
 
 const TailwindcssLogo = ({ colors, width, height, hoverColors, name }) => {

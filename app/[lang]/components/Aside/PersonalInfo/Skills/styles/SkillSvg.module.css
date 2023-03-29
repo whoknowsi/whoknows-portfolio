@@ -41,13 +41,12 @@
   border: 0.75em solid transparent;
   border-top-color: var(--text-color-vivid);
   border-bottom: none;
-  z-index: 55;
 }
 
 .bubble.hover {
   opacity: 1;
   transform: translateY(-.5em);
-    padding: 0.5em 1em;
+  padding: 0.5em 1em;
 }
 
 .container svg {

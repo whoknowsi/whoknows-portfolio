@@ -1,22 +1,28 @@
 .contactInformationSectionContainer {
-  width: 100%;
+  width: 30%;
 }
 
 .contactInformationCardsContainer {
+  position: absolute;
   width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   gap: 1em;
   flex-wrap: wrap;
+  width: 30%;
+  right: 0;
+  top: 0;
 }
 
 .contactCardContainer {
-  padding: 2em;
-  background-color: var(--middle-color-light);
-  min-width: 19em;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: fit-content;
+  padding: 1em;
+  width: 17em;
   flex: 1;
-  box-shadow: var(--border-shadow-block)
 }
 
 
@@ -60,6 +66,7 @@
   cursor: pointer;
   transition: background .2s ease-in-out;
   transition-property: background, filter;
+  border-radius: .5em;
 }
 
 .contactSectionContainer button:disabled {
@@ -72,13 +79,16 @@ filter: brightness(.6);
   width: 100%;
   height: 100%;
   box-shadow: var(--border-shadow-block);
+  background-color: var(--middle-color-light);
+  padding: 2em;
   flex: 1;
+  gap: 2em;
+  position: relative;
+  border-radius: .5em;
 }
 
 .contactFormContainer form {
   width: 100%;
-  background-color: var(--middle-color-light);
-  padding: 2em;
   display: flex;
   flex-direction: column;
   gap: 1.25em;
@@ -104,6 +114,8 @@ filter: brightness(.6);
   color: var(--text-color-gray);
   background-color: var(--back-color);
   transition: background .5s ease-in-out;
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
 }
 
 .contactInputContainer input, .contactInputContainer textArea {
@@ -111,6 +123,8 @@ filter: brightness(.6);
   background-color: var(--middle-color);
   color: var(--text-color-highlight);
   padding: 1.25em;
+  border-top-right-radius: .5em;
+  border-bottom-right-radius: .5em;
 }
 
 .contactInputContainer svg {
@@ -187,3 +201,28 @@ to {
   width: 1.6em;     
 }
 }
+
+.contactSectionContainer_titleDesktop {
+  display: block;
+}
+
+.contactSectionContainer_titleMobile {
+  display: none;
+}
+
+@media (max-width: 568px) {
+  .contactCardContainer {
+    width: 100%;
+    position: inherit;
+    right: 0;
+    top: 0;
+    max-width: 100%;
+  }
+  .contactSectionContainer_titleMobile {
+    display: block;
+  }
+  .contactSectionContainer_titleDesktop {
+    display: none;
+  }
+}
+

@@ -1,3 +1,4 @@
+'use client'
 import SvgContainer from '../SvgContainer'
 
 const BootstrapLogo = ({ width, height, colors, hoverColors, name }) => {

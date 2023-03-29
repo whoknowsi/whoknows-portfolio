@@ -1,3 +1,4 @@
+'use client'
 import styles from './styles/SkillSvg.module.css'
 import React, { useState } from 'react'
 

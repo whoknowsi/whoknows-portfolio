@@ -1,22 +1,23 @@
 .container {
   display: flex;
-  flex-direction: column;
   flex: 1;
   color: var(--text-color-gray);
-  background-color: var(--back-color);
+  background-color: #20202aee;
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
   font-size: .95em;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: 2em 0;
+  align-items: center;
+  padding: 0 2em;
 }
 
 .container > ul {
   display: flex;
-  flex-direction: column;
   flex: 1;
-  gap: 1em;
+  gap: 1.5em;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .container > ul > li {
@@ -29,7 +30,6 @@
   display: flex;
   align-items: center;
   gap: 1em;
-  padding: 0 2em;
 }
 
 .container >  ul > li > a:hover {
@@ -51,24 +51,20 @@
   transition-property: transform, color;
 }
 
+.container >  ul > li > a > svg {
+  display: none;
+}
+
 .container >  ul > li.active > a > svg{
   color: var(--text-color-vivid);
-  transform: scale(1.1)
 }
 
 .container >  ul > li > a:hover > svg {
   color: inherit;
-  transform: scale(1.2);
 }
 
 .container > ul > li > a > div {
   color: inherit;
-  opacity: 0;
-  transition-property: color, transform, opacity;
-  transition-duration: var(--menu-open-transition);
-  transition-timing-function: ease-out;
-  cursor: pointer;
-  transform: translateX(5em);
 }
 
 
@@ -129,4 +125,36 @@
 
 .projects .active:hover {
   color: var(--text-color-vivid-light);
+}
+
+
+@media (max-width: 1023px) {
+  .container > ul {
+    padding: 0;
+  }
+}
+
+
+@media (max-width: 568px) {
+  .container > ul > li:nth-child(3){
+    display: none;
+  }
+
+  .container > ul {
+    justify-content: space-between;
+  }
+}
+
+
+@media (max-width: 375px) {
+  .container >  ul {
+    gap: 1em;
+  }
+  .container >  ul > li > a > svg {
+    display: block;
+  }
+
+  .container >  ul > li:first-child > a > div {
+    display: none;
+  }
 }

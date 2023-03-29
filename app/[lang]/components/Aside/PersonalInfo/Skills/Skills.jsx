@@ -45,15 +45,18 @@ const skillsList = [
 ]
 
 const Skills = ({ skills }) => (
-  <div className={styles.container}>
-    {skills.map((skill) => {
-      const foundSkill = skillsList.find((x) => skill === Object.keys(x)[0].toString())
-      const Component = foundSkill ? Object.values(foundSkill)[0] : NoLogo
-      const label = skill
+  <section className={styles.container}>
+    <h2>Skills</h2>
+    <div>
+      {skills.map((skill) => {
+        const foundSkill = skillsList.find((x) => skill === Object.keys(x)[0].toString())
+        const Component = foundSkill ? Object.values(foundSkill)[0] : NoLogo
+        const label = skill
 
-      return <Component key={label} name={label} />
-    })}
+        return <Component key={label} name={label} />
+      })}
   </div>
+  </section>
 )
 
 export default Skills

@@ -8,6 +8,8 @@
   display: grid;
   width: 100%;
   row-gap: 0.5em;
+  border-radius: .5em;
+  overflow: hidden;
 }
 
 .deploymentsRow,
@@ -27,6 +29,10 @@
 .deploymentsHeader h3 {
   margin: 0;
 }
+
+.deploymentsHeader h3:first-child {
+  justify-self: flex-start;
+} 
 
 .deploymentsRow {
   transition: background 0.3s ease-in-out;

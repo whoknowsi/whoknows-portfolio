@@ -7,7 +7,7 @@
       "skills": "Habilidades",
       "cv": "Cv"
     },
-    "cv": "Descargar"
+    "cv": "Descargar CV"
   },
   "menu": {
     "home": "Inicio",
@@ -21,7 +21,7 @@
     "firstTitle": "Conoce al Creador: La Cara Detrás del Trabajo",
     "secondTitle": "Mis últimos proyectos",
     "firstPartDescription": "Hola, soy",
-    "secondPartDescription": "desarrollador web y estudiante de Ciencias de la Computación. Me especializo en desarrollar aplicaciones y sitios web que resuelven problemas y mejoran la vida de las personas. Estoy en constante aprendizaje y explorando nuevas tecnologías para mejorar mis habilidades y ofrecer soluciones de alta calidad para mis clientes.",
+    "secondPartDescription": "desarrollador web y estudiante de Ciencias de la Computación, especializado en desarrollar aplicaciones y sitios web que resuelven problemas y mejoran la vida de las personas. En constante aprendizaje y explorando nuevas tecnologías para mejorar mis habilidades y ofrecer soluciones de alta calidad para mis clientes.",
     "viewMore": "Ver más"
   },
   "projects": {

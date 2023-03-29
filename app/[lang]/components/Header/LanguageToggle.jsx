@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import styles from './styles/LenguageToggle.module.css'
 
-const LenguageToggle = ({ open, dictionary }) => {
+const LanguageToggle = ({ dictionary }) => {
   const pathName = usePathname()
   const locale = getCurrentLocale(pathName)
   const [nextLocale, setNextLocale] = useState('')
@@ -37,23 +37,21 @@ const LenguageToggle = ({ open, dictionary }) => {
   }, [locale])
 
   return (
-    <div className={styles.container}>
-      <button
-        tabIndex={open ? 0 : -1}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}>
-          <div className={`${styles.bubble} ${hover ? styles.hover : ''}`}>
-            {dictionary.langToggle}
-          </div>
-          <Link
-            href={redirectedPathName(nextLocale)}
-            onClick={() => handleClick(nextLocale)}
-          >
-            {locale}
-          </Link>
-      </button>
+    <Link
+      className={styles.container}
+      href={redirectedPathName(nextLocale)}
+      onClick={() => handleClick(nextLocale)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+    <div className={`${styles.bubble} ${hover ? styles.hover : ''}`}>
+      {dictionary.langToggle}
     </div>
+    <p>
+      {locale}
+    </p>
+  </Link>
   )
 }
 
-export default LenguageToggle
+export default LanguageToggle

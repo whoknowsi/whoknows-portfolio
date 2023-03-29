@@ -1,3 +1,5 @@
+import Link from 'next/link'
+import { FaFileDownload } from 'react-icons/fa'
 import styles from './styles/BasicInfo.module.css'
 
 const getAgeFrom = (dateOfBirth) => {
@@ -6,15 +8,23 @@ const getAgeFrom = (dateOfBirth) => {
   return Math.floor((new Date() - birth) / 31557600000) // Divide by 1000*60*60*24*365.25
 }
 
-const BasicInfo = ({ info, dictionary }) => {
+const BasicInfo = ({ info, dictionary, cv }) => {
   const { dateOfBirth, country, city } = info
 
   return (
     <div className={styles.container}>
       <ul>
-        <li><strong>{dictionary.country}:</strong>{country}</li>
-        <li><strong>{dictionary.city}:</strong>{city}</li>
-        <li><strong>{dictionary.age}:</strong>{getAgeFrom(dateOfBirth)}</li>
+        <li>{country}</li>
+        <li>{city}</li>
+        <li>{getAgeFrom(dateOfBirth)}</li>
+        <Link
+          href={`${process.env.STATICS_BASE_URL}${cv}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={'download curriculum vitae'}
+        >
+          {dictionary.cv} <FaFileDownload />
+      </Link>
       </ul>
     </div>
   )

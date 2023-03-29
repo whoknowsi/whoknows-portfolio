@@ -7,7 +7,7 @@
       "skills": "Skills",
       "cv": "Cv"
     },
-    "cv": "Download"
+    "cv": "Download CV"
   },
   "menu": {
     "home": "Home",
@@ -21,7 +21,7 @@
     "firstTitle": "Meet the Maker: The Face Behind the Work",
     "secondTitle": "My last projects",
     "firstPartDescription": "Hi, I'm",
-    "secondPartDescription": "a web developer and computer science student. I specialize in building web applications and websites that solve problems and improve people's lives. I'm constantly learning and exploring new technologies and work approaches to improve my skills and offer high-quality solutions to my clients.",
+    "secondPartDescription": "web developer and computer science student, specialized in building web applications and websites that solve problems and improve people's lives, in constant learning and exploring new technologies and work approaches to improve my skills and offer high-quality solutions to my clients.",
     "viewMore": "View more"
   },
   "projects": {

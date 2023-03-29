@@ -18,7 +18,7 @@ const Project = ({ name, description, media, id }) => {
   }
 
   return name ? (
-    <div
+    <article
       className="projectCardContainer"
       onClick={handleClick}
       onMouseDown={handleMiddleClick}
@@ -34,9 +34,9 @@ const Project = ({ name, description, media, id }) => {
         />
       </div>
       <p>{description}</p>
-    </div>
+    </article>
   ) : (
-    <div className="projectCardContainerPlaceHolder"></div>
+    <article className="projectCardContainerPlaceHolder"></article>
   )
 }
 

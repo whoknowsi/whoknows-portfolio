@@ -1,6 +1,12 @@
 .container {
+  width: 100%;
+}
+
+.container > div {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(5, 1fr);
   grid-row-gap: 0.5em;
+  z-index: 10;
+  padding: 0 2em;
 }

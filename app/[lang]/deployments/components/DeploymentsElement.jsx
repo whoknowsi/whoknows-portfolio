@@ -7,7 +7,7 @@ const DeploymentsElement = ({ deployments, lang, dictionary }) => {
       <Head>
         <title>Whoknows | Deployments</title>
       </Head>
-      <section className="deploymentsSectionContainer">
+      <section id="deployments" className="deploymentsSectionContainer">
         <h2>{dictionary.title}</h2>
         <section className="deploymentsContainer">
           <div className="deploymentsHeader">

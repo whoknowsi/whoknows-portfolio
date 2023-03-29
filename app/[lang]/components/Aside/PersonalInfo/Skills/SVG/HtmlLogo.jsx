@@ -1,3 +1,4 @@
+'use client'
 import SvgContainer from '../SvgContainer'
 
 const HtmlLogo = ({ width, height, colors, hoverColors, name }) => {

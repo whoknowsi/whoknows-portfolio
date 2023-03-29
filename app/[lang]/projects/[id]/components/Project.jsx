@@ -40,15 +40,9 @@ const Project = ({ project, dictionary }) => {
     )
     const vw = window.innerWidth
     const isMobile = window.innerWidth <= 1023
-    const headerWidth = isMobile
-      ? 0
-      : emToPixels(styles.getPropertyValue('--header-width'))
-    const asideWidth = isMobile
-      ? 0
-      : emToPixels(styles.getPropertyValue('--aside-width'))
     const paddingWidth = isMobile ? emToPixels('4em') : emToPixels('6em')
 
-    return Math.min(maxWidth, vw) - headerWidth - asideWidth - paddingWidth
+    return Math.min(maxWidth, vw) - paddingWidth
   }
 
   const fromTranslateToNumber = (t) => Number(t.split('(')[1].split('px')[0])

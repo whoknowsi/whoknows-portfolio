@@ -1,5 +1,5 @@
 :root {
-  --max-width: 1440px;
+  --max-width: 1080px;
   --border-radius: 12px;
   --background-color: #191923;
   --background-front-color: #1e1e28;
@@ -22,8 +22,6 @@
   --montain-gradient: linear-gradient(0deg, var(--background-front-color) 0%, var(--middle-color) 100%);
   --svg-basic-height: 1.5em;
   --aside-width: 18em;
-  --header-width: 5em;
-  --header-width-open: 15em;
   --max-height: 55em;
   --header-height: 4em;
 }
@@ -95,6 +93,9 @@ svg {
   transition: color .3s ease-in-out;
 }
 
+section {
+  scroll-margin: calc(var(--header-height) + 1.5em);
+}
 
 svg:hover {
   color: var(--text-color-highlight)
@@ -125,14 +126,16 @@ a {
   overflow: hidden;
   overflow-y: overlay;
   margin: 0 auto;
+  border-radius: .5em;
 }
 
 .scrollContainer {
   position: absolute;
-  left: var(--aside-width);
+  left: 0;
   bottom: 0;
   top: 0;
-  right: calc(var(--header-width));
+  padding-top: var(--header-height);
+  right: 0;
   z-index: 5;
   overflow-y: overlay;
   transition: transform var(--menu-open-transition) var(--menu-open-cubic);
@@ -143,7 +146,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1em;
+  gap: 2.5em;
   transition: transform var(--menu-open-transition) var(--menu-open-cubic);
   padding: 2em;
 }
@@ -196,6 +199,7 @@ footer {
   justify-content: flex-end;
   align-items: center;
   box-shadow: var(--border-shadow-block);
+  border-radius: .5em;
 }
 footer span {
   font-size: .8em;
@@ -231,7 +235,6 @@ input:-internal-autofill-selected {
   }
 
   .main {
-    margin-top: var(--header-height);
     padding: 2em;
     height: fit-content;
   }

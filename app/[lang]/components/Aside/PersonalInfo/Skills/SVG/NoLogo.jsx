@@ -1,3 +1,4 @@
+'use client'
 import SvgContainer from '../SvgContainer'
 
 const NoLogo = ({ colors, width, height, hoverColors, name }) => {

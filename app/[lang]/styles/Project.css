@@ -4,6 +4,8 @@
   flex-direction: column;
   flex: 1;
   width: 100%;
+  max-height: none;
+  height: auto;
 }
 
 .projectSecondSectionContainer {
@@ -17,21 +19,23 @@
   width: 100%;
   flex: 1;
   overflow: hidden;
-  height: 100%;
+  height: calc((100vw - 2em) * 0.5625);
+  width: calc(min(var(--max-width), 100vw) - 4em);
 }
 
 .projectImagesSlider {
-  height: inherit;
+  height: fit-content;
   display: flex;
   width: max-content;
   transition: transform .3s ease-in-out;
 }
 
 .projectImageContainer {
-  width: calc(min(var(--max-width), 100vw) - var(--header-width) - var(--aside-width) - 6em);
+  width: calc(min(var(--max-width), 100vw) - 6em);
   transition: opacity .3s ease-in-out;
   opacity: 0;
   padding: 0 2.75em;
+  height: auto;
 }
 
 .projectImageContainer.projectCurrent {
@@ -52,11 +56,12 @@
   transition: all .3s ease-in-out;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  z-index: 10;
 }
 
-.projectPrev:hover, .next:hover {
+.projectPrev:hover, .projectNext:hover {
   background-color: rgba(0,0,0,.2);
-  color: var(--text-color-highlight)
+  color: var(--text-color-highlight);
 }
 
 .projectPrev {
@@ -66,6 +71,7 @@
 
 .projectNext {
   right: 0;
+  transform: translatex(calc(-50% - 0.25em));
 }
 
 .projectSliderPoints {
@@ -145,19 +151,12 @@
 }
 
 @media (max-width: 1023px) {
-  .projectFirstSectionContainer {
-    max-height: none;
-    height: auto;
-  }
-
-  .projectImagesContainer {
-      height: calc((100vw - 2em) * 0.5625);
-  }
-
   .projectImageContainer {
-      width: calc(min(var(--max-width), 100vw) - 4em);
+    width: calc(min(var(--max-width), 100vw) - 4em);
   }
-
+  .projectNext {
+    transform: translateX(0);
+  }
   .projectDetailsContainer {
       flex-wrap: wrap;
   }
